@@ -1,0 +1,494 @@
+@charset "utf-8";
+
+/*html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, b, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, audio, canvas, details, figcaption, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, summary, time, video {font-family:'Noto Sans KR', sans-serif !important;}*/
+body, th, td, input, select, textarea {color:#575756;}
+
+/* common */
+article {display:none;}
+h5 {font-size:14px;font-weight:800;margin-top:20px;}
+.hide {display:none;}
+
+.pcWrap {display:block;}
+.mobileWrap {display:none;}
+
+.selectBox>select {display:block;width:100% !important;}
+.section02 .selectBox>select {display:block;width:100% !important;}
+.logo_box {left:0;top:-42px;padding:0;}
+.menuSticky.fixed .logo_box {padding:0;}
+.menuSticky {width:100%;border-top:none;border-bottom:1px solid #c9cacc;background-color:#ae1857;}
+.menuSticky .inner {position:relative !important;}
+.menuSticky .inner h1 a {display:inline-block;width:100px;height:40px;background:url('../img/logo_desian_nest_white.png') no-repeat center /100%;transition:all .3s ease !important}
+
+/* 타이틀 */
+.sec_title {color:#1c1c1b;padding-left:60px;margin-bottom:30px;}
+.sec_title.member {background:url('../img/tit_icon_find_id.png') no-repeat left center /contain !important;}
+.sec_title.member.findPW {background:url('../img/tit_icon_find_pw.png') no-repeat left center /contain !important;}
+.sec_title.join {background:url('../img/tit_icon_user.png') no-repeat left center /contain;}
+.sec_title.join1 {background:url('../img/tit_icon_join.png') no-repeat left center /contain;}
+.h4_title {color:#575756;margin-top:20px;}
+.margin_top_sm {margin-top:30px;}
+/* tab */
+.tabWrap .tabBtn a.active, .tabWrap .tabBtn a:hover {background:#575756;}
+.tabWrap .tabBtn a {color:#575756;font-size:16px;}
+.tabWrap .tabBtn {border-bottom-color:#575756;}
+
+.gray_box {background:transparent;border-bottom:1px solid #7f7f7f;}
+
+/* button */
+.btnArea .fillType {color:#fff;background-color:#1c1c1b;border:1px solid #1c1c1b;}
+.cetify_wrap .phone_cetify {background-color:#1c1c1b;border:1px solid #1c1c1b;}
+
+/* bottom parag */
+.bulType p {color:#8c9091;}
+
+/* footer */
+#footer {border-top-color:#ededed;}
+#footer .fTxt > p {color:#8c9091;}
+#footer .fLink a {color:#575756;}
+#footer .fLogo a {display:inline-block;width:100px;height:40px;background:url('../img/logo_desian_nest_color.png') no-repeat left center /100%;}
+
+.cashInfo > .bulType {margin:10px 0 40px;}
+.cashInfo > .bulType .noti_text {margin-bottom:10px;font-size:13px;}
+
+.tb-list01 table .tar {text-align:right !important;}
+
+/* input */
+input.type01 {border-color:#e5e5e5;}
+
+/* select box */
+.selType02 .selType {border-color:#e5e5e5;}
+
+/* 회원가입 */
+.desc_text {color:#980046;}
+.sec_title + .desc_text {color:#980046;margin-top:30px;}
+.memTxt.red {color:#980046 !important;}
+
+/* 분리 화살표 */
+.subContent .tabWrap.share_4 .tabBtn {border:none;}
+.subContent .tabWrap.share_4 .tabBtn a {position:relative;background:#e8e8e8;width:calc(33.33% - 27px) !important;color:#8c9091;padding:20px 0;text-align:center;margin-right:27px;}
+.subContent .tabWrap.share_4 .tabBtn a.active {background:#1c1c1b;color:#fff;}
+.subContent .tabWrap.share_4 .tabBtn a:before {position:absolute;left:-22px; top:0;height:100%;content:'';display:inline-block;width:22px;background:url('../img/tab_before.png') no-repeat right top /cover !important;}
+.subContent .tabWrap.share_4 .tabBtn a:after  {position:absolute;right:-22px;top:0;height:100%;content:'';display:inline-block;width:22px;background:url('../img/tab_after.png') no-repeat left top /cover !important;}
+.subContent .tabWrap.share_4 .tabBtn a.active:before {background:url('../img/tab_active_before.png') no-repeat right top /contain !important;;}
+.subContent .tabWrap.share_4 .tabBtn a.active:after  {background:url('../img/tab_active_after.png') no-repeat left top /contain !important;;}
+.subContent .tabWrap.share_4 .tabBtn a:nth-child(1):before {display:none;}
+
+/* box */
+.join_intro3 .box {border:1px solid #d9d9d9;}
+
+.tb-list01 table th {background:transparent;}
+.tb-list01 table td {border-left:none;}
+.tb-list01 table td .btnType01 {background-color:#575756;}
+
+/*title */
+.join_intro3 .join01 .title,
+.join_intro3 .join02 .title,
+.join_intro3 .join03 .title,
+.join_intro3 .join04 .title {width:calc(100% - 40px);background:transparent;color:#1c1c1b;border-bottom:1px solid #d9d9d9;margin:auto;}
+.join_intro3 .join01 .txt strong,
+.join_intro3 .join02 .txt strong,
+.join_intro3 .join03 .txt strong,
+.join_intro3 .join04 .txt strong {color:#575756;}
+.join_intro3 .box .txt span {color:#8c9091;}
+
+/* icon */
+.join_intro3 .box.join01 .txt:before,
+.join_intro3 .box.join02 .txt:before,
+.join_intro3 .box.join03 .txt:before,
+.join_intro3 .box.join04 .txt:before {background:none;}
+.box.join01 .txt {background:url('../img/icon_join_01.png') no-repeat center 30px /70px;}
+.box.join02 .txt {background:url('../img/icon_join_02.png') no-repeat center 30px /70px;}
+.box.join03 .txt {background:url('../img/icon_join_03.png') no-repeat center 30px /70px;}
+.box.join04 .txt {background:url('../img/icon_join_04.png') no-repeat center 30px /70px;}
+
+/* button */
+.btn_join3          {margin-top:90px;}
+.btn_join3 button   {background:#1c1c1b;}
+
+.policy_textbox    {color:#575756;}
+.input_check label {color:#575756;}
+.cetify_wrap dl dt {color:#1c1c1b;}
+.cetify_wrap dl dd {color:#575756;}
+.policy_textbox    {border:1px solid #d9d9d9;}
+.cetify_wrap       {border:1px solid #b2b2b2;padding:30px;}
+.cetify_wrap .phone_cetify {right:30px;}
+.tb-list01.type01 table th {background:transparent;}
+.tb-list01.type01 table td {border-left:none;}
+
+/* 개인정보취급방침 */
+.policyCon .top > .logo {width:120px;height:60px;margin-right:30px;background:url('../img/logo_desian_nest_color.png') no-repeat left center /contain;}
+.policyCon .top > span:nth-child(2) {padding-left:50px;}
+.policyCon .title {color:#AE1857;border-bottom-color:#ae1857;margin-top:20px;}
+.policyCon .closebtn a {border-color:#ae1857;color:#ae1857;}
+.layerArea .textCont h3 {color:#1c1c1b;}
+
+.layerArea .tab_wrap {border-bottom-color:#ae1857;}
+.layerArea .tab_wrap li.on {background:#ae1857;color:#fff;border-color:#ae1857;}
+
+/* index */
+#header .topLogin {background:#ae1857;border-bottom:none;}
+.utilTop {border-bottom:1px solid #b63068;}
+.user-menu li:nth-child(2) {margin:0 10px;}
+.user-menu li:nth-child(2) a:before {position:relative;top:2px;content:'';display:inline-block;width:16px;height:16px;margin-right:3px;background:url('../img/icon_header_user.png')   no-repeat center /100%;}
+.user-menu li:nth-child(3) a:before {position:relative;top:2px;content:'';display:inline-block;width:16px;height:16px;margin-right:3px;background:url('../img/icon_header_logout.png') no-repeat center /100%;}
+.cashInfo {border:2px solid #a38544;}
+
+.section01 .sec_title {background-image:url("../img/tit_icon_bill.png");    background-size:contain;line-height:45px;}
+.section02 .sec_title {background-image:url("../img/tit_icon_unpaid.png");  background-size:contain;line-height:45px;}
+.section03 .sec_title {background-image:url("../img/tit_icon_paid.png");    background-size:contain;line-height:45px;}
+.section04 .sec_title {background-image:url("../img/tit_icon_method.png");  background-size:contain;line-height:45px;}
+.section05 .sec_title {background-image:url("../img/tit_icon_contract.png");background-size:contain;line-height:45px;}
+.section06 .sec_title {background-image:url("../img/tit_icon_notice.png");  background-size:contain;line-height:45px;padding-left:70px;}
+.section07 .sec_title {background-image:url("../img/tit_icon_custom.png");  background-size:contain;line-height:45px;}
+
+.cashInfo .payTxt {background-image:url("../img/tit_icon_bill_2.png");background-size:contain;}
+
+.cashInfo .table_type01 th,.cashInfo .table_type01 td {background-color:#454544;border-left:none;border-right:none;}
+.cashInfo .table_type01 td .date .cal_input {background-color:transparent;}
+.cashInfo .table_type01 td .search_btn {background:url('../img/icon_search_white.png') no-repeat center /75% transparent;}
+.cashInfo .table_type02 {border-top-color:#151515;}
+.cashInfo .table_type02 th {color:#151515;border-bottom-color:#d9d9d9;text-align:left;padding-left:10px;}
+.cashInfo .table_type02 td {color:#454544;border-bottom-color:#d9d9d9;border-left:none;}
+.cashInfo .table_type02 tr:last-child th,.cashInfo .table_type02 tr:last-child td {border-bottom:2px solid #b2b2b2;}
+
+.r_box, .r_box {vertical-align:middle;margin-top:5px;}
+.r_box .txt {display:inline-block;font-size:15px;margin-top:3px;margin-right:5px;}
+.r_box .selectBox  {margin-top:-8px;}
+.selType01 .selType {font-size:15px;min-width:100px;}
+
+.bulType p.noti_text {color:#8c9091;}
+.bulType p.noti_text a.blue {color:#317ad9 !important;}
+
+.wideBtn .btn {background-color:#151515;border-color:#151515;}
+
+.section .sec_title {color:#151515;}
+.section .h4_title {color:#151515;}
+.tb-list01 {border-bottom-color:#151515;margin-top:10px;}
+.tb-list01.service_2_table {margin-top:-2px;}
+.tb-list01 table th {background:#f2f2f2;}
+.tb-list01 table td {border-bottom-color:#d9d9d9;border-left:1px solid #d9d9d9;}
+#nonIncomeTable td.tar {text-align:right !important;}
+
+.energy_graph .graph:first-child {margin-right:10px;}
+
+.text01 {color:#8c9091;font-size:13px;}
+.section04 .text01 {color:#8c9091;font-size:12px;}
+
+.method_icon .method_icon01 {background-image:url('../img/icon_method_bank.png');background-size:40px;padding-top:50px;}
+.method_icon .method_icon02 {background-image:url('../img/icon_method_card.png');background-size:40px;padding-top:45px;}
+.method_icon .method_icon03 {background-image:url('../img/icon_method_cms.png');background-size:40px;padding-top:45px;}
+
+td.parag {line-height:1.5em;font-size:16px;}
+.text02 {color:#575756;font-size:16px;}
+.wayInfo .txt {color:#575756;}
+
+.tb-list02 table td .noti_text {color:#8c9091;margin-top:20px;}
+.tb-list02 table td .noti_text + .noti_text {margin-top:10px;}
+.list_style01 dt a {background-size:16px;}
+.list_style01 dt a {display:block;background:url('/resources/front/pc/desian/main/img/ac_arr.png') no-repeat right 20px top 18px /14px;}
+.list_style01 dt a.active {display:block;background:url('/resources/front/pc/desian/main/img/ac_arr_on.png') no-repeat right 20px top 24px /14px;}
+.list_style01 dt a .title > em {margin-left:20px;text-align:left;}
+.wayInfo .tit {color:#1c1c1b;}
+.tb-list02 {border-top-color:transparent;border-right-color:transparent;}
+.tb-list02 table th {font-weight:bold;background:transparent;border-left-color:transparent;color:#1c1c1b;}
+.tb-list02 table td {border-bottom-color:#d9d9d9;border-left-color:transparent;}
+.tb-list02 table tr:last-child th,.tb-list02 table tr:last-child td {border-bottom:2px solid #b2b2b2;}
+
+.ui-widget.ui-widget-content {border-color:#e1e1e1;}
+.ui-progressbar .ui-progressbar-value {background:#7e7e7f;}
+.ui-progressbar .progress-label {color:#575756 !important;top:10px;}
+.tb-list01 table#hoTable tr:first-child th {background:transparent;}
+.tb-list01 table#hoTable tr:first-child td {border-left-color:transparent;}
+.tb-list01 table#hoTable td:first-child {border-left-color:transparent;}
+
+.wayInfo .btn button.print span          {padding-left:30px;background:url("../img/icon_white_print.png") no-repeat left center /20px;}
+.wayInfo .btn button.download span       {padding-left:30px;background:url("../img/icon_white_download.png") no-repeat left center /20px;}
+.wayInfo .btn button.cms span            {padding-left:30px;background:url("../img/icon_white_cms.png") no-repeat left center /20px;}
+.wayInfo .btn button.print:hover span    {background:url("../img/icon_black_print.png") no-repeat left center /20px;}
+.wayInfo .btn button.download:hover span {background:url("../img/icon_black_download.png") no-repeat left center /20px;}
+.wayInfo .btn button.cms:hover span      {background:url("../img/icon_black_cms.png") no-repeat left center /20px;}
+
+.faq dt,.ask dt {position:relative;background:none;}
+.faq dd {position:relative;background-image:none;}
+.faq dt a,.ask dt a {padding-left:60px;}
+.ask dt a .date {right:60px;}
+.list_style01 dt a.active span:after {display:none;}
+.list_style01 dd .title {position:relative;background:none;}
+.faq dt:before,.ask dt:before   {position:absolute;left:20px;top:16px;content:'';display:inline-block;background:url('../img/Q.svg') no-repeat center /contain;width:18px;height:18px;margin-right:10px;}
+.faq dd:before                  {position:absolute;left:20px;top:45px;content:'';display:inline-block;background:url('../img/A.svg') no-repeat center /contain;width:16px;height:16px;margin-right:10px;}
+.list_style01 dd .title:before  {background:none;}
+
+.paging .btn a {display:inline-block;border:1px solid #e5e5e5;}
+
+
+.list_style01 dl dt span,.list_style01 dl dt span em {color:#575756;}
+.list_style01 dd .date {display:none;}
+.icoCustom.bottom_big_bt {background:#1c1c1b;}
+.sub_title_box.margin_top_min:nth-child(2) h4.h4_title {margin-bottom:10px;}
+
+.sub_title_box {margin-top:50px;}
+.sub_title_box.first {margin-top:20px;}
+.sub_title_box .h4_title {margin-top:0;line-height:1.7em;}
+
+.tb-list01 table.table-vertical th {text-align:left;background-color:transparent;}
+.tb-list01 table.table-vertical td {border-left:none;}
+.faq_sorting {margin-top:0;}
+/* login */
+.loginWrap .left {background:#AE1857;min-width:450px;}
+.loginWrap .right {min-width:450px;}
+.loginWrap .left h1 {width:180px;height:80px;background:url('../img/logo_desian_nest_white.png') no-repeat left center /contain;margin-top:20px;margin-left:-20px;}
+#title {color:#575756;}
+#title_style {color:#575756;}
+.inputBox {color:#b3b3b3;}
+.inputfield {border-bottom-color:#b7b7b7;}
+.inputfield:hover,.inputfield:focus {border-bottom-color:#AE1857;background-color:transparent;}
+input::placeholder {color:#b3b3b3;}
+body.login a:link, body.login a:visited {color:#ae1857;}
+.login_btn {background:#ae1857;}
+.login_btn:hover,.login_btn:focus {background: #8b0c42;}
+.btn_wrap p {color:#575756;}
+.loginWrap .left .copy_bottom {position:absolute;left:40px;bottom:50px;width:auto;border-bottom:none;}
+.loginWrap .left .copy_bottom strong {display:block;font-weight:800;}
+.loginWrap .left .copy_bottom span {display:block;font-weight:100;}
+
+.withdraw {background:transparent;border:2px solid #a38544;margin-top:20px;padding-top:40px}
+.withdraw .alertTxt {padding-bottom:40px;}
+.withdraw .survey {margin-top:40px;}
+.withdraw .survey .sel_reason {margin-top:20px;}
+.withdraw .survey .sel_reason .else_box {margin-top:20px;}
+.withdraw .survey .logo {width:56px;height:20px;background:url('../img/logo_desian_nest_color.png') no-repeat center /100%;}
+
+.section07 .btnArea .lineType {margin-right:5px;}
+.section07 .btnArea button {width:70px !important;}
+
+@media only screen and (max-width:1024px) {
+
+    .pcWrap {display:block;}
+    .mobileWrap {display:none;}
+
+    article {display:block;}
+    article {margin:10px 0 20px;}
+    article:last-child {margin-bottom:0;}
+    table.table-horizontal th.title {background:#dedede;}
+    table.table-horizontal th {background:#f2f2f2 !important;}
+    table.table-vertical th {text-align:left;}
+    table.table-vertical td {border-left:none;}
+    .faq_sorting li {border-bottom:1px solid #ccc;}
+    .faq_sorting li:nth-last-child(1),
+    .faq_sorting li:nth-last-child(2) {border-bottom-color:transparent;}
+    .faq_sorting li a:before {display:none;}
+
+    .mobileGnb .gnbContainer {background:#f2f2f2;}
+    .mobileGnb .gnbTop {background:#fff;padding:20px;}
+    .mobileGnb .gnbTop .accInfo .userName span {color:#1c1c1b;}
+    .mobileGnb .gnbTop .accInfo .userName .logout {border:2px solid #AE1857;color:#AE1857;padding:3px 5px;}
+    .mobileGnb .gnbTop .accInfo .accessDay {color:#575756;}
+    .mobileGnb .gnbContainer .notice p:first-child {margin-bottom:0;}
+
+    .mCustomScrollBox, .mCSB_container {overflow:visible;} /* 임시 */
+    .mobileGnb .menuWrap {top:128px;}
+    .mobileGnb .gnbTop .btn_close {background-image:url('../img/btn_close_g.png');}
+    .mobileGnb .gnbContainer .notice {background:transparent;padding:20px;margin:0;}
+    .mobileGnb .gnbContainer .menuList {background:transparent;margin:0 20px 20px;border-top:2px solid #1c1c1b;}
+    .mobileGnb .gnbContainer .menuList li.icoBtn a {border-bottom:1px solid #d9d9d9;padding-left:0;}
+    .mobileGnb .gnbContainer .menuList li.icoBtn:last-child a {border-bottom:none;}
+    .mobileGnb .gnbContainer .menuList li.icoBtn a:first-child {border-right:none;}
+    .mobileGnb .gnbContainer .menuList li.icoBtn a span .count {display:inline-block;background:#AE1857;color:#fff;padding:5px 8px;border-radius:100px;font-size:0.8em;margin-left:5px;}
+
+    .mobileGnb .gnbContainer .menuList a span {position:relative;background:none !important;padding-left:30px !important;}
+    .mobileGnb .gnbContainer .menuList a span:after {position:absolute;content:'';left:0;top:0;display:inline-block;width:20px;height:20px;}
+
+    .mobileGnb .gnbContainer .menuList a.ico01 span:after {background:url('../img/tit_icon_bill.png') no-repeat center /contain;}
+    .mobileGnb .gnbContainer .menuList a.ico02 span:after {background:url('../img/tit_icon_unpaid.png') no-repeat center /contain;}
+    .mobileGnb .gnbContainer .menuList a.ico03 span:after {background:url('../img/tit_icon_paid.png') no-repeat center /contain;}
+    .mobileGnb .gnbContainer .menuList a.ico04 span:after {background:url('../img/tit_icon_method.png') no-repeat center /contain;}
+    .mobileGnb .gnbContainer .menuList a.ico05 span:after {background:url('/resources/front/pc/desian/main/img/icon/icon_sectitle05.svg') no-repeat center /contain;}
+    .mobileGnb .gnbContainer .menuList a.ico06 span:after {background:url('/resources/front/pc/desian/main/img/icon/icon_sectitle06.svg') no-repeat center /contain;}
+    .mobileGnb .gnbContainer .menuList a.ico07 span:after {background:url('../img/tit_icon_contract.png') no-repeat center /contain;}
+    .mobileGnb .gnbContainer .menuList a.ico08 span:after {background:url('../img/tit_icon_notice.png') no-repeat center /contain;}
+    .mobileGnb .gnbContainer .menuList a.ico09 span:after {background:url('../img/tit_icon_custom.png') no-repeat center /contain;}
+    .mobileGnb .gnbContainer .menuList a.ico10 span:after {background:url('/resources/front/pc/desian/main/img/icon/icon_sectitle10.svg') no-repeat center /contain;}
+    .mobileGnb .gnbContainer .custommer {position:fixed;bottom:0;width:calc(100% - 60px);background:#1c1c1b;margin:30px;}
+    .mobileGnb .gnbContainer .custommer a.icoCustom span:before {background-image: url("../img/icon_telephone_white.png")}
+
+
+    /*h4.h4_title {margin-top:50px;}*/
+    #footer .fLogo {text-align:left;}
+    #footer .fTxt {text-align:left !important;}
+    #footer .fTxt p {text-align:left !important;}
+    #footer .fLink {text-align:left !important;}
+
+    .sec_title.member {padding-left:60px;line-height:50px;}
+    .section03 .sec_title {padding-left:50px;background-size:38px;}
+    .section04 .sec_title {padding-left:50px;background-size:38px;}
+    .section06 .sec_title {padding-left:60px;background-size:50px;}
+    .section05 .sec_title {padding-left:60px;background-size:50px;}
+    .section07 .sec_title {padding-left:60px;}
+    .policyCon .top > span:nth-child(2) {padding-left:0;}
+
+    .section05 h5.pc {display:none;}
+
+    .mobileType.menuSticky {border-bottom:none;}
+    .mobileType.menuSticky:after {background:#be4679;}
+    .mobileType.menuSticky h1 {left:20px;top:-42px;width:100px;height:40px;background:url("../img/logo_desian_nest_white.png") no-repeat center /contain;}
+    .top_bar_menu {background:#ae1857;top:0;overflow-x:auto;transition:all 500ms ease!important;}
+    .top_bar_menu::-webkit-scrollbar {width:0;height:0;}
+    .top_bar_menu::-webkit-scrollbar-thumb {background-color:transparent;}
+    .top_bar_menu::-webkit-scrollbar-track {background-color:transparent;}
+    .red strong {color:#AE1857;}
+    .maintenanceTable_mobile td:nth-child(1),
+    .maintenanceTable_mobile td:nth-child(2),
+    .maintenanceTable_mobile td:nth-child(3),
+    .maintenanceTable_mobile td:nth-child(4) {display:none;}
+
+    .tabWrap .tabBtn a {font-size:14px;}
+
+    .cashInfo .payTxt {background-size:30px;padding-left:40px;}
+
+    .energy_graph .graph:last-child {margin-left:0;}
+    #incomeTable_mobile tr:last-child td {border-bottom:2px solid #b2b2b2 !important; }
+    #incomeTable_mobile tr:nth-child(3n) th,
+    #incomeTable_mobile tr:nth-child(3n) td {border-bottom:none;}
+    #incomeTable_mobile tr:nth-child(3n) td:last-child {text-align:right;}
+    #incomeTable_mobile tr:nth-child(3n+1) th {background:transparent;border-top:1px solid #141413;}
+    #incomeTable_mobile tr:nth-child(3n+1) td {background:transparent;border-top:1px solid #141413;}
+    #incomeTable_mobile tr:nth-child(3n-1) th {background:#f2f2f2;}
+    #incomeTable_mobile tr:nth-child(3n-2) th,#incomeTable_mobile tr:nth-child(3n-2) td {background:#d9d9d9;color:#1c1c1b;font-weight:bold !important;}
+
+    .tb-list01.mobile {word-break:keep-all;}
+    .tb-list01.mobile:not(.table-horizontal) table th {background:transparent;color:#575756;}
+    .tb-list01.mobile table:not(#incomeTable_mobile,.paidList) td {border-left:none;}
+    /*.tb-list01.mobile table#hoTable_mobile td {border-left:1px solid #d2d2d2;}*/
+    .tb-list01.mobile table.term th,.tb-list01.mobile table.term td {background:#f2f2f2;}
+    .tb-list01.mobile table.term th em {display:block;text-align:left;padding-left:20px;}
+    .tb-list01 table.table-vertical th {text-align:left;background-color:transparent;}
+    /*.tb-list01 table th {background:transparent;}*/
+
+    .tb-list01.mobile table#MAcount_mobile th {background-color:#f2f2f2;}
+    .tb-list01.mobile table#MAcount_mobile td:not(:first-child) {border-left:1px solid #d2d2d2;}
+
+    .list_style01 dt a .date {right:40px;}
+    .list_style01 dt a {display:block;background:url('/resources/front/pc/desian/main/img/ac_arr.png') no-repeat right 10px top 18px /14px;}
+    .list_style01 dt a.active {display:block;background:url('/resources/front/pc/desian/main/img/ac_arr_on.png') no-repeat right 10px top 24px /14px;}
+    .list_style01 dt a .title > em {margin-left:10px;}
+    .tb-list02 table th {border-bottom:none;padding-top:20px;}
+    .tb-list02 table td {padding-bottom:20px;}
+    .section04 .text01 {color:#8c9091;}
+    .ui-progressbar .progress-label {line-height:32px;}
+    .ui-progressbar .ui-progressbar-value {background:#899091 !important;}
+
+    table#hoTable_mobile tr:nth-child(even) th {background:#f2f2f2;text-align:center;}
+    table#hoTable_mobile tr:nth-child(3) td:first-child {border-left:none;}
+    table#hoTable_mobile tr:nth-child(3) td,
+    table#hoTable_mobile tr:nth-child(5) td {border-left:1px solid #d9d9d9;}
+
+
+    table.payMethod th {text-align:left;}
+
+    .text02 {color:#575756;font-size:12px;}
+    .wayInfo .txt {color:#575756;font-size:12px;}
+
+
+    /*.faq dt span:before {position:absolute;right:10px;top:15px;content:'';width:20px;height:2px;background:#575756;}*/
+    /*.faq dt span:after  {position:absolute;right:19px;top:7px;content:'';width:2px;height:20px;background:#575756;}*/
+    .faq dt a {padding-left:40px;}
+    .list_style01 dd .title:before {left:-30px;}
+
+    .ask dt a .date {right:40px;}
+
+
+    .faq dt a,.faq dd,.ask dt a {padding-left:40px;}
+    .faq dt:before,.ask dt:before   {left:10px;top:15px;width:20px;height:20px;}
+    .faq dd:before                  {left:10px;top:18px;width:18px;height:18px;}
+
+    /* join */
+
+    .join_intro3 .box:first-child {margin-left:0;}
+    .join_intro3 .box .txt:before {min-height:70px;}
+    .join_intro3 .box {min-height:240px;}
+    .join_intro3 .box .title {padding:20px 0;}
+    /*.subContent .tabWrap.share_4 .tabBtn a {position:relative;background:#e7e7e7 !important;width:calc(33.3333% - 25px) !important;color:#8c9091;margin-left:0;margin-right:20px}*/
+    /*.subContent .tabWrap.share_4 .tabBtn a:before {position:absolute;left:-13px;top:0;display:inline-block;content:'';width:20px;height:100%;background:url('../img/tab_before.png') no-repeat left top /contain;}*/
+    .border_box {border:none;border-bottom:1px solid #b2b2b2;padding:0;}
+    .border_box .text02  {color:#575756;padding:30px 10px;}
+    .border_box .wayInfo {padding:30px 10px;}
+    .border_box .wayInfo .btn .cms > i {display:none;}
+    .border_box .wayInfo .btn .cms > span {background:url("../img/button_icon_list.png") no-repeat left center /20px;padding-left:25px;}
+
+    .loginWrap .left {min-width:330px;}
+    .loginWrap .right {min-width:330px;}
+
+    /*.policy_textbox {padding-left:5px;padding-right:5px;}*/
+    .policyCon .textCont {padding-top:0;height:260px;}
+    .layerArea .textCont h3 {font-size:15px;height:auto;min-height:30px;}
+    .layerArea .textCont h4 {font-size:14px;}
+    .layerArea .textCont p {font-size:12px;}
+}
+
+@media (max-width:1120px) {
+    .logo_box {left:20px;}
+    .energy_graph .graph {float:none;margin:10px auto !important;width:520px;}
+    .energy_graph .graph:last-child {margin-left:auto;}
+}
+
+@media (max-width:1080px) {
+    .subContent {width:100%;padding-left:20px;padding-right:20px;}
+}
+
+@media only screen and (max-width:736px) {
+    body.login {background:#e5e5e5;}
+    .loginWrap .right {background:#e5e5e5;}
+    .loginWrap #1pxborder {display:none;}
+    .loginWrap .left {background:transparent;}
+    .loginWrap .left h1 {width:160px;height:160px;background:url('../img/logo_mobile.png') no-repeat center /contain transparent;margin:50px auto 0;}
+    .copy_bottom {display:none;}
+    .loginWrap #title {color:#575756;}
+    .loginWrap #title_style {color:#838383;}
+    .loginWrap .inputfield {color:#bfbfbf;}
+    .loginWrap input {background:#e5e5e5;}
+    .loginWrap input:hover {border-bottom-color:#ae1857;}
+    .login a:link, body.login a:visited {color:#1c1c1b;}
+    .loginWrap .login_btn {background:#ae1857;}
+
+    .cetify_wrap .phone_cetify {right:auto;}
+
+    /*.top_bar_menu .main_menu_tabs {padding:0 10px 0 0;}*/
+    /*.top_bar_menu .main_menu_tabs li:first-child {margin-left:0;}*/
+
+    .bannerWrap + .sec_title {margin-top:0;}
+    .energy_graph .graph {width:100%;}
+    .section {padding-top:10px;}
+    .mobileType.menuSticky h1 {top:0;}
+    .top_bar_menu {top:50px;}
+    .mobileType.menuSticky.fixed {height:54px;}
+    .mobileType.menuSticky.fixed:after {display:none;}
+    .mobileType.menuSticky.fixed>h1,.mobileType.menuSticky.fixed>a {display:none;}
+    .mobileType.menuSticky.fixed .top_bar_menu {top:0;}
+    .sec_title {color:#1c1c1b;padding-left:40px !important;background-size:35px !important;line-height:45px !important;margin-top:30px;}
+    .sec_title.join {margin-top:0;}
+    .sec_title.member {line-height:35px !important;}
+    table.table-contract th i {display:inline-block;font-style:normal;}
+    .tb-list01 table th {padding-left:10px !important;}
+    /*.section02 .selType01 .selType {width:185px;}*/
+    .wideBtn .selectBox {width:calc(50% - 7px);}
+    .wideBtn .btn {width:calc(50% - 7px);}
+
+    .tb-list01.type01 table td input#usernm,
+    .tb-list01.type01 table td input#user_pw,
+    .tb-list01.type01 table td input#user_re_pw {width:100% !important;}
+    #email_addr,#email_domain {width:calc(50% - 8px);}
+    #mobile1,#mobile2,#mobile3 {width:calc(33.33% - 6px);}
+
+    .list_style01 dt a {display:block;background:url('/resources/front/pc/desian/main/img/ac_arr.png') no-repeat right 10px top 12px /10px;}
+    .list_style01 dt a.active {display:block;background:url('/resources/front/pc/desian/main/img/ac_arr_on.png') no-repeat right 10px top 16px /10px;}
+    .faq dt:before,.ask dt:before   {left:10px;top:10px;width:16px;height:16px;}
+    .faq dd:before                  {left:10px;top:22px;width:14px;height:14px;}
+    .ask dd {background:#f2f2f2 url("/resources/front/pc/desian/main/img/ac_faq_a.png") no-repeat left 13px top 20px;padding-left:40px;}
+
+
+}@media only screen and (max-width:380px) {
+    .section02 .selType01 .selType {width:100%;}
+    .wideBtn .selectBox .selType .selTypeInner {font-size:14px !important;}
+    .wideBtn .btn {font-size:14px;}
+
+}

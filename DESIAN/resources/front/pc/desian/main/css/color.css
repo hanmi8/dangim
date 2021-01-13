@@ -1,0 +1,127 @@
+/*gnb_color*/
+
+.menuSticky {
+    border-top: 1px solid #343b45;
+    border-bottom: 1px solid #343b45;
+    background-color: #343b45;
+}
+
+
+#header .topLogin {
+	    background-color: #343b45;
+}
+
+
+@media only screen and (max-width: 1024px){
+	.top_bar_menu {
+	    background-color: #343b45;
+	}
+}
+
+@media (max-width: 736px){
+	.mobileGnb .gnbTop {
+	    background-color: #343b45;
+	}
+}
+
+
+/*content_color*/
+.btnArea2 .fillType {
+	
+}
+ 
+ .tabWrap .tabBtn a.active, .tabWrap .tabBtn a:hover {
+    background-color: #3d3d3d;
+    color: #fff;
+}
+
+.btnArea1 .fillType {
+    color: #fff;
+    background-color: #3d3d3d;
+    border: 1px solid #3d3d3d;
+}
+
+.btnArea1 .fillType:hover {
+    color: #3d3d3d;
+    background-color: #fff;
+}
+.btnArea2 .fillType {
+    color: #fff;
+    background-color: #3d3d3d;
+    border: 1px solid #3d3d3d;
+}
+.btnArea2 .fillType:hover {
+    color: #3d3d3d;
+    background-color: #fff;
+}
+
+.cashInfo .table_type01 {
+	border-top: 2px solid #3d3d3d;
+}
+.cashInfo .table_type01 th {
+    background-color: #3d3d3d;
+ }
+ .cashInfo .table_type01 td {
+    background-color: #3d3d3d;
+ }
+ .cashInfo .table_type01 td .date .cal_input {
+    background-color: #3d3d3d;
+    
+ }
+ 
+ .cashInfo .table_type01 td .search_btn {
+  background-color: #3d3d3d;
+ }
+ .icoCustom.bottom_big_bt {
+    color: #fff;
+    background-color: #3d3d3d;
+}
+ 
+ .icoCustom.bottom_big_bt:hover {
+    background: #5f5f5f;
+}
+.ui-widget-header {
+    background-color: #343b45!important;
+}
+
+.ui-datepicker .ui-widget-header {
+	background-color: #3d3d3d!important;
+	
+}
+
+ 
+ .ui-widget-header select {
+    /* background: #0d6fa9; */
+    background: #3d3d3d!important;
+}
+ .btnArea .fillType {
+    color: #fff;
+    background-color: #3d3d3d;
+    border: 1px solid #3d3d3d;
+}
+ .btnArea .lineType:hover {
+    color: #fff;
+    background-color: #3d3d3d;
+}
+ 
+ 
+ 
+ 
+ /*sm_bt*/
+ .section06 .searchBox .btn_type {
+    background-color:#5f5f5f;
+    color: #fff;
+}
+.section03 .searchBox .btn_type{
+	    background-color: #5f5f5f;
+    color: #fff;
+}
+ .fileUpload span {
+     background-color: #5f5f5f;
+    border: 1px solid #5f5f5f;
+ }
+ 
+ 
+ 
+ 
+ 

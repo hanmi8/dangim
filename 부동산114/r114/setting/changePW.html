@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+	<!--begin::Head-->
+	<head><base href="../">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<meta id="metaURL" property="og:url" content='https://www.r114.com/Default.asp?_c=StartupSupport&_s=StoreInfo'>
+		<meta id="metaType" property="og:type" content='website' />
+		<meta id="metaImg" property="og:image" content='https://image.r114.co.kr/W1/images/common/fe_logo.png' />
+		<meta id="metaTitle" property="og:title" content='부동산 빅데이터 플랫폼 부동산114' />
+		<meta id="metaDescription" property="og:description" content='종합부동산포털, 매물, 시세, 실거래가, 분양, 리서치, 매물의뢰, 창업지원, 컨설팅, 솔루션, 부동산뉴스 제공' />
+		<meta id="metaKeyword" name="keyword" content='종합부동산포털, 매물, 시세, 실거래가, 분양, 리서치, 매물의뢰, 창업지원, 컨설팅, 솔루션, 부동산뉴스 제공' />
+		<meta name="description" content="종합부동산포털, 매물, 시세, 실거래가, 분양, 리서치, 매물의뢰, 창업지원, 컨설팅, 솔루션, 부동산뉴스 제공" />
+		<meta name="twitter:card" content="summary" />
+		<title>부동산114 - MABS</title>
+		<!--begin::Fonts-->
+		<link rel="stylesheet" href="fonts/NotoSansKR-Hestia.css" />
+		<!--end::Fonts-->
+		<!--begin::Global Theme Styles(used by all pages)-->
+		<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="assets/plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<!--end::Global Theme Styles-->
+		<!--begin::Layout Themes(used by all pages)-->
+		<link href="assets/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+		<!--end::Layout Themes-->
+		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+	</head>
+	<!--end::Head-->
+	<!--begin::Body-->
+	<body id="kt_body" class="header-mobile-fixed aside-enabled aside-fixed page-loading">
+		<!--begin::Main-->
+		<!--begin::Header Mobile-->
+		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
+			<!--begin::Logo-->
+			<a href="index.html">
+				<img alt="Logo" src="assets/media/logos/logo-light.svg" />
+			</a>
+			<!--end::Logo-->
+			<!--begin::Toolbar-->
+			<div class="d-flex align-items-center">
+				<!--begin::Aside Mobile Toggle-->
+				<button class="btn p-0" id="kt_aside_mobile_toggle">
+					<i class="ki ki-menu text-white pr-0 icon-lg"></i>
+				</button>
+				<!--end::Aside Mobile Toggle-->
+			</div>
+			<!--end::Toolbar-->
+		</div>
+		<!--end::Header Mobile-->
+		<div class="d-flex flex-column flex-root">
+			<!--begin::Page-->
+			<div class="d-flex flex-row flex-column-fluid page">
+				<!--begin::Aside-->
+				<div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside">
+					<!--begin::Brand-->
+					<div class="brand flex-column-auto" id="kt_brand">
+						<!--begin::Logo-->
+						<a href="index.html" class="brand-logo">
+							<img alt="Logo" src="assets/media/logos/logo-light.svg" />
+						</a>
+						<!--end::Logo-->
+						<!--begin::Toggle-->
+						<button class="brand-toggle btn btn-sm px-0 text-center" id="kt_aside_toggle">
+							<i class="ki ki-menu pr-0"></i>
+						</button>
+						<!--end::Toolbar-->
+					</div>
+					<!--end::Brand-->
+					<!--begin::Aside Menu-->
+					<div class="aside-menu-wrapper flex-column-fluid" id="kt_aside_menu_wrapper">
+						<!--begin::Menu Container-->
+						<div id="kt_aside_menu" class="aside-menu mb-4" data-menu-dropdown-timeout="500">
+							<!--begin::Menu Nav-->
+							<ul class="menu-nav py-0">
+								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+									<a href="index.html" class="menu-link menu-toggle">
+										<span class="svg-icon menu-icon">
+											<img src="assets/media/svg/icons/r114/dashboard.svg" alt="대시보드">
+										</span>
+										<span class="menu-text">대시보드</span>
+										<i class="menu-arrow"></i>
+									</a>
+									<div class="menu-submenu">
+										<i class="menu-arrow"></i>
+										<ul class="menu-subnav">
+											<li class="menu-item menu-item-parent" aria-haspopup="true">
+												<span class="menu-link">
+													<span class="menu-text">대시보드</span>
+												</span>
+                                            </li>
+                                            <li class="menu-item" aria-haspopup="true">
+												<a href="index.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">지역/상권현황</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="dashboard/supplyTrend.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">공급동향</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="dashboard/averageSales.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">평균분양가</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="dashboard/rentVariation.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">평균임대료</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="dashboard/rentTrend.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">임대료변동율</span>
+												</a>
+											</li>
+											
+											<li class="menu-item" aria-haspopup="true">
+												<a href="dashboard/industryInfo.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">업종정보</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="dashboard/population.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">인구정보</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="menu-item" aria-haspopup="true">
+									<a href="business/analyReport.html" class="menu-link menu-toggle">
+										<span class="svg-icon menu-icon">
+											<img src="assets/media/svg/icons/r114/report.svg" alt="상권분석리포트">
+										</span>
+										<span class="menu-text">상권분석리포트</span>
+									</a>
+								</li>
+								<li class="menu-item" aria-haspopup="true">
+									<a href="gis/building.html" class="menu-link menu-toggle">
+										<span class="svg-icon menu-icon">
+											<img src="assets/media/svg/icons/r114/building.svg" alt="GIS건물">
+										</span>
+										<span class="menu-text">GIS건물</span>
+									</a>
+								</li>
+								<li class="menu-item" aria-haspopup="true">
+									<a href="gis/block.html" class="menu-link menu-toggle">
+										<span class="svg-icon menu-icon">
+											<img src="assets/media/svg/icons/r114/block.svg" alt="GIS블럭">
+										</span>
+										<span class="menu-text">GIS블럭</span>
+									</a>
+								</li>
+								<li class="menu-item menu-item-submenu menu-item-active menu-item-open" aria-haspopup="true" data-menu-toggle="hover">
+									<a href="setting/pcInfo.html" class="menu-link menu-toggle">
+										<span class="svg-icon menu-icon">
+											<img src="assets/media/svg/icons/r114/setting.svg" alt="설정">
+										</span>
+										<span class="menu-text">설정</span>
+										<i class="menu-arrow"></i>
+									</a>
+									<div class="menu-submenu">
+										<i class="menu-arrow"></i>
+										<ul class="menu-subnav">
+											<li class="menu-item menu-item-parent" aria-haspopup="true">
+												<span class="menu-link">
+													<span class="menu-text">설정</span>
+												</span>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="setting/pcInfo.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">PC 등록정보</span>
+												</a>
+											</li>
+											<li class="menu-item menu-item-active" aria-haspopup="true">
+												<a href="setting/changePW.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">비밀번호수정</span>
+												</a>
+											</li>
+											
+											<li class="menu-item" aria-haspopup="true">
+												<a href="setting/saveInfo.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">저장한정보</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="setting/notice.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">공지사항</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+									<a href="admin/useLog.html" class="menu-link menu-toggle">
+										<span class="svg-icon menu-icon">
+											<img src="assets/media/svg/icons/r114/admin.svg" alt="관리자">
+										</span>
+										<span class="menu-text">관리자</span>
+										<i class="menu-arrow"></i>
+									</a>
+									<div class="menu-submenu">
+										<i class="menu-arrow"></i>
+										<ul class="menu-subnav">
+											<li class="menu-item menu-item-parent" aria-haspopup="true">
+												<span class="menu-link">
+													<span class="menu-text">관리자</span>
+												</span>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="admin/useLog.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">사용자로그분석</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="admin/account.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">계정관리</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="admin/corporation.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">법인등록</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="admin/menuAuth.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">메뉴관리</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="admin/auth.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">권한관리</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="admin/notice.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">공지관리</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="admin/businessAnal.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">상권분석관리</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<!--end::Menu Nav-->
+						</div>
+						<!--end::Menu Container-->
+					</div>
+					<!--end::Aside Menu-->
+					<!--begin::Copyright -->
+					<div class="r114-copyright flex-column-auto">
+						<div class="text-center pb-12">
+							<p class="text-white font-size-h5">홍길동님</p>
+							<a href="util/login.html" class="btn btn-outline-white font-weight-bold btn-pill px-7">로그아웃</a>
+						</div>
+						<div class="text-center text-white font-size-sm border-top py-7">
+							Copyright © MABS Corp.<br>All rights reserved.
+						</div>
+					</div>
+					<!--end::Copyright -->
+				</div>
+				<!--end::Aside-->
+				<!--begin::Wrapper-->
+				<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+					<!--begin::Content-->
+					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+						<!--begin::Entry-->
+						<div class="d-flex flex-column-fluid">
+							<!--begin::Container-->
+							<div class="container-fluid">
+                                <!--begin::Card-->
+                                <div class="card card-custom card-stretch rounded-0">
+                                    <!--begin::Header-->
+                                    <div class="card-header align-items-center border-bottom">
+                                        <h3 class="card-title align-items-center">
+                                            <span class="font-weight-bolder text-dark">비밀번호수정</span>
+                                        </h3>
+                                       <!-- 201215 추가 -->
+									   <div class="card-toolbar">
+										<div class="d-flex align-items-center">
+											<i class="flaticon-buildings text-dark mb-1"></i>
+											<i class="ki ki-arrow-next icon-sm mx-2"></i>
+											비밀번호수정
+										</div>
+									</div>
+                                    </div>
+                                    <!--end::Header-->
+                                    <!--begin::Body-->
+                                    <div class="card-body pt-20">
+										<div class="col-md-6 offset-md-3">
+											<h4>비밀번호 안내</h4>
+											<p class="font-size-lg mb-9 border-bottom pb-8">회원님의 비밀번호는 정기적으로 변경 하셔야 됩니다.<br>
+												최초 또는 비밀번호 분실시 받은 임시 비밀번호는 반드시 변경 하셔야 합니다.</p>
+											<!--begin: Write Form-->
+											<div class="form-group row">
+												<label class="col-md-3 col-form-label"><span class="font-size-lg">사용자 아이디</span></label>
+												<input class="col-md-9 form-control rounded-sm" type="text" value="abcd00001" disabled="disabled">
+											</div>
+											<div class="form-group row">
+												<label class="col-md-3 col-form-label"><span class="d-block font-size-lg">기존비밀번호</span></label>
+												<input class="col-md-9 form-control rounded-sm is-invalid" type="password" value="">
+												<div class="col-md-9 offset-md-3 invalid-feedback">비밀번호가 틀립니다. 다시한번 정확인 입력해 주세요</div>
+											</div>
+											<div class="form-group row">
+												<label class="col-md-3 col-form-label"><span class="d-block font-size-lg">새 비밀번호</span></label>
+												<input class="col-md-9 form-control form-control rounded-sm is-invalid" type="password" value="">
+												<div class="col-md-9 offset-md-3 invalid-feedback">비밀번호 입력시 최소 4자리이상으로 하셔야 합니다.</div>
+											</div>
+											<div class="form-group row">
+												<label class="col-md-3 col-form-label"><span class="d-block font-size-lg">새 비밀번호확인</span></label>
+												<input class="col-md-9 form-control form-control rounded-sm is-invalid" type="password" value="">
+												<div class="col-md-9 offset-md-3 invalid-feedback">비밀번호가 틀립니다. 다시한번 정확인 입력해 주세요</div>
+											</div>
+											<!--end: Write Form-->
+											<div class="border-top text-center mt-9 pt-8">
+												<button type="button" class="btn btn-danger btn-lg font-weight-bold px-11 mr-2">확인</button>
+												<!-- 201223 삭제 -->
+												<!-- <button type="button" class="btn btn-outline-secondary btn-lg font-weight-bold px-11" data-dismiss="modal">취소</button> -->
+											</div>
+										</div>
+                                    </div>
+                                    <!--end: Card Body-->
+                                </div>
+                                <!--end: Card-->
+							</div>
+							<!--end::Container-->
+						</div>
+						<!--end::Entry-->
+					</div>
+					<!--end::Content-->
+				</div>
+				<!--end::Wrapper-->
+			</div>
+			<!--end::Page-->
+		</div>
+		<!--end::Main-->
+		<!--begin::Scrolltop-->
+		<div id="kt_scrolltop" class="scrolltop">
+			<span class="svg-icon">
+				<!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Up-2.svg-->
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+					<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+						<polygon points="0 0 24 0 24 24 0 24" />
+						<rect fill="#000000" opacity="0.3" x="11" y="10" width="2" height="10" rx="1" />
+						<path d="M6.70710678,12.7071068 C6.31658249,13.0976311 5.68341751,13.0976311 5.29289322,12.7071068 C4.90236893,12.3165825 4.90236893,11.6834175 5.29289322,11.2928932 L11.2928932,5.29289322 C11.6714722,4.91431428 12.2810586,4.90106866 12.6757246,5.26284586 L18.6757246,10.7628459 C19.0828436,11.1360383 19.1103465,11.7686056 18.7371541,12.1757246 C18.3639617,12.5828436 17.7313944,12.6103465 17.3242754,12.2371541 L12.0300757,7.38413782 L6.70710678,12.7071068 Z" fill="#000000" fill-rule="nonzero" />
+					</g>
+				</svg>
+				<!--end::Svg Icon-->
+			</span>
+		</div>
+		<!--end::Scrolltop-->
+		
+		<!--begin::Global Config(global config for global JS scripts)-->
+		<!--end::Global Config-->
+		<!--begin::Global Theme Bundle(used by all pages)-->
+		<script src="assets/plugins/global/plugins.bundle.js"></script>
+		<script src="assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
+		<script src="assets/js/scripts.bundle.js"></script>
+		<!--end::Global Theme Bundle-->
+		<!--begin::Page Scripts(used by this page)-->
+		<script src="assets/js/pages/setting/notice.js"></script>
+		<!--end::Page Scripts-->
+	</body>
+	<!--end::Body-->
+</html>

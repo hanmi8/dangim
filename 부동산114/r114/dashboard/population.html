@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+	<!--begin::Head-->
+	<head><base href="../">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<meta id="metaURL" property="og:url" content='https://www.r114.com/Default.asp?_c=StartupSupport&_s=StoreInfo'>
+		<meta id="metaType" property="og:type" content='website' />
+		<meta id="metaImg" property="og:image" content='https://image.r114.co.kr/W1/images/common/fe_logo.png' />
+		<meta id="metaTitle" property="og:title" content='부동산 빅데이터 플랫폼 부동산114' />
+		<meta id="metaDescription" property="og:description" content='종합부동산포털, 매물, 시세, 실거래가, 분양, 리서치, 매물의뢰, 창업지원, 컨설팅, 솔루션, 부동산뉴스 제공' />
+		<meta id="metaKeyword" name="keyword" content='종합부동산포털, 매물, 시세, 실거래가, 분양, 리서치, 매물의뢰, 창업지원, 컨설팅, 솔루션, 부동산뉴스 제공' />
+		<meta name="description" content="종합부동산포털, 매물, 시세, 실거래가, 분양, 리서치, 매물의뢰, 창업지원, 컨설팅, 솔루션, 부동산뉴스 제공" />
+		<meta name="twitter:card" content="summary" />
+		<title>부동산114 - MABS</title>
+		<!--begin::Fonts-->
+		<link rel="stylesheet" href="fonts/NotoSansKR-Hestia.css" />
+		<!--end::Fonts-->
+		<!--begin::Global Theme Styles(used by all pages)-->
+		<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="assets/plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<!--end::Global Theme Styles-->
+		<!--begin::Layout Themes(used by all pages)-->
+		<link href="assets/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+		<!--end::Layout Themes-->
+		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+	</head>
+	<!--end::Head-->
+	<!--begin::Body-->
+	<body id="kt_body" class="header-mobile-fixed aside-enabled aside-fixed page-loading">
+		<!--begin::Main-->
+		<!--begin::Header Mobile-->
+		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
+			<!--begin::Logo-->
+			<a href="index.html">
+				<img alt="Logo" src="assets/media/logos/logo-light.svg" />
+			</a>
+			<!--end::Logo-->
+			<!--begin::Toolbar-->
+			<div class="d-flex align-items-center">
+				<!--begin::Aside Mobile Toggle-->
+				<button class="btn p-0" id="kt_aside_mobile_toggle">
+					<i class="ki ki-menu text-white pr-0 icon-lg"></i>
+				</button>
+				<!--end::Aside Mobile Toggle-->
+			</div>
+			<!--end::Toolbar-->
+		</div>
+		<!--end::Header Mobile-->
+		<div class="d-flex flex-column flex-root">
+			<!--begin::Page-->
+			<div class="d-flex flex-row flex-column-fluid page">
+				<!--begin::Aside-->
+				<div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside">
+					<!--begin::Brand-->
+					<div class="brand flex-column-auto" id="kt_brand">
+						<!--begin::Logo-->
+						<a href="index.html" class="brand-logo">
+							<img alt="Logo" src="assets/media/logos/logo-light.svg" />
+						</a>
+						<!--end::Logo-->
+						<!--begin::Toggle-->
+						<button class="brand-toggle btn btn-sm px-0 text-center" id="kt_aside_toggle">
+							<i class="ki ki-menu pr-0"></i>
+						</button>
+						<!--end::Toolbar-->
+					</div>
+					<!--end::Brand-->
+					<!--begin::Aside Menu-->
+					<div class="aside-menu-wrapper flex-column-fluid" id="kt_aside_menu_wrapper">
+						<!--begin::Menu Container-->
+						<div id="kt_aside_menu" class="aside-menu mb-4" data-menu-dropdown-timeout="500">
+							<!--begin::Menu Nav-->
+							<ul class="menu-nav py-0">
+								<li class="menu-item menu-item-submenu menu-item-active menu-item-open" aria-haspopup="true" data-menu-toggle="hover">
+									<a href="index.html" class="menu-link menu-toggle">
+										<span class="svg-icon menu-icon">
+											<img src="assets/media/svg/icons/r114/dashboard.svg" alt="대시보드">
+										</span>
+										<span class="menu-text">대시보드</span>
+										<i class="menu-arrow"></i>
+									</a>
+									<div class="menu-submenu">
+										<i class="menu-arrow"></i>
+										<ul class="menu-subnav">
+											<li class="menu-item menu-item-parent" aria-haspopup="true">
+												<span class="menu-link">
+													<span class="menu-text">대시보드</span>
+												</span>
+                                            </li>
+                                            <li class="menu-item" aria-haspopup="true">
+												<a href="index.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">지역/상권현황</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="dashboard/supplyTrend.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">공급동향</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="dashboard/averageSales.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">평균분양가</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="dashboard/rentVariation.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">평균임대료</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="dashboard/rentTrend.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">임대료변동율</span>
+												</a>
+											</li>
+											
+											<li class="menu-item" aria-haspopup="true">
+												<a href="dashboard/industryInfo.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">업종정보</span>
+												</a>
+											</li>
+											<li class="menu-item menu-item-active" aria-haspopup="true">
+												<a href="dashboard/population.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">인구정보</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="menu-item" aria-haspopup="true">
+									<a href="business/analyReport.html" class="menu-link menu-toggle">
+										<span class="svg-icon menu-icon">
+											<img src="assets/media/svg/icons/r114/report.svg" alt="상권분석리포트">
+										</span>
+										<span class="menu-text">상권분석리포트</span>
+									</a>
+								</li>
+								<li class="menu-item" aria-haspopup="true">
+									<a href="gis/building.html" class="menu-link menu-toggle">
+										<span class="svg-icon menu-icon">
+											<img src="assets/media/svg/icons/r114/building.svg" alt="GIS건물">
+										</span>
+										<span class="menu-text">GIS건물</span>
+									</a>
+								</li>
+								<li class="menu-item" aria-haspopup="true">
+									<a href="gis/block.html" class="menu-link menu-toggle">
+										<span class="svg-icon menu-icon">
+											<img src="assets/media/svg/icons/r114/block.svg" alt="GIS블럭">
+										</span>
+										<span class="menu-text">GIS블럭</span>
+									</a>
+								</li>
+								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+									<a href="setting/pcInfo.html" class="menu-link menu-toggle">
+										<span class="svg-icon menu-icon">
+											<img src="assets/media/svg/icons/r114/setting.svg" alt="설정">
+										</span>
+										<span class="menu-text">설정</span>
+										<i class="menu-arrow"></i>
+									</a>
+									<div class="menu-submenu">
+										<i class="menu-arrow"></i>
+										<ul class="menu-subnav">
+											<li class="menu-item menu-item-parent" aria-haspopup="true">
+												<span class="menu-link">
+													<span class="menu-text">설정</span>
+												</span>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="setting/pcInfo.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">PC 등록정보</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="setting/changePW.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">비밀번호수정</span>
+												</a>
+											</li>
+											
+											<li class="menu-item" aria-haspopup="true">
+												<a href="setting/saveInfo.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">저장한정보</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="setting/notice.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">공지사항</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+									<a href="admin/useLog.html" class="menu-link menu-toggle">
+										<span class="svg-icon menu-icon">
+											<img src="assets/media/svg/icons/r114/admin.svg" alt="관리자">
+										</span>
+										<span class="menu-text">관리자</span>
+										<i class="menu-arrow"></i>
+									</a>
+									<div class="menu-submenu">
+										<i class="menu-arrow"></i>
+										<ul class="menu-subnav">
+											<li class="menu-item menu-item-parent" aria-haspopup="true">
+												<span class="menu-link">
+													<span class="menu-text">관리자</span>
+												</span>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="admin/useLog.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">사용자로그분석</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="admin/account.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">계정관리</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="admin/corporation.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">법인등록</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="admin/menuAuth.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">메뉴관리</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="admin/auth.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">권한관리</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="admin/notice.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">공지관리</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="admin/businessAnal.html" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">상권분석관리</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<!--end::Menu Nav-->
+						</div>
+						<!--end::Menu Container-->
+					</div>
+					<!--end::Aside Menu-->
+					<!--begin::Copyright -->
+					<div class="r114-copyright flex-column-auto">
+						<div class="text-center pb-12">
+							<p class="text-white font-size-h5">홍길동님</p>
+							<a href="util/login.html" class="btn btn-outline-white font-weight-bold btn-pill px-7">로그아웃</a>
+						</div>
+						<div class="text-center text-white font-size-sm border-top py-7">
+							Copyright © MABS Corp.<br>All rights reserved.
+						</div>
+					</div>
+					<!--end::Copyright -->
+				</div>
+				<!--end::Aside-->
+				<!--begin::Wrapper-->
+				<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+					<!--begin::Content-->
+					<div class="content d-flex flex-column flex-column-fluid pb-5" id="kt_content">
+						<!--begin::Entry-->
+						<div class="d-flex flex-column-fluid">
+							<!--begin::Container-->
+							<div class="container-fluid">
+								<!--begin::Card-->
+                                <div class="card card-custom card-stretch rounded-0">
+                                    <!--begin::Header-->
+                                    <div class="card-header align-items-center border-bottom">
+                                        <h3 class="card-title align-items-center">
+                                            <span class="font-weight-bolder text-dark">인구정보</span>
+                                        </h3>
+                                        <div class="card-toolbar">
+											<div class="d-flex align-items-center">
+												<i class="flaticon-buildings text-dark mb-1"></i>
+												<i class="ki ki-arrow-next icon-sm mx-2"></i>
+												대시보드
+												<i class="ki ki-arrow-next icon-sm mx-2"></i>
+												인구정보
+											</div>
+                                        </div>
+                                    </div>
+                                    <!--end::Header-->
+                                    <!--begin::Body-->
+                                    <div class="card-body px-0 py-0">
+                                        <!--begin: Search Form-->
+										<div class="px-9 py-4 bg-gray-200">
+											<div class="row align-items-center">
+												<div class="col-lg-10 col-xl-10">
+													<div class="row align-items-center">
+														<div class="col-md-6 my-2 my-md-0 d-flex align-items-center">
+															<div class="d-flex align-items-center pr-7 position-relative">
+																<button type="button" class="btn btn-danger rounded-0 px-4 m-0" id="ktAreaBtn">지역</button>
+																<button type="button" class="btn btn-outline-secondary rounded-0 px-4 m-0" id="ktStrBtn">상권</button>
+																<!--begin:: Search Result -->
+																<div class="position-absolute border bg-white str-block-layer w-350px" id="strStrLayer" style="display: none">
+																	<div class="px-3 pt-3">
+																		<h3 class="font-size-h6">역세권 검색</h3>
+																	</div>
+																	<div class="d-flex align-items-center px-3 py-3">
+																		<select class="form-control selectpicker mr-2 w-120px">
+																			<option value="">서울특별시</option>
+																		</select>
+																		<select class="form-control selectpicker mr-2 w-120px">
+																			<option value="">관악구</option>
+																		</select>
+																		<button type="button" class="btn btn-dark btn-search px-6">조회</button>
+																	</div>
+																	<div class="ps scroll" data-scroll="true" data-height="200" data-mobile-height="200" style="height:200px" >
+																		<div class="">
+																			<ul class="list-group rounded-0">
+																				<li class="list-group-item pt-3 pb-0 border-0">
+																					<a href="javascript:;" class="d-block border-bottom border-light-secondary pb-5"><i class="flaticon2-pin text-muted mr-1"></i> <span class="font-size-lg font-weight-bold">서울특별시 강남구 역삼역</span></a>
+																				</li>
+																				<li class="list-group-item pt-3 pb-0 border-0">
+																					<a href="javascript:;" class="d-block border-bottom border-light-secondary pb-5"><i class="flaticon2-pin text-muted mr-1"></i> <span class="font-size-lg font-weight-bold">서울특별시 강남구 역삼역</span></a>
+																				</li>
+																				<li class="list-group-item pt-3 pb-0 border-0">
+																					<a href="javascript:;" class="d-block border-bottom border-light-secondary pb-5"><i class="flaticon2-pin text-muted mr-1"></i> <span class="font-size-lg font-weight-bold">서울특별시 강남구 역삼역</span></a>
+																				</li>
+																				<li class="list-group-item pt-3 pb-0 border-0">
+																					<a href="javascript:;" class="d-block border-bottom border-light-secondary pb-5"><i class="flaticon2-pin text-muted mr-1"></i> <span class="font-size-lg font-weight-bold">서울특별시 강남구 역삼역</span></a>
+																				</li>
+																				<li class="list-group-item pt-3 pb-0 border-0">
+																					<a href="javascript:;" class="d-block border-bottom border-light-secondary pb-5"><i class="flaticon2-pin text-muted mr-1"></i> <span class="font-size-lg font-weight-bold">서울특별시 강남구 역삼역</span></a>
+																				</li>
+																			</ul>
+																			<div class="">
+																				<button type="button" class="btn btn-square btn-secondary border-0 bg-light-secondary btn-block font-size-lg">+ 더보기</button>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!--end:: Search Result -->
+															</div>
+															<div class="d-flex align-items-center pl-7 border-left">
+																<select class="form-control selectpicker mr-2 w-120px">
+																	<option value="">서울특별시</option>
+																</select>
+																<select class="form-control selectpicker mr-2 w-120px">
+																	<option value="">관악구</option>
+																</select>
+																<select class="form-control selectpicker mr-2 w-120px">
+																	<option value="">전체</option>
+																</select>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-2 col-xl-2 mt-5 text-right">
+													<p class="font-size-sm mt-2 mb-0">출처:SK</p>
+												</div>
+											</div>
+										</div>
+										<!--end: Search Form-->
+										<div class="row mt-11">
+											<div class="col-lg-6 px-9 pr-md-4">
+												<div class="d-flex justify-content-between align-items-center h-40px">
+													<h3 class="font-size-h5">
+														<span class="font-weight-bold text-dark">선택지역 거주인구</span>
+													</h3>
+												</div>
+												<div class="border border-secondary px-6 pt-2 h-275px overflow-auto d-flex align-items-center">
+													<div id="chart_6" class="w-100"></div>
+												</div>
+											</div>
+											<div class="col-lg-6 px-9 pr-md-4">
+												<div class="d-flex justify-content-between align-items-center h-40px">
+													<h3 class="font-size-h5">
+														<span class="font-weight-bold text-dark">선택지역 직장인구</span>
+													</h3>
+												</div>
+												<div class="border border-secondary px-6 pt-2 h-275px overflow-auto d-flex align-items-center">
+													<div id="chart_3_1" class="w-100"></div>
+												</div>
+											</div>
+										</div>
+										<div class="row mt-11 mb-9">
+											<div class="col-lg-6 px-9 pr-md-4">
+												<div class="d-flex justify-content-between align-items-center h-40px">
+													<h3 class="font-size-h5">
+														<span class="font-weight-bold text-dark">선택지역 유동인구(요일별인구비율)</span>
+													</h3>
+												</div>
+												<div class="border border-secondary px-6 pt-2 h-275px overflow-auto d-flex align-items-center">
+													<div id="chart_4_1" class="w-100"></div>
+												</div>
+											</div>
+											<div class="col-lg-6 px-9 pr-md-4">
+												<div class="d-flex justify-content-between align-items-center h-40px">
+													<h3 class="font-size-h5">
+														<span class="font-weight-bold text-dark">선택지역 유동인구(연령별/성별 유동인구)</span>
+													</h3>
+												</div>
+												<div class="border border-secondary px-6 pt-2 h-275px overflow-auto d-flex align-items-center">
+													<div id="chart_10" class="w-100"></div>
+												</div>
+											</div>
+										</div>
+                                    </div>
+                                    <!--end: Card Body-->
+                                </div>
+                                <!--end: Card-->
+							</div>
+							<!--end::Container-->
+						</div>
+						<!--end::Entry-->
+					</div>
+					<!--end::Content-->
+				</div>
+				<!--end::Wrapper-->
+			</div>
+			<!--end::Page-->
+		</div>
+		<!--end::Main-->
+		<!--begin::Scrolltop-->
+		<div id="kt_scrolltop" class="scrolltop">
+			<span class="svg-icon">
+				<!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Up-2.svg-->
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+					<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+						<polygon points="0 0 24 0 24 24 0 24" />
+						<rect fill="#000000" opacity="0.3" x="11" y="10" width="2" height="10" rx="1" />
+						<path d="M6.70710678,12.7071068 C6.31658249,13.0976311 5.68341751,13.0976311 5.29289322,12.7071068 C4.90236893,12.3165825 4.90236893,11.6834175 5.29289322,11.2928932 L11.2928932,5.29289322 C11.6714722,4.91431428 12.2810586,4.90106866 12.6757246,5.26284586 L18.6757246,10.7628459 C19.0828436,11.1360383 19.1103465,11.7686056 18.7371541,12.1757246 C18.3639617,12.5828436 17.7313944,12.6103465 17.3242754,12.2371541 L12.0300757,7.38413782 L6.70710678,12.7071068 Z" fill="#000000" fill-rule="nonzero" />
+					</g>
+				</svg>
+				<!--end::Svg Icon-->
+			</span>
+		</div>
+		<!--end::Scrolltop-->
+		
+		<!--begin::Global Config(global config for global JS scripts)-->
+		<!--end::Global Config-->
+		<!--begin::Global Theme Bundle(used by all pages)-->
+		<script src="assets/plugins/global/plugins.bundle.js"></script>
+		<script src="assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
+		<script src="assets/js/scripts.bundle.js"></script>
+		<!--end::Global Theme Bundle-->
+		<!--begin::Page Scripts(used by this page)-->
+		<script src="assets/js/pages/dashboard/dashboardcharts.js"></script>
+		<script src="assets/js/pages/my-script.js"></script>
+		<script src="assets/js/pages/dashboard/supplyTrend.js"></script>
+		<script src="assets/js/pages/gis/nouislider.js"></script>
+		<!--end::Page Scripts-->
+	</body>
+	<!--end::Body-->
+</html>

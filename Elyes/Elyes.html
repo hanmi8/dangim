@@ -82,19 +82,25 @@
 	  gtag('config', 'UA-119782193-1');
 	</script>
 
-	<!-- popup 2021.01.12 -->
+	<!-- popup 2021.02.16 -->
 	<link rel="stylesheet" href="src/css/popup.css" type="text/css">
 
 	<script>
 		$(function(){
 			$('.modalCall').click(function(e){
 				e.preventDefault();
-				$('.myModal').show();
+				var modalID = $(this).attr('href');
+				console.log(modalID);
+				$(modalID).show();
 				$('body').css('overflow', 'hidden');
-				$('.myModal .modal-body').css("height" , $(window).height() - $('.myModal .modal-body').position().top - 100);
+				$('#popup .modal-body').css("height" , $(window).height() - $('#popup .modal-body').position().top - 100);
 			});
 			$('.modal-close').click(function(){
-				$('.myModal').hide();
+				$(this).parents('.myModal').hide();
+				$('body').css('overflow', '');
+			});
+			$('.btn.m-close').click(function(){
+				$(this).parents('.myModal').hide();
 				$('body').css('overflow', '');
 			});
 			$('.myModal .dropdown strong').click(function(){
@@ -110,7 +116,7 @@
 			})
 		})
 	</script>
-	<!-- //2021.01.12 -->
+	<!-- //2021.02.16 -->
 
 
 <script type="text/javascript">
@@ -530,7 +536,7 @@
 					          	<a href="https://www.elyes.co.kr/main/stayView.do?pid=4#" onclick="prePage(); return false;" class="button button-circle button-border button-whiteorange btn-block"><i class="xi-heart-o"></i> 관심단지등록</a>
 					          	<a href="https://www.elyes.co.kr/main/stayView.do?pid=4#" onclick="prePage(); return false;" class="button button-circle button-border button-whiteorange btn-block"><i class="xi-clock-o"></i> 방문예약</a>
 					          	<!-- 2021.01.12 -->
-								  <a href="#" class="button button-circle button-border button-whiteorange btn-block modalCall"><i class="xi-pen-o"></i> 예약대기</a>
+								  <a href="#popup" class="button button-circle button-border button-whiteorange btn-block modalCall"><i class="xi-pen-o"></i> 예약대기</a>
 								  <!-- //2021.01.12 -->
 					          </div>
 					        </div>
@@ -1543,6 +1549,11 @@
 
 				</div><!-- .footer-widgets-wrap end -->
 			</div>
+			<ul>
+				<li><a href="#popup2" class="modalCall">당첨결과확인</a></li>
+				<li><a href="#popup3" class="modalCall">당첨확인(당첨)</a></li>
+				<li><a href="#popup4" class="modalCall">당첨확인(미당첨)</a></li>
+			</ul>
 		</footer><!-- #footer end -->
 	</div><!-- #wrapper end -->
 
@@ -1744,7 +1755,7 @@
 </div>
 <!-- //2021.01.12 -->
 
-<!-- 2021.01.12 -->
+<!-- 2021.02.16 -->
 <script>
 	var radio = document.getElementById('check');
 	function radioCheck() {
@@ -1752,6 +1763,131 @@
 	}
 </script>
 <!-- //2021.01.12 -->
+
+<!-- 2021. 02. 16 -->
+
+<div class="myModal resultCheck" id="popup2" style="display:none;">
+	<div class="modal-dialog">
+		<div class="modal-header">
+			<h1>당첨 결과 조회</h1>
+			<span class="modal-close"></span>
+		</div>
+		<div class="modal-body">
+			<p class="governing">
+				독산역 롯데캐슬 입주자 모집 당첨 결과를 안내해 드립니다.<br>
+				접수자 성함과 접수 번호를 입력하시면 당첨 결과를 확인하실 수 있습니다.
+			</p>
+
+			<div class="inputWrap">
+				<h3>- 신청자 정보 입력</h3>
+				<div class="form-vertical bg_gray">
+					<div class="form-group">
+						<label class="control-label">성명</label>
+						<div class="">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label">접수번호</label>
+						<div class="">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="btnWrap footer">
+				<button class="btn btn-primary">확인</button>
+				<button class="btn btn-default m-close">취소</button>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- 당첨확인(당첨) -->
+<div class="myModal confirm modal-small" id="popup3" style="display:none;">
+	<div class="modal-dialog">
+		<div class="modal-header">
+			<h1>당첨 확인</h1>
+<!--			<span class="modal-close"></span>-->
+		</div>
+		<div class="modal-body">
+
+			<div class="inputWrap">
+				<h3>- 신청자 정보</h3>
+				<div class="form-vertical">
+					<div class="form-group">
+						<label class="control-label light">성명</label>
+						<div class="bold">
+							홍길동
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label light">접수번호</label>
+						<div class="bold">
+							12345
+						</div>
+					</div>
+				</div>
+
+
+				<h2>축하합니다. 당첨되었습니다.</h2>
+				<div class="form-vertical bg_gray">
+					<div class="form-group">
+						<label class="control-label light">동호수</label>
+						<div class="bold">
+							101동 1001호
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="btnWrap footer">
+				<button class="btn btn-primary m-close">확인</button>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- 당첨확인(미당첨) -->
+<div class="myModal confirm second modal-small" id="popup4">
+	<div class="modal-dialog">
+		<div class="modal-header">
+			<h1>당첨 확인</h1>
+<!--			<span class="modal-close"></span>-->
+		</div>
+		<div class="modal-body">
+
+			<div class="inputWrap">
+				<h3>- 신청자 정보</h3>
+				<div class="form-vertical">
+					<div class="form-group">
+						<label class="control-label light">성명</label>
+						<div class="bold">
+							홍길동
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label light">접수번호</label>
+						<div class="bold">
+							12345
+						</div>
+					</div>
+				</div>
+
+
+				<h2>죄송합니다. <br>당첨되신 내역이 없습니다.</h2>
+			</div>
+
+			<div class="btnWrap footer">
+				<button class="btn btn-primary m-close">확인</button>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- //2021. 02. 16 -->
 
 	<!-- Go To Top -->
 	<div id="gotoTop" class="icon-angle-up" style="display: block;"></div>

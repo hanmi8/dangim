@@ -106,7 +106,7 @@
     .mobile     {display:table;}
     .myModal .form-control {width:100%;}
     .myModal textarea.form-control {width:100%;}
-    .myModal .modal-dialog {left:0;width:auto;margin-left:30px;margin-right:30px;}
+    .myModal .modal-dialog {left:0;width:auto;margin-left:10px;margin-right:10px;}
     .myModal .modal-header .modal-close {position:absolute;right:10px;top:6px;display:inline-block;border:none;width:50px;height:50px;cursor:pointer;}
     .myModal .modal-header .modal-close:hover {background:rgba(255,255,255,0.2);}
     .myModal .modal-header .modal-close:before {content:'';position:absolute;left:14px;top:24px;width:30px;height:2px;background:#222;transform:rotate(45deg);transition:.3s;}
@@ -148,7 +148,27 @@
 .myModal .form-vertical .control-label.light {float:left;width:40%;font-size:14px;font-weight:300;color:#484848;padding-top:0;}
 .myModal .form-vertical .control-label+div.bold {float:left;width:60%;font-size:15px;font-weight:400;color:#262626;letter-spacing:0.05em;}
 
-.modal-small .modal-dialog {width:450px;margin-left:-225px;}
+.modal-small .modal-dialog {width:450px;left:50%;transform:translateX(-50%);margin:0;}
 
 .myModal.resultCheck .modal-body .btnWrap.footer,
 .myModal.confirm .modal-body .btnWrap.footer {padding:30px;}
+
+
+@media (max-width:510px) {
+    .myModal p.governing {font-size:16px;margin-top:0;}
+    .myModal.resultCheck .inputWrap {margin-top:50px;}
+    .myModal.resultCheck .form-vertical .form-group {margin:20px 0;padding:0 50px;}
+    .myModal.resultCheck .form-vertical .form-group:first-child {margin-top:20px;}
+    .myModal.resultCheck .form-vertical .form-group:last-child {margin-bottom:30px;}
+    .myModal .form-vertical .control-label {float:none;width:100%;margin-bottom:5px;}
+    .myModal .form-vertical .control-label+div {float:none;width:100%;}
+    .myModal.confirm .form-vertical .form-group {margin:20px 30px;}
+}
+
+@media (max-width:480px) {
+    .modal-small .modal-dialog {left:0;transform:translateX(0);width:calc(100% - 20px);margin:0 10px;}
+    .myModal.resultCheck .modal-body .btnWrap.footer, .myModal.confirm .modal-body .btnWrap.footer {padding:30px 0;}
+}
+@media (max-width:400px) {
+    .myModal.resultCheck .form-vertical .form-group {padding:0 20px;}
+}

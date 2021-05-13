@@ -27,6 +27,7 @@
 		<link href="assets/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/common.css" rel="stylesheet" type="text/css" />
 		<!--end::Layout Themes-->
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
 	</head>
@@ -133,7 +134,7 @@
 													<span class="menu-text">임대료변동율</span>
 												</a>
 											</li>
-											
+
 											<li class="menu-item" aria-haspopup="true">
 												<a href="dashboard/industryInfo.html" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
@@ -209,13 +210,13 @@
 													<span class="menu-text">비밀번호수정</span>
 												</a>
 											</li>
-											
+
 											<li class="menu-item" aria-haspopup="true">
 												<a href="setting/saveInfo.html" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
 													</i>
-													<span class="menu-text">저장한정보</span>
+													<span class="menu-text">북마크</span>
 												</a>
 											</li>
 											<li class="menu-item" aria-haspopup="true">
@@ -350,35 +351,41 @@
                                     <!--end::Header-->
                                     <!--begin::Body-->
                                     <div class="card-body pt-20">
-										<div class="col-md-6 offset-md-3">
-											<h4>비밀번호 안내</h4>
-											<p class="font-size-lg mb-9 border-bottom pb-8">회원님의 비밀번호는 정기적으로 변경 하셔야 됩니다.<br>
-												최초 또는 비밀번호 분실시 받은 임시 비밀번호는 반드시 변경 하셔야 합니다.</p>
+
+										<div class="font-size-lg mb-9 pb-8">
+											<div class="bg-light px-6 py-6 font-size-lg line-height-xl mb-6">
+												- 최초 또는 비밀번호 분실 신고 시 받은 임시 비밀번호는 반드시 변경 해주세요.<br>
+												- 비밀번호는 정기적으로 변경 해주셔야 합니다. 1개월 단위로 변경하시는 것을 추천해드립니다.<br>
+												- 8~16자의 영문 대소문자, 숫자, 특수문자만 가능합니다.   사용 가능한 특수문자 : ! " # $ % & ' ( ) * + , - . / : ; ? @ [ ＼ ] ^ _ ` { | } ~ \
+											</div>
+										</div>
+										<div class="col-md-4 offset-md-4">
+<!--											<h4>비밀번호 안내</h4>-->
 											<!--begin: Write Form-->
+<!--											<div class="form-group row">-->
+<!--												<label class="col-md-3 col-form-label"><span class="font-size-lg">사용자 아이디</span></label>-->
+<!--												<input class="col-md-9 form-control rounded-sm" type="text" value="abcd00001" disabled="disabled">-->
+<!--											</div>-->
 											<div class="form-group row">
-												<label class="col-md-3 col-form-label"><span class="font-size-lg">사용자 아이디</span></label>
-												<input class="col-md-9 form-control rounded-sm" type="text" value="abcd00001" disabled="disabled">
+<!--												<label class="col-md-3 col-form-label"><span class="d-block font-size-lg">기존비밀번호</span></label>-->
+												<input class="form-control rounded-sm text-center" type="password" value="" placeholder="현재 비밀번호를 입력해주세요">
+<!--												<div class="col-md-9 offset-md-3 invalid-feedback">비밀번호가 틀립니다. 다시한번 정확인 입력해 주세요</div>-->
 											</div>
 											<div class="form-group row">
-												<label class="col-md-3 col-form-label"><span class="d-block font-size-lg">기존비밀번호</span></label>
-												<input class="col-md-9 form-control rounded-sm is-invalid" type="password" value="">
-												<div class="col-md-9 offset-md-3 invalid-feedback">비밀번호가 틀립니다. 다시한번 정확인 입력해 주세요</div>
+<!--												<label class="col-md-3 col-form-label"><span class="d-block font-size-lg">새 비밀번호</span></label>-->
+												<input class="form-control form-control rounded-sm is-invalid text-center" type="password" value="" placeholder="새 비밀번호를 입력해주세요">
+												<div class="offset-md-3 invalid-feedback"> 8~16자, 영문 대소문자, 숫자, 특수문자가 포함되어야 합니다.</div>
 											</div>
 											<div class="form-group row">
-												<label class="col-md-3 col-form-label"><span class="d-block font-size-lg">새 비밀번호</span></label>
-												<input class="col-md-9 form-control form-control rounded-sm is-invalid" type="password" value="">
-												<div class="col-md-9 offset-md-3 invalid-feedback">비밀번호 입력시 최소 4자리이상으로 하셔야 합니다.</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-md-3 col-form-label"><span class="d-block font-size-lg">새 비밀번호확인</span></label>
-												<input class="col-md-9 form-control form-control rounded-sm is-invalid" type="password" value="">
-												<div class="col-md-9 offset-md-3 invalid-feedback">비밀번호가 틀립니다. 다시한번 정확인 입력해 주세요</div>
+<!--												<label class="col-md-3 col-form-label"><span class="d-block font-size-lg">새 비밀번호확인</span></label>-->
+												<input class="form-control form-control rounded-sm text-center" type="password" value="" placeholder="새 비밀번호를 확인해주세요">
+<!--												<div class="col-md-9 offset-md-3 invalid-feedback">비밀번호가 틀립니다. 다시한번 정확인 입력해 주세요</div>-->
 											</div>
 											<!--end: Write Form-->
-											<div class="border-top text-center mt-9 pt-8">
+											<div class="text-center mt-9 pt-8">
 												<button type="button" class="btn btn-danger btn-lg font-weight-bold px-11 mr-2">확인</button>
 												<!-- 201223 삭제 -->
-												<!-- <button type="button" class="btn btn-outline-secondary btn-lg font-weight-bold px-11" data-dismiss="modal">취소</button> -->
+												 <button type="button" class="btn btn-outline-secondary btn-lg font-weight-bold px-11" data-dismiss="modal">취소</button>
 											</div>
 										</div>
                                     </div>
@@ -412,7 +419,7 @@
 			</span>
 		</div>
 		<!--end::Scrolltop-->
-		
+
 		<!--begin::Global Config(global config for global JS scripts)-->
 		<!--end::Global Config-->
 		<!--begin::Global Theme Bundle(used by all pages)-->

@@ -27,8 +27,10 @@
 		<link href="assets/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/common.css" rel="stylesheet" type="text/css" />
 		<!--end::Layout Themes-->
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+		<script src="assets/js/apexcharts.js"></script>
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -133,7 +135,7 @@
 													<span class="menu-text">임대료변동율</span>
 												</a>
 											</li>
-											
+
 											<li class="menu-item" aria-haspopup="true">
 												<a href="dashboard/industryInfo.html" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
@@ -209,13 +211,13 @@
 													<span class="menu-text">비밀번호수정</span>
 												</a>
 											</li>
-											
+
 											<li class="menu-item" aria-haspopup="true">
 												<a href="setting/saveInfo.html" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
 													</i>
-													<span class="menu-text">저장한정보</span>
+													<span class="menu-text">북마크</span>
 												</a>
 											</li>
 											<li class="menu-item" aria-haspopup="true">
@@ -369,99 +371,115 @@
                                         <!--begin: Search Form-->
 										<div class="mt-9 mb-7">
 											<div class="row align-items-center">
-												<div class="col-lg-9 col-xl-8">
-													<div class="row align-items-center">
-														<div class="col-md-6 my-2 my-md-0 d-flex align-items-center">
-                                                            <span class="font-size-lg text-nowrap mr-4 d-none d-md-block ">기간별검색</span>
-															<div class="input-daterange input-group" id="kt_datepicker_1">
-                                                                <input type="text" class="form-control" name="start" />
-                                                                <span class="input-group-text border-left-0">
-                                                                    <i class="la la-calendar-check-o"></i>
-                                                                </span>
-                                                                <div class="px-2 py-3">~</div>
-                                                                <input type="text" class="form-control" name="end" />
-                                                                <span class="input-group-text border-left-0">
-                                                                    <i class="la la-calendar-check-o"></i>
-                                                                </span>
-                                                            </div>
-														</div>
-														<div class="col-md-4 my-2 my-md-0">
-															<button type="button" class="btn btn-dark btn-search px-6">검색</button>
-														</div>
+												<div class="searchTerm">
+													<label class="font-size-lg">기간별검색</label>
+													<div class="input-daterange input-group" id="kt_datepicker_1">
+														<input type="text" class="form-control" name="start" placeholder="연도 선택" />
+														<span class="input-group-text border-left-0">
+															<i class="la la-calendar-check-o"></i>
+														</span>
+														<div class="px-2 py-3">~</div>
+														<input type="text" class="form-control" name="end" placeholder="연도 선택" />
+														<span class="input-group-text border-left-0">
+															<i class="la la-calendar-check-o"></i>
+														</span>
 													</div>
 												</div>
-												<div class="col-lg-3 col-xl-4 mt-5 mt-lg-0 text-right">
+												<div class="toggleTerm col-lg-3 col-xl-4">
+													<a href="#" class="toggle-btn on">오늘</a>
+													<a href="#" class="toggle-btn">주간</a>
+													<a href="#" class="toggle-btn">월간</a>
+													<button type="button" class="btn btn-dark btn-search px-6">검색</button>
 												</div>
 											</div>
 										</div>
 										<!--end: Search Form-->
 										<!--begin: row-->
-										<div class="row">
-                                            <div class="col-lg-4">
+										<div class="row pt-10">
+                                            <div class="col-lg-4 pr-5">
+												<h4 class="d-flex align-items-center justify-content-between">
+													<label>다운로드 항목</label>
+													<button type="button" class="btn btn-outline-secondary btn-sm rounded-0 px-3 py-1"><i class="flaticon-download icon-md"></i> 다운로드</button>
+												</h4>
                                                 <table class="table table-striped mb-0">
                                                     <colgroup>
-                                                        <col style="width: 50%;">
-                                                        <col style="width: 50%;">
+                                                        <col width="80px">
+                                                        <col width="* ">
+                                                        <col width="30%">
                                                     </colgroup>
                                                     <thead class="thead-light">
                                                         <tr>
-                                                            <th class="text-center">검색지역</th>
-                                                            <th class="text-center">클릭수</th>
+                                                            <th class="text-center">no</th>
+                                                            <th class="text-left">주요 다운로드 메뉴</th>
+                                                            <th class="text-center">다운로드 건수</th>
                                                         </tr>
                                                     </thead>
                                                 </table>
                                                 <div data-scroll="true" data-height="560">
                                                     <table class="table table-striped">
                                                         <colgroup>
-                                                            <col style="width: 50%;">
-                                                            <col style="width: 50%;">
+															<col width="80px">
+															<col width="* ">
+															<col width="30%">
                                                         </colgroup>
                                                         <tbody>
                                                             <tr>
+                                                                <td>1</td>
                                                                 <td>대시보드_공급동향</td>
                                                                 <td class="text-center">5432</td>
                                                             </tr>
                                                             <tr>
+																<td>2</td>
                                                                 <td>대시보드_평균분양가</td>
                                                                 <td class="text-center">5432</td>
                                                             </tr>
                                                             <tr>
+																<td>3</td>
                                                                 <td>대시보드_공급동향</td>
                                                                 <td class="text-center">5432</td>
                                                             </tr>
                                                             <tr>
+																<td>4</td>
                                                                 <td>대시보드_평균분양가</td>
                                                                 <td class="text-center">5432</td>
                                                             </tr>
                                                             <tr>
+																<td>5</td>
                                                                 <td>대시보드_공급동향</td>
                                                                 <td class="text-center">5432</td>
                                                             </tr>
                                                             <tr>
+																<td>6</td>
                                                                 <td>대시보드_평균분양가</td>
                                                                 <td class="text-center">5432</td>
                                                             </tr>
                                                             <tr>
+																<td>7</td>
                                                                 <td>대시보드_공급동향</td>
                                                                 <td class="text-center">5432</td>
                                                             </tr>
                                                             <tr>
+																<td>8</td>
                                                                 <td>대시보드_평균분양가</td>
                                                                 <td class="text-center">5432</td>
                                                             </tr>
                                                             <tr>
+																<td>9</td>
                                                                 <td>대시보드_공급동향</td>
                                                                 <td class="text-center">5432</td>
                                                             </tr>
                                                             <tr>
+																<td>10</td>
                                                                 <td>대시보드_평균분양가</td>
                                                                 <td class="text-center">5432</td>
                                                             </tr>
                                                             <tr>
+																<td>11</td>
                                                                 <td>대시보드_공급동향</td>
                                                                 <td class="text-center">5432</td>
                                                             </tr>
                                                             <tr>
+																<td>12</td>
                                                                 <td>대시보드_평균분양가</td>
                                                                 <td class="text-center">5432</td>
                                                             </tr>
@@ -469,32 +487,68 @@
                                                     </table>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-8">
+                                            <div class="col-lg-8 pl-5">
                                                 <div class="row">
-                                                    <div class="col">
-                                                        <div class="border border-secondary px-5 py-5 ml-md-9">
-                                                            <span class="font-size-lg">최대 클릭수 및 항목</span>
-                                                            <div class="d-flex align-items-center justify-content-center py-9">
-                                                                <span class="font-size-h3 font-weight-bold mr-6">대시보드_공급동향</span>
-                                                                <span class="display-4 text-danger font-weight-bold">5432</span>
-                                                            </div>
-                                                        </div>
+                                                    <div class="col pr-5">
+														<div class="section">
+															<h4>최대 다운로드 순위(엑셀)</h4>
+															<div class="ranking-wrap">
+																<ul>
+																	<li>
+																		<div>
+																			<label>대시보드_공급동향</label>
+																			<strong class="on"><span>128</span>건</strong>
+																		</div>
+																	</li>
+																	<li>
+																		<div>
+																			<label>대시보드_평균분양가</label>
+																			<strong><span>58</span>건</strong>
+																		</div>
+																	</li>
+																	<li>
+																		<div>
+																			<label>대시보드_인구정보</label>
+																			<strong><span>25</span>건</strong>
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
                                                     </div>
-                                                    <div class="col">
-                                                        <div class="border border-secondary px-5 py-5 ml-md-9">
-                                                            <span class="font-size-lg">최소 클릭수 및 항목</span>
-                                                            <div class="d-flex align-items-center justify-content-center py-9">
-                                                                <span class="font-size-h3 font-weight-bold mr-6">대시보드_평균분양가</span>
-                                                                <span class="display-4 text-danger font-weight-bold">432</span>
-                                                            </div>
-                                                        </div>
+                                                    <div class="col pl-5">
+														<div class="section">
+															<h4>최대 다운로드 순위(그래프)</h4>
+															<div class="ranking-wrap">
+																<ul>
+																	<li>
+																		<div>
+																			<label>대시보드_공급동향</label>
+																			<strong class="on"><span>67</span>건</strong>
+																		</div>
+																	</li>
+																	<li>
+																		<div>
+																			<label>대시보드_평균분양가</label>
+																			<strong><span>58</span>건</strong>
+																		</div>
+																	</li>
+																	<li>
+																		<div>
+																			<label>대시보드_임대료변동률</label>
+																			<strong><span>25</span>건</strong>
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <div class="border border-secondary px-5 py-5 ml-md-9 mt-md-11">
-                                                            <span class="font-size-lg">시간별(클릭수 높은 10가지 항목)</span>
-                                                            <div id="usechart_1"></div>
+                                                        <div class="mt-md-10">
+                                                            <h4>다운로드 통계(엑셀/그래프)</h4>
+                                                            <div id="useLogDownloadStatistics"></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -532,7 +586,7 @@
 			</span>
 		</div>
 		<!--end::Scrolltop-->
-		
+
 		<!--begin::Global Config(global config for global JS scripts)-->
 		<!--end::Global Config-->
 		<!--begin::Global Theme Bundle(used by all pages)-->
@@ -543,7 +597,19 @@
 		<!--begin::Page Scripts(used by this page)-->
         <script src="assets/js/pages/admin/useLogcharts.js"></script>
         <script src="assets/js/pages/admin/useLog-datepicker.js"></script>
+		<script src="assets/js/pages/admin/useLogChart.js"></script>
 		<!--end::Page Scripts-->
+		<script>
+			$(function(){
+				useLogDownloadStatistics.render();
+
+				$('.toggle-btn').click(function(e){
+					e.preventDefault();
+					$(this).siblings('a').removeClass('on');
+					$(this).addClass('on');
+				})
+			})
+		</script>
 	</body>
 	<!--end::Body-->
 </html>

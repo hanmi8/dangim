@@ -27,6 +27,7 @@
 		<link href="assets/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/common.css" rel="stylesheet" type="text/css" />
 		<!--end::Layout Themes-->
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
 	</head>
@@ -133,7 +134,7 @@
 													<span class="menu-text">임대료변동율</span>
 												</a>
 											</li>
-											
+
 											<li class="menu-item" aria-haspopup="true">
 												<a href="dashboard/industryInfo.html" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
@@ -209,13 +210,13 @@
 													<span class="menu-text">비밀번호수정</span>
 												</a>
 											</li>
-											
+
 											<li class="menu-item" aria-haspopup="true">
 												<a href="setting/saveInfo.html" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
 													</i>
-													<span class="menu-text">저장한정보</span>
+													<span class="menu-text">북마크</span>
 												</a>
 											</li>
 											<li class="menu-item" aria-haspopup="true">
@@ -351,49 +352,170 @@
                                     <!--begin::Body-->
                                     <div class="card-body pt-9">
                                         <div class="bg-light px-6 py-6 font-size-lg line-height-xl">
-                                            - 접속은 PC IP로 관리됩니다.<br>
-                                            - 아이디별 사용가능한 PC가 찼을때 새로 접속할려면 삭제를 하여야 합니다.
+                                            상품명 : IP 3개 등록<br>
+											구입날짜 : 2020년 03월 12일<br>
+											계약기간 : 2020년 03월 12일 ~ 2021년 03월 11일<br>
+											사용기간 : 15일 남았습니다. 계약 연장을 원하시면 담당자에게 연락해주세요<br>
+											계약문의 : 031-1234-1234
                                         </div>
-                                        <!--begin: Search Form-->
-										<div class="mt-9 mb-7">
-											<div class="row align-items-center">
-												<div class="col-lg-9 col-xl-8">
-													<div class="row align-items-center">
-														<div class="col-md-4 my-2 my-md-0">
+										<div class="pt-8">
+											<div>
+												<h4>IP 등록 현황</h4>
+												<div class="pt-4 pb-4">
+													IP를 변경하려면, 담당자에게 연락하여 기존 IP를 삭제하시고 새로 등록할 수 있습니다.<br>
+													IP 관련 문의 : 031-4321-1234
+												</div>
+												<table class="table-vertical">
+													<colgroup>
+														<col width="60px">
+														<col width="*">
+														<col width="15%">
+														<col width="25%">
+														<col width="25%">
+													</colgroup>
+													<thead>
+													<tr>
+														<th>no</th>
+														<th>PC 명</th>
+														<th>IP 주소</th>
+														<th>등록일시</th>
+														<th>최근 접속시간</th>
+													</tr>
+													</thead>
+													<tbody>
+													<tr>
+														<td>1</td>
+														<td>집_PC</td>
+														<td>210.102.195.13</td>
+														<td>2020년 12워 24일 오전 09:02:03</td>
+														<td>2020년 01월 31일 오전 03:51:16</td>
+													</tr>
+													<tr>
+														<td>2</td>
+														<td>회사_PC</td>
+														<td>211.23.45.32</td>
+														<td>2020년 12워 24일 오전 09:02:03</td>
+														<td>2020년 01월 31일 오전 03:51:16</td>
+													</tr>
+													<tr>
+														<td>3</td>
+														<td>회사_노트북</td>
+														<td>211.102.195.13</td>
+														<td>2020년 12워 24일 오전 09:02:03</td>
+														<td>2020년 01월 31일 오전 03:51:16</td>
+													</tr>
+													</tbody>
+												</table>
+											</div>
+											<div class="mt-9">
+												<h4>접속정보</h4>
+												<div class="mb-3">
+													<div class="row align-items-end">
+														<div class="col-lg-9 col-xl-9">
+														</div>
+														<div class="col-lg-3 col-xl-3 mt-5 mt-lg-0 text-right">
 															<div class="input-icon">
-																<input type="text" class="form-control" placeholder="검색어를 입력하세요" id="kt_datatable_search_query" />
+																<input type="text" class="form-control input_bottom_line" placeholder="검색어를 입력하세요"/>
 																<span>
-																	<i class="flaticon2-search-1 text-muted"></i>
-																</span>
+															<i class="flaticon2-search-1 text-muted"></i>
+														</span>
 															</div>
-														</div>
-														<div class="col-md-3 my-2 my-md-0">
-															<div class="d-flex align-items-center">
-																<label class="mr-3 mb-0 d-none d-md-block text-nowrap">사용여부:</label>
-																<select class="form-control" id="kt_datatable_search_status">
-																	<option value="">전체</option>
-																	<option value="1">사용</option>
-																	<option value="2">삭제</option>
-																</select>
-															</div>
-														</div>
-														<div class="col-md-5 my-2 my-md-0">
-															<button type="button" class="btn btn-dark btn-search px-6">검색</button>
 														</div>
 													</div>
 												</div>
-												<!-- 201215 삭제 -->
-												<!-- <div class="col-lg-3 col-xl-4 mt-5 mt-lg-0 text-right">
-                                                    <button type="button" class="btn btn-square btn-outline-secondary font-weight-bold"><i class="flaticon-delete"></i> 선택삭제</button>
-                                                    <button type="button" class="btn btn-square btn-outline-secondary font-weight-bold"><i class="flaticon2-copy"></i> 복사하기</button>
-                                                    <button type="button" class="btn btn-square btn-outline-secondary font-weight-bold ml-3"><i class="flaticon-download"></i> 다운로드</button>
-												</div> -->
+												<table class="table-vertical">
+													<colgroup>
+														<col width="60px">
+														<col width="*">
+														<col width="15%">
+														<col width="15%">
+														<col width="30%">
+													</colgroup>
+													<thead>
+													<tr>
+														<th>no</th>
+														<th>PC 명</th>
+														<th>IP 주소</th>
+														<th>접속상태</th>
+														<th>발생시간</th>
+													</tr>
+													</thead>
+													<tbody>
+													<tr>
+														<td>1</td>
+														<td>집_PC</td>
+														<td>210.102.195.13</td>
+														<td>로그아웃</td>
+														<td>2020년 01월 31일 오전 03:51:16</td>
+													</tr>
+													<tr>
+														<td>2</td>
+														<td>회사_PC</td>
+														<td>211.23.45.32</td>
+														<td>로그인</td>
+														<td>2020년 01월 31일 오전 03:51:16</td>
+													</tr>
+													<tr>
+														<td>3</td>
+														<td>회사_노트북</td>
+														<td>211.102.195.13</td>
+														<td>로그아웃</td>
+														<td>2020년 01월 31일 오전 03:51:16</td>
+													</tr>
+													<tr>
+														<td>4</td>
+														<td>회사_PC</td>
+														<td>211.23.45.32</td>
+														<td>로그인</td>
+														<td>2020년 01월 31일 오전 03:51:16</td>
+													</tr>
+													<tr>
+														<td>5</td>
+														<td>회사_노트북</td>
+														<td>211.102.195.13</td>
+														<td>로그아웃</td>
+														<td>2020년 01월 31일 오전 03:51:16</td>
+													</tr>
+													<tr>
+														<td>6</td>
+														<td>회사_PC</td>
+														<td>211.23.45.32</td>
+														<td>로그인</td>
+														<td>2020년 01월 31일 오전 03:51:16</td>
+													</tr>
+													<tr>
+														<td>7</td>
+														<td>회사_노트북</td>
+														<td>211.102.195.13</td>
+														<td>로그아웃</td>
+														<td>2020년 01월 31일 오전 03:51:16</td>
+													</tr>
+													<tr>
+														<td>8</td>
+														<td>회사_PC</td>
+														<td>211.23.45.32</td>
+														<td>로그인</td>
+														<td>2020년 01월 31일 오전 03:51:16</td>
+													</tr>
+													<tr>
+														<td>9</td>
+														<td>회사_노트북</td>
+														<td>211.102.195.13</td>
+														<td>로그아웃</td>
+														<td>2020년 01월 31일 오전 03:51:16</td>
+													</tr>
+													<tr>
+														<td>10</td>
+														<td>회사_노트북</td>
+														<td>211.102.195.13</td>
+														<td>로그아웃</td>
+														<td>2020년 01월 31일 오전 03:51:16</td>
+													</tr>
+													</tbody>
+												</table>
 											</div>
 										</div>
-										<!--end: Search Form-->
-										<!--begin: Datatable-->
-										<div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable"></div>
-										<!--end: Datatable-->
+
                                     </div>
                                     <!--end: Card Body-->
                                 </div>
@@ -455,7 +577,7 @@
 			</span>
 		</div>
 		<!--end::Scrolltop-->
-		
+
 		<!--begin::Global Config(global config for global JS scripts)-->
 		<!--end::Global Config-->
 		<!--begin::Global Theme Bundle(used by all pages)-->

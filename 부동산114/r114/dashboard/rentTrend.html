@@ -29,6 +29,8 @@
 		<link href="assets/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
 		<!--end::Layout Themes-->
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+		<script src="assets/js/apexcharts.js"></script>
+		<script src="assets/js/pages/dashboard/supplyTrend.js"></script>
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -125,15 +127,15 @@
 													<span class="menu-text">평균임대료</span>
 												</a>
 											</li>
-											<li class="menu-item menu-item-active" aria-haspopup="true">
+											<!--<li class="menu-item menu-item-active" aria-haspopup="true">
 												<a href="dashboard/rentTrend.html" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
 													</i>
 													<span class="menu-text">임대료변동율</span>
 												</a>
-											</li>
-											
+											</li>-->
+
 											<li class="menu-item" aria-haspopup="true">
 												<a href="dashboard/industryInfo.html" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
@@ -209,13 +211,13 @@
 													<span class="menu-text">비밀번호수정</span>
 												</a>
 											</li>
-											
+
 											<li class="menu-item" aria-haspopup="true">
 												<a href="setting/saveInfo.html" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
 													</i>
-													<span class="menu-text">저장한정보</span>
+													<span class="menu-text">북마크</span>
 												</a>
 											</li>
 											<li class="menu-item" aria-haspopup="true">
@@ -411,7 +413,7 @@
 																<!-- 201223 삭제 재 생성 -->
 																<select class="form-control selectpicker mr-2 w-120px">
 																	<option value="">전체</option>
-																</select> 
+																</select>
 															</div>
 														</div>
 														<div class="col-md-3 my-2 my-md-0">
@@ -491,7 +493,7 @@
 															<div id="chart_1_1"></div>
 														</div>
 													</div>
-													
+
 													<!-- E: 차트 -->
 													<!-- S: 목록  -->
 													<div class="dashboard_tab_content" id="dashboard_tab_content_1" >
@@ -534,7 +536,7 @@
 												</div>
 											</div>
 										</div>
-										
+
                                     </div>
                                     <!--end: Card Body-->
                                 </div>
@@ -566,7 +568,7 @@
 			</span>
 		</div>
 		<!--end::Scrolltop-->
-		
+
 		<!--begin::Global Config(global config for global JS scripts)-->
 		<!--end::Global Config-->
 		<!--begin::Global Theme Bundle(used by all pages)-->
@@ -579,6 +581,19 @@
 		<script src="assets/js/pages/my-script.js"></script>
 		<script src="assets/js/pages/dashboard/supplyTrend.js"></script>
 		<script src="assets/js/pages/gis/nouislider.js"></script>
+		<script src="assets/js/jquery.js"></script>
+		<script src="assets/js/common.js"></script>
+		<script>
+			$(function() {
+				localSupplyTrend.render();
+				localSupplyTrendYears.render();
+				localSupplyTrendSelectYear.render();
+				localSupplyTrendSelectYearNonhyun.render();
+				commerceSupplyTrend.render();
+				commerceSupplyTrendYears.render();
+				commerceSupplyTrendSelectYear.render();
+			})
+		</script>
 		<!--end::Page Scripts-->
 	</body>
 	<!--end::Body-->

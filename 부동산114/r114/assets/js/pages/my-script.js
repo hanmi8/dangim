@@ -39,29 +39,42 @@ $(document).on('click', '#btnMapType2', function(){
 $(document).on('click', '.btnMapType2Close', function(){
     $('#mapTypeLayer2').hide();
 });
-$(document).on('click', '#mapInfo1', function(){
-    $('#mapPannel1').removeClass('d-none');
-    $('#mapPannel1').addClass('d-flex');
-    $('#mapPannel2').removeClass('d-flex');
-    $('#mapPannel2').addClass('d-none');
-});
-$(document).on('click', '#mapPannel1Close', function(){
-    $('#mapPannel1').removeClass('d-flex');
-    $('#mapPannel1').addClass('d-none');
-});
-$(document).on('click', '#mapSrcClose', function(){
-    $('#mapSrcResult').hide();
-});
-$(document).on('click', '#mapInfo2', function(){
-    $('#mapPannel2').removeClass('d-none');
-    $('#mapPannel2').addClass('d-flex');
-    $('#mapPannel1').removeClass('d-flex');
-    $('#mapPannel1').addClass('d-none');
-});
-$(document).on('click', '#mapPannel2Close', function(){
-    $('#mapPannel2').removeClass('d-flex');
-    $('#mapPannel2').addClass('d-none');
-});
+// pannel open
+$(document).on('click', '.map-pannel-open', function(){
+    var pannelID = $(this).attr('data-target');
+    $('.map-pannel').removeClass('d-flex')
+    $('.map-pannel').addClass('d-none')
+    $(pannelID).removeClass('d-none');
+    $(pannelID).addClass('d-flex');
+})
+// pannel close
+$(document).on('click', '.map-pannel-close', function(){
+    $(this).parent('.map-pannel').removeClass('d-flex');
+    $(this).parent('.map-pannel').addClass('d-none');
+})
+// $(document).on('click', '#mapInfo1_1', function(){
+//     $('#mapPannel1').removeClass('d-none');
+//     $('#mapPannel1').addClass('d-flex');
+//     $('#mapPannel2').removeClass('d-flex');
+//     $('#mapPannel2').addClass('d-none');
+// });
+// $(document).on('click', '#mapPannel1Close', function(){
+//     $('#mapPannel1').removeClass('d-flex');
+//     $('#mapPannel1').addClass('d-none');
+// });
+// $(document).on('click', '#mapSrcClose', function(){
+//     $('#mapSrcResult').hide();
+// });
+// $(document).on('click', '#mapInfo2', function(){
+//     $('#mapPannel2').removeClass('d-none');
+//     $('#mapPannel2').addClass('d-flex');
+//     $('#mapPannel1').removeClass('d-flex');
+//     $('#mapPannel1').addClass('d-none');
+// });
+// $(document).on('click', '#mapPannel2Close', function(){
+//     $('#mapPannel2').removeClass('d-flex');
+//     $('#mapPannel2').addClass('d-none');
+// });
 $(document).on('click', '#btnBlock', function(){
     $('#mapBlockPanel').removeClass('d-none');
     $('#mapBlockPanel').addClass('d-flex');
@@ -100,7 +113,7 @@ function srcResult () {
     }
 }
 
-//대시보드 tab 스크립트 201215추가 
+//대시보드 tab 스크립트 201215추가
 $(document).on('click', '.dashboard_tab_box button', function(){
     var tab_current_Num = $(this).index();
     var tab_length = $('.dashboard_tab_content').length;
@@ -115,21 +128,21 @@ $(document).on('click', '.dashboard_tab_box button', function(){
     }
 });
 
-// 20.12 추가스크립트 
+// 20.12 추가스크립트
 var map_popup_check = false;
 var map_popup_item = $('.map-info-popup');
 $(document).ready(function (){
-    // 지도 주소 검색 함수 실행 
+    // 지도 주소 검색 함수 실행
     var adress_num = $('.pa_list .map_search_list .list').length;
     if(adress_num > 0  ){
         address_searcher(adress_num);
     }
-    // 지도 말풍선 함수 실행  
+    // 지도 말풍선 함수 실행
     var map_popup_num = map_popup_item.length;
     if(map_popup_num > 0){
         map_popup_stater(map_popup_num);
     }
-    //대시보드버튼 함수 실행 
+    //대시보드버튼 함수 실행
     var dashboard_bt_num = $('.dashboard_bt_box').length;
     if(dashboard_bt_num > 0){
         $('.dashboard_bt_box button').click(function (){
@@ -137,7 +150,7 @@ $(document).ready(function (){
             $(this).addClass('on');
         });
     }
-    // 21.01.04 편의시설 추가 
+    // 21.01.04 편의시설 추가
     var map_plant_num = $('#map_plant_bt').length;
     if(map_plant_num > 0  ){
         var map_plant_list = $('.map_plant_list_box li').length;
@@ -160,20 +173,20 @@ $(document).ready(function (){
         $('.map_plant_list_box li.sub_depth_in').click(function (){
             var plant_sub_depth_position = $(this).closest('ul').index();
             if(plant_sub_depth_position==0){
-               $('#plant_sub_depth_box').css('right','0') 
-               $('#plant_sub_depth_box').css('left','auto') 
+               $('#plant_sub_depth_box').css('right','0')
+               $('#plant_sub_depth_box').css('left','auto')
             }else{
-                $('#plant_sub_depth_box').css('left','0') 
-                $('#plant_sub_depth_box').css('right','auto') 
-                
+                $('#plant_sub_depth_box').css('left','0')
+                $('#plant_sub_depth_box').css('right','auto')
+
             }
             if($(this).hasClass('active') == true){
                 plant_sub_depth_visible();
-               
+
             }else{
                 $('.map_plant_list_box li').removeClass('active');
                 plant_sub_depth_hide();
-                
+
             }
 
         })
@@ -184,7 +197,7 @@ $(document).ready(function (){
     }
 
 });
-// 편의시설 2뎁스 함수 
+// 편의시설 2뎁스 함수
 function plant_sub_depth_visible(){
     $('#plant_sub_depth_box').addClass('active')
 }
@@ -192,7 +205,7 @@ function plant_sub_depth_hide(){
     $('#plant_sub_depth_box').removeClass('active')
 }
 
-// 지도 말풍선 함수 
+// 지도 말풍선 함수
 function map_popup_stater(_Num){
     map_popup_item.find('.label').click(function (){
         var _this = $(this);
@@ -228,15 +241,21 @@ function map_popup_stater(_Num){
         };
     });
 };
+// 2021.04.30 hanmi8 수정
+// function map_popup_visible(_Taget){
+//     $('.leaflet-popup').removeClass('on');
+//     _Taget.closest(map_popup_item).find('.leaflet-popup').addClass('on');
+// };
 function map_popup_visible(_Taget){
     $('.leaflet-popup').removeClass('on');
-    _Taget.closest(map_popup_item).find('.leaflet-popup').addClass('on');
+    var targetID = $(_Taget).attr('data-target');
+    $(targetID).addClass('on');
 };
 function map_popup_hide(){
     $('.leaflet-popup').removeClass('on');
 };
 
-// 지도 주소 검색 함수 
+// 지도 주소 검색 함수
 function address_searcher(_Num){
     var current_one_depth ;
     var _one_depth_mc = $('.pa_list .map_search_list .list')
@@ -272,6 +291,6 @@ function address_searcher(_Num){
                 _address_mc.eq(i).find('.sub_address').removeClass('minus').addClass('plus');
             }
         }
-        
+
     });
 };

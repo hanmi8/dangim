@@ -27,8 +27,10 @@
 		<link href="assets/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/common.css" rel="stylesheet" type="text/css" />
 		<!--end::Layout Themes-->
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+		<script src="assets/js/apexcharts.js"></script>
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -133,7 +135,7 @@
 													<span class="menu-text">임대료변동율</span>
 												</a>
 											</li>
-											
+
 											<li class="menu-item" aria-haspopup="true">
 												<a href="dashboard/industryInfo.html" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
@@ -209,13 +211,13 @@
 													<span class="menu-text">비밀번호수정</span>
 												</a>
 											</li>
-											
+
 											<li class="menu-item" aria-haspopup="true">
 												<a href="setting/saveInfo.html" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
 													</i>
-													<span class="menu-text">저장한정보</span>
+													<span class="menu-text">북마크</span>
 												</a>
 											</li>
 											<li class="menu-item" aria-haspopup="true">
@@ -324,7 +326,7 @@
 				</div>
 				<!--end::Aside-->
 				<!--begin::Wrapper-->
-				<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+				<div class="user-log d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
 					<!--begin::Content-->
 					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 						<!--begin::Entry-->
@@ -353,13 +355,13 @@
                                         <!--begin:: Nav Line -->
                                         <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-2x nav-tabs-line-danger">
                                             <li class="nav-item">
-                                                <a class="nav-link font-size-lg px-5" href="admin/useLog.html">접속자수</a>
+                                                <a class="nav-link font-size-lg px-5" href="javascript:;">접속자수</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link font-size-lg px-5" href="admin/useLog-2.html">메뉴별/버튼 클릭수</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link active font-size-lg px-5" href="javascript:;">주요 검색 지역</a>
+                                                <a class="nav-link active font-size-lg px-5" href="admin/useLog-3.html">주요 검색 지역</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link font-size-lg px-5" href="admin/useLog-4.html">주요 다운로드 메뉴</a>
@@ -369,138 +371,183 @@
                                         <!--begin: Search Form-->
 										<div class="mt-9 mb-7">
 											<div class="row align-items-center">
-												<div class="col-lg-9 col-xl-8">
-													<div class="row align-items-center">
-														<div class="col-md-6 my-2 my-md-0 d-flex align-items-center">
-                                                            <span class="font-size-lg text-nowrap mr-4 d-none d-md-block ">기간별검색</span>
-															<div class="input-daterange input-group" id="kt_datepicker_1">
-                                                                <input type="text" class="form-control" name="start" />
-                                                                <span class="input-group-text border-left-0">
-                                                                    <i class="la la-calendar-check-o"></i>
-                                                                </span>
-                                                                <div class="px-2 py-3">~</div>
-                                                                <input type="text" class="form-control" name="end" />
-                                                                <span class="input-group-text border-left-0">
-                                                                    <i class="la la-calendar-check-o"></i>
-                                                                </span>
-                                                            </div>
-														</div>
-														<div class="col-md-4 my-2 my-md-0">
-															<button type="button" class="btn btn-dark btn-search px-6">검색</button>
-														</div>
+												<div class="searchTerm">
+													<label class="font-size-lg">기간별검색</label>
+													<div class="input-daterange input-group" id="kt_datepicker_1">
+														<input type="text" class="form-control" name="start" placeholder="연도 선택" />
+														<span class="input-group-text border-left-0">
+															<i class="la la-calendar-check-o"></i>
+														</span>
+														<div class="px-2 py-3">~</div>
+														<input type="text" class="form-control" name="end" placeholder="연도 선택" />
+														<span class="input-group-text border-left-0">
+															<i class="la la-calendar-check-o"></i>
+														</span>
 													</div>
 												</div>
-												<div class="col-lg-3 col-xl-4 mt-5 mt-lg-0 text-right">
+												<div class="toggleTerm col-lg-3 col-xl-4">
+													<a href="#" class="toggle-btn on">오늘</a>
+													<a href="#" class="toggle-btn">주간</a>
+													<a href="#" class="toggle-btn">월간</a>
+													<button type="button" class="btn btn-dark btn-search px-6">검색</button>
 												</div>
 											</div>
 										</div>
-										<!--end: Search Form-->
-										<!--begin: row-->
-										<div class="row">
-                                            <div class="col-lg-4">
-                                                <table class="table table-striped mb-0">
-                                                    <colgroup>
-                                                        <col style="width: 50%;">
-                                                        <col style="width: 50%;">
-                                                    </colgroup>
-                                                    <thead class="thead-light">
-                                                        <tr>
-                                                            <th class="text-center">검색지역</th>
-                                                            <th class="text-center">클릭수</th>
-                                                        </tr>
-                                                    </thead>
-                                                </table>
-                                                <div data-scroll="true" data-height="560">
-                                                    <table class="table table-striped">
-                                                        <colgroup>
-                                                            <col style="width: 50%;">
-                                                            <col style="width: 50%;">
-                                                        </colgroup>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>서울시 강남구 역삼동</td>
-                                                                <td class="text-center">5432</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>수원시 팔달구 시원동</td>
-                                                                <td class="text-center">5432</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>서울시 강남구 역삼동</td>
-                                                                <td class="text-center">5432</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>수원시 팔달구 시원동</td>
-                                                                <td class="text-center">5432</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>서울시 강남구 역삼동</td>
-                                                                <td class="text-center">5432</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>수원시 팔달구 시원동</td>
-                                                                <td class="text-center">5432</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>서울시 강남구 역삼동</td>
-                                                                <td class="text-center">5432</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>수원시 팔달구 시원동</td>
-                                                                <td class="text-center">5432</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>서울시 강남구 역삼동</td>
-                                                                <td class="text-center">5432</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>수원시 팔달구 시원동</td>
-                                                                <td class="text-center">5432</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>서울시 강남구 역삼동</td>
-                                                                <td class="text-center">5432</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>수원시 팔달구 시원동</td>
-                                                                <td class="text-center">5432</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-8">
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="border border-secondary px-5 py-5 ml-md-9">
-                                                            <span class="font-size-lg">최대 클릭수 및 항목</span>
-                                                            <div class="d-flex align-items-center justify-content-center py-9">
-                                                                <span class="font-size-h3 font-weight-bold mr-6">서울시 강남구 역삼동</span>
-                                                                <span class="display-4 text-danger font-weight-bold">5432</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="border border-secondary px-5 py-5 ml-md-9">
-                                                            <span class="font-size-lg">최소 클릭수 및 항목</span>
-                                                            <div class="d-flex align-items-center justify-content-center py-9">
-                                                                <span class="font-size-h3 font-weight-bold mr-6">수원시 팔달구 시원동</span>
-                                                                <span class="display-4 text-danger font-weight-bold">432</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="border border-secondary px-5 py-5 ml-md-9 mt-md-11">
-                                                            <span class="font-size-lg">시간별(클릭수 높은 10가지 항목)</span>
-                                                            <div id="usechart_1"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-										<!--end: row-->
+										<div class="row pt-15">
+											<div class="col-5 pr-5">
+												<div class="section">
+													<h4>최대 주소 순위</h4>
+													<div class="ranking-wrap">
+														<ul>
+															<li>
+																<div>
+																	<label>서울시 강남구</label>
+																	<strong class="on"><span>1,019,706</span>건</strong>
+																</div>
+															</li>
+															<li>
+																<div>
+																	<label>서울시 송파구</label>
+																	<strong><span>58</span>건</strong>
+																</div>
+															</li>
+															<li>
+																<div>
+																	<label>수원시 팔달구</label>
+																	<strong><span>25</span>건</strong>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</div>
+												<div class="section">
+													<h4 class="d-flex align-items-center justify-content-between">
+														<label>검색지역</label>
+														<button type="button" class="btn btn-outline-secondary btn-sm rounded-0 px-3 py-1">
+															<i class="flaticon-download icon-md"></i>
+															다운로드
+														</button>
+													</h4>
+													<table class="table table-vertical mb-0">
+														<colgroup>
+															<col width="80px">
+															<col width="*">
+															<col width="20%">
+														</colgroup>
+														<thead class="thead-light">
+														<tr>
+															<th>no</th>
+															<th>검색지역</th>
+															<th>검색건수</th>
+														</tr>
+														</thead>
+													</table>
+													<div data-scroll="true" data-height="270">
+														<table class="table table-vertical">
+															<colgroup>
+																<col width="80px">
+																<col width="*">
+																<col width="20%">
+															</colgroup>
+															<tbody>
+															<tr>
+																<td>1</td>
+																<td class="text-left">서울시 강남구 역삼동</td>
+																<td>532,258</td>
+															</tr>
+															<tr>
+																<td>2</td>
+																<td class="text-left">서울시 강남구 압구정동</td>
+																<td>532,258</td>
+															</tr>
+															<tr>
+																<td>3</td>
+																<td class="text-left">서울시 송파구 잠실5동</td>
+																<td>532,258</td>
+															</tr>
+															<tr>
+																<td>4</td>
+																<td class="text-left">수원시 팔달구 시원동</td>
+																<td>532,258</td>
+															</tr>
+															<tr>
+																<td>5</td>
+																<td class="text-left">경기도 용인시 처인구 유방동</td>
+																<td>532,258</td>
+															</tr>
+															<tr>
+																<td>6</td>
+																<td class="text-left">서울시 서초구 개포동</td>
+																<td>532,258</td>
+															</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+											<div class="col-7 pl-5">
+												<div class="row">
+													<div class="col-6 pr-5">
+														<div class="section">
+															<h4>최대 읍면동 순위</h4>
+															<div class="ranking-wrap">
+																<ul>
+																	<li>
+																		<div>
+																			<label>강남구 역삼동</label>
+																			<strong class="on"><span>67</span>건</strong>
+																		</div>
+																	</li>
+																	<li>
+																		<div>
+																			<label>강남구 압구정동</label>
+																			<strong><span>54</span>건</strong>
+																		</div>
+																	</li>
+																	<li>
+																		<div>
+																			<label>송파구 잠실5동</label>
+																			<strong><span>42</span>건</strong>
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+													<div class="col-6 pl-5">
+														<div class="section">
+															<h4>최대 상권 순위</h4>
+															<div class="ranking-wrap">
+																<ul>
+																	<li>
+																		<div>
+																			<label>서울시 강남구 역삼동</label>
+																			<strong class="on"><span>67</span>건</strong>
+																		</div>
+																	</li>
+																	<li>
+																		<div>
+																			<label>서울시 강남구 압구정동</label>
+																			<strong><span>54</span>건</strong>
+																		</div>
+																	</li>
+																	<li>
+																		<div>
+																			<label>서울시 송파구 잠실5동</label>
+																			<strong><span>42</span>건</strong>
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="section">
+													<h4>시간별(클릭 수 높은 지역)</h4>
+													<div class="chart" id="useLogTimeClick"></div>
+												</div>
+											</div>
+										</div>
                                     </div>
                                     <!--end: Card Body-->
                                 </div>
@@ -532,7 +579,7 @@
 			</span>
 		</div>
 		<!--end::Scrolltop-->
-		
+
 		<!--begin::Global Config(global config for global JS scripts)-->
 		<!--end::Global Config-->
 		<!--begin::Global Theme Bundle(used by all pages)-->
@@ -541,9 +588,21 @@
 		<script src="assets/js/scripts.bundle.js"></script>
 		<!--end::Global Theme Bundle-->
 		<!--begin::Page Scripts(used by this page)-->
-        <script src="assets/js/pages/admin/useLogcharts.js"></script>
+        <script src="assets/js/pages/admin/useLog.js"></script>
         <script src="assets/js/pages/admin/useLog-datepicker.js"></script>
+		<script src="assets/js/pages/admin/useLogChart.js"></script>
 		<!--end::Page Scripts-->
+		<script>
+			$(function() {
+				useLogTimeClick.render();
+
+				$('.toggle-btn').click(function(e){
+					e.preventDefault();
+					$(this).siblings('a').removeClass('on');
+					$(this).addClass('on');
+				})
+			})
+		</script>
 	</body>
 	<!--end::Body-->
 </html>

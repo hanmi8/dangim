@@ -27,6 +27,7 @@
 		<link href="assets/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/common.css" rel="stylesheet" type="text/css" />
 		<!--end::Layout Themes-->
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
 	</head>
@@ -133,7 +134,7 @@
 													<span class="menu-text">임대료변동율</span>
 												</a>
 											</li>
-											
+
 											<li class="menu-item" aria-haspopup="true">
 												<a href="dashboard/industryInfo.html" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
@@ -209,13 +210,13 @@
 													<span class="menu-text">비밀번호수정</span>
 												</a>
 											</li>
-											
+
 											<li class="menu-item" aria-haspopup="true">
 												<a href="setting/saveInfo.html" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
 													</i>
-													<span class="menu-text">저장한정보</span>
+													<span class="menu-text">북마크</span>
 												</a>
 											</li>
 											<li class="menu-item" aria-haspopup="true">
@@ -350,237 +351,260 @@
                                     <!--end::Header-->
                                     <!--begin::Body-->
                                     <div class="card-body pt-9">
-										<div class="col-md-6 offset-md-3">
-											<!--begin: Write Form-->
-											<table class="table">
-												<colgroup>
-													<col style="width:20%" />
-													<col style="width:80%" />
-												</colgroup>
-												<tbody>
-													<!-- 201215 삭제 -->
-													<!-- <tr>
-														<th class="border-0">
-															<label class=""><span class="d-block font-size-lg font-weight-bold mt-3">회원구분</span></label>
-														</th>
-														<td class="border-0">
-															<input class="form-control form-control-solid border border-secondary rounded-sm" disabled="disabled" type="text" value="엔터프라이즈" placeholder="">
-														</td>
-													</tr> -->
-													<tr>
-														<th  class="border-0">
-															<label class=""><span class="d-block font-size-lg font-weight-bold mt-3">아이디</span></label>
-														</th>
-														<td  class="border-0">
-															<div class="d-flex">
-																<input class="form-control form-control-solid border border-secondary rounded-sm" type="text" value="" placeholder="">
-																<button type="button" class="btn btn-outline-secondary w-100px ml-3">중복확인</button>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<th>
-															<label class=""><span class="d-block font-size-lg font-weight-bold mt-3">비밀번호</span></label>
-														</th>
-														<td>
-															<input class="form-control form-control-solid border border-secondary rounded-sm" type="password" value="" placeholder="">
-															<span class="form-text text-muted">비밀번호는 8자이상이며 특수문자 숫자 포함<br>
-																초기화 : r12345678! 로 초기화 됩니다</span>
-														</td>
-													</tr>
-													<tr>
-														<th>
-															<label class=""><span class="d-block font-size-lg font-weight-bold mt-3">계약구분</span></label>
-														</th>
-														<td>
-															<div class="d-flex align-items-center">
-																<select class="form-control selectpicker">
-																	<option value="">선택하세요</option>
-																	<option value="1">신규계약</option>
-																	<option value="2">재계약</option>
-																	<option value="3">계약종료</option>
-																	<option value="4">테스트사용</option>
-																	<option value="5">무료사용</option>
-																</select>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<th>
-															<label class=""><span class="d-block font-size-lg font-weight-bold mt-3">계약일자</span></label>
-														</th>
-														<td>
-															<div class="input-group date">
-																<input type="text" class="form-control" readonly id="kt_datepicker_1"/>
-																<div class="input-group-append">
-																	<span class="input-group-text">
-																		<i class="la la-calendar-check-o"></i>
-																	</span>
+										<!--begin:: Nav Line -->
+										<ul class="nav nav-tabs nav-tabs-line nav-tabs-line-2x nav-tabs-line-danger">
+											<li class="nav-item">
+												<a class="nav-link active font-size-lg px-5" data-bs-toggle="tab" data-bs-target="#tab01">사용자 계정 현황</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link font-size-lg px-5"  href="admin/accountWrite.html">사용자 계정 등록</a>
+											</li>
+										</ul>
+										<!--end:: Nav Line -->
+										<div class="tab-content">
+											<div class="tab-pane fade show active mt-10" role="tabpanel" id="tab01">
+												<h4 class="mt-10">사용자 계정 리스트</h4>
+												<div class="form-wrap">
+													<div class="governing">법인정보를 입력하는 공간입니다.</div>
+													<div class="d-flex">
+														<div class="col-6">
+															<div class="form-group">
+																<label class="control-label col-4">법인선택</label>
+																<div class="col-8">
+																	<input type="text" class="form-control">
 																</div>
 															</div>
-														</td>
-													</tr>
-													<tr>
-														<th>
-															<label class=""><span class="d-block font-size-lg font-weight-bold mt-3">사용기간</span></label>
-														</th>
-														<td>
-															<div class="input-daterange input-group" id="kt_datepicker_2">
-																<input type="text" class="form-control" name="start" />
-																<span class="input-group-text border-left-0">
-																	<i class="la la-calendar-check-o"></i>
-																</span>
-																<div class="px-2 py-3">~</div>
-																<input type="text" class="form-control" name="end" />
-																<span class="input-group-text border-left-0">
-																	<i class="la la-calendar-check-o"></i>
-																</span>
+															<div class="form-group">
+																<label class="control-label col-4">법인명</label>
+																<div class="col-8">
+																	<input type="text" class="form-control">
+																</div>
 															</div>
-														</td>
-													</tr>
-													<tr>
-														<th>
-															<label class=""><span class="d-block font-size-lg font-weight-bold mt-3">법인명</span></label>
-														</th>
-														<td>
-															<div class="d-flex align-items-center">
-																<select class="form-control select2" id="kt_select2_1_modal" name="param">
-																	<option label="Label"></option>
-																	<option value="1">산립</option>
-																	<option value="2">동산립</option>
-																	<option value="3">서산립</option>
-																	<option value="4">남산립</option>
-																	<option value="5">북산립</option>
-																	<option value="AL">Alabama</option>
-																	<option value="AR">Arkansas</option>
-																	<option value="IL">Illinois</option>
-																	<option value="IA">Iowa</option>
-																	<option value="KS">Kansas</option>
-																	<option value="KY">Kentucky</option>
-																	<option value="LA">Louisiana</option>
-																	<option value="MN">Minnesota</option>
-																	<option value="MS">Mississippi</option>
-																	<option value="MO">Missouri</option>
-																	<option value="OK">Oklahoma</option>
-																	<option value="SD">South Dakota</option>
-																	<option value="TX">Texas</option>
-																	<option value="TN">Tennessee</option>
-																	<option value="WI">Wisconsin</option>
-																</select>
-																<button type="button" class="btn btn-outline-secondary w-100px ml-3" data-toggle="modal" data-target="#kt_cor_modal">법인등록</button>
+														</div>
+														<div class="col-6">
+															<div class="form-group">
+																<label class="control-label col-4">법인구분1</label>
+																<div class="col-8">
+																	<input type="text" class="form-control">
+																</div>
 															</div>
-														</td>
-													</tr>
-													<tr>
-														<th>
-															<label class=""><span class="d-block font-size-lg font-weight-bold mt-3">법인구분</span></label>
-														</th>
-														<td>
-															<div class="d-flex align-items-center mb-2">
-																<select class="form-control selectpicker">
-																	<option value="1">건설</option>
-																</select>
+															<div class="form-group">
+																<label class="control-label col-4">법인구분2</label>
+																<div class="col-8">
+																	<input type="text" class="form-control">
+																</div>
 															</div>
-															<div class="d-flex align-items-center mb-2">
-																<select class="form-control selectpicker">
-																	<option value="1">시공사</option>
-																</select>
+														</div>
+													</div>
+												</div>
+												<div class="form-wrap">
+													<div class="governing">계정정보를 입력하는 공간입니다.</div>
+													<div class="d-flex">
+														<div class="col-6">
+															<div class="form-group">
+																<label class="control-label col-4">아이디</label>
+																<div class="col-8">
+																	<div class="d-flex">
+																		<input class="form-control" type="text" value="" placeholder="">
+																		<button type="button" class="btn btn-outline-secondary w-100px ml-3">중복확인</button>
+																	</div>
+																</div>
 															</div>
-															<div class="d-flex align-items-center mb-2">
-																<select class="form-control selectpicker">
-																	<option value="1">영업</option>
-																</select>
+															<div class="form-group">
+																<label class="control-label col-4">계약구분</label>
+																<div class="col-8">
+																	<div class="d-flex align-items-center">
+																		<select class="form-control selectpicker">
+																			<option value="">선택하세요</option>
+																			<option value="1">신규계약</option>
+																			<option value="2">재계약</option>
+																			<option value="3">계약종료</option>
+																			<option value="4">테스트사용</option>
+																			<option value="5">무료사용</option>
+																		</select>
+																	</div>
+																</div>
 															</div>
-														</td>
-													</tr>
-													<tr>
-														<th>
-															<label class=""><span class="d-block font-size-lg font-weight-bold mt-3">사용자</span></label>
-														</th>
-														<td>
-															<input class="form-control form-control-solid border border-secondary rounded-sm" type="text" value="" placeholder="사용자명을 입력해주세요">
-														</td>
-													</tr>
-													<tr>
-														<th>
-															<label class=""><span class="d-block font-size-lg font-weight-bold mt-3">전화번호</span></label>
-														</th>
-														<td>
-															<input class="form-control form-control-solid border border-secondary rounded-sm" type="text" value="" placeholder="전화번호를 입력해주세요">
-														</td>
-													</tr>
-													<tr>
-														<th>
-															<label class=""><span class="d-block font-size-lg font-weight-bold mt-3">그룹</span></label>
-														</th>
-														<td>
-															<div class="d-flex align-items-center mb-2">
-																<select class="form-control selectpicker">
-																	<option value="1">MABS회원</option>
-																	<option value="2">114직원</option>
-																	<option value="3">114직원(관리자)</option>
-																	<option value="4">개발자</option>
-																</select>
+															<div class="form-group">
+																<label class="control-label col-4">계정그룹</label>
+																<div class="col-8">
+
+																	<div class="d-flex align-items-center">
+																		<select class="form-control selectpicker">
+																			<option value="">선택하세요</option>
+																		</select>
+																	</div>
+																</div>
 															</div>
-														</td>
-													</tr>
-													<tr>
-														<th>
-															<label class=""><span class="d-block font-size-lg font-weight-bold mt-3">기능권한</span></label>
-														</th>
-														<td>
-															<div class="d-flex align-items-center mb-2">
-																<select class="form-control selectpicker">
-																	<option value="1">기능무제한</option>
-																	<option value="2">전체데이터복사가능</option>
-																	<option value="3">일반데이터복사가능</option>
-																	<option value="4">데이터복사불가</option>
-																</select>
+															<div class="form-group">
+																<label class="control-label col-4">계약일자</label>
+																<div class="col-8">
+																	<input type="text" class="form-control">
+																</div>
 															</div>
-														</td>
-													</tr>
-													<tr>
-														<th>
-															<label class=""><span class="d-block font-size-lg font-weight-bold mt-3">PC등록</span></label>
-														</th>
-														<td>
-															<div class="d-flex align-items-center mb-2">
-																<select class="form-control selectpicker">
-																	<option value="1">0</option>
-																	<option value="2" selected>3대</option>
-																	<option value="3">6대</option>
-																	<option value="4">9대</option>
-																	<option value="4">12대</option>
-																</select>
+														</div>
+														<div class="col-6">
+															<div class="form-group">
+																<label class="control-label col-4">사용자명</label>
+																<div class="col-8">
+																	<input type="text" class="form-control">
+																</div>
 															</div>
-															<div class="mb-2">IP 개 (3) 등록</div>
-															<div class="mb-2"> 
-																<input class="form-control form-control-solid border border-secondary rounded-sm" type="text" value="" placeholder="">
+															<div class="form-group">
+																<label class="control-label col-4">사용자연락처</label>
+																<div class="col-8">
+																	<input type="text" class="form-control">
+																</div>
 															</div>
-															<div class="mb-2"> 
-																<input class="form-control form-control-solid border border-secondary rounded-sm" type="text" value="" placeholder="">
+															<div class="form-group">
+																<label class="control-label col-4">사용시작일자</label>
+																<div class="col-8">
+																	<div class="input-daterange input-group">
+																		<input type="text" class="form-control" name="start" />
+																		<span class="input-group-text border-left-0">
+																			<i class="la la-calendar-check-o"></i>
+																		</span>
+																	</div>
+																</div>
 															</div>
-															<div class="mb-2"> 
-																<input class="form-control form-control-solid border border-secondary rounded-sm" type="text" value="" placeholder="">
+															<div class="form-group">
+																<label class="control-label col-4">사용종료일자</label>
+																<div class="col-8">
+																	<div class="input-daterange input-group">
+																		<input type="text" class="form-control" name="start" />
+																		<span class="input-group-text border-left-0">
+																			<i class="la la-calendar-check-o"></i>
+																		</span>
+																	</div>
+																</div>
 															</div>
-														</td>
-													</tr>
-													<tr>
-														<th>
-															<label class=""><span class="d-block font-size-lg font-weight-bold mt-3">특이사항<br>(메모)</span></label>
-														</th>
-														<td>
-															<textarea class="form-control form-control-solid border border-secondary rounded-sm" rows="3" placeholder="내용을 입력해주세요"></textarea>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-											<div class="text-center mt-16">
-												<button type="reset" class="btn btn-danger btn-lg mr-2 font-weight-bold px-11">확인</button>
-												<a href="admin/account.html" class="btn btn-outline-secondary btn-lg px-11 font-weight-bold">목록</a>
+														</div>
+													</div>
+													<div class="d-flex">
+														<div class="col-12">
+															<div class="form-group">
+																<label class="control-label col-2">특이사항(메모)</label>
+																<div class="col-10">
+																	<textarea class="form-control" rows="5">
+
+																	</textarea>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="form-wrap">
+													<div class="governing">IP정보를 입력하는 공간입니다.</div>
+													<div class="d-flex">
+														<div class="col-4">
+															<div class="form-group">
+																<label class="control-label col-6">IP등록</label>
+																<div class="col-6">
+																	<div class="d-flex align-items-center">
+																		<select class="form-control selectpicker">
+																			<option value="">등록할 IP 수를 선택하세요</option>
+																		</select>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-8">
+															<ul class="ipList">
+																<li>
+																	<label>12/12</label>
+																	<input type="text" class="form-control first">
+																	<input type="text" class="form-control second">
+																	<a href="#" class="text-success"><i class="fa fa-check-circle"></i></a>
+																	<button class="btn btn-dark">변경이력보기</button>
+																	<button class="btn btn-dark">엑셀업로드</button>
+																</li>
+																<li>
+																	<label>11/12</label>
+																	<input type="text" class="form-control first">
+																	<input type="text" class="form-control second">
+																	<a href="#"><i class="fa fa-edit"></i></a>
+																	<a href="#" class="text-danger"><i class="fa fa-times-circle"></i></a>
+																</li>
+																<li>
+																	<label>10/12</label>
+																	<input type="text" class="form-control first">
+																	<input type="text" class="form-control second">
+																	<a href="#"><i class="fa fa-edit"></i></a>
+																	<a href="#" class="text-danger"><i class="fa fa-times-circle"></i></a>
+																</li>
+																<li>
+																	<label>9/12</label>
+																	<input type="text" class="form-control first">
+																	<input type="text" class="form-control second">
+																	<a href="#"><i class="fa fa-edit"></i></a>
+																	<a href="#" class="text-danger"><i class="fa fa-times-circle"></i></a>
+																</li>
+																<li>
+																	<label>8/12</label>
+																	<input type="text" class="form-control first">
+																	<input type="text" class="form-control second">
+																	<a href="#"><i class="fa fa-edit"></i></a>
+																	<a href="#" class="text-danger"><i class="fa fa-times-circle"></i></a>
+																</li>
+																<li>
+																	<label>7/12</label>
+																	<input type="text" class="form-control first">
+																	<input type="text" class="form-control second">
+																	<a href="#"><i class="fa fa-edit"></i></a>
+																	<a href="#" class="text-danger"><i class="fa fa-times-circle"></i></a>
+																</li>
+																<li>
+																	<label>6/12</label>
+																	<input type="text" class="form-control first">
+																	<input type="text" class="form-control second">
+																	<a href="#" class="text-success"><i class="fa fa-check-circle"></i></a>
+																	<a href="#" class="text-danger"><i class="fa fa-times-circle"></i></a>
+																</li>
+																<li>
+																	<label>5/12</label>
+																	<input type="text" class="form-control first">
+																	<input type="text" class="form-control second">
+																	<a href="#"><i class="fa fa-edit"></i></a>
+																	<a href="#" class="text-danger"><i class="fa fa-times-circle"></i></a>
+																</li>
+																<li>
+																	<label>4/12</label>
+																	<input type="text" class="form-control first">
+																	<input type="text" class="form-control second">
+																	<a href="#"><i class="fa fa-edit"></i></a>
+																	<a href="#" class="text-danger"><i class="fa fa-times-circle"></i></a>
+																</li>
+																<li>
+																	<label>3/12</label>
+																	<input type="text" class="form-control first">
+																	<input type="text" class="form-control second">
+																	<a href="#"><i class="fa fa-edit"></i></a>
+																	<a href="#" class="text-danger"><i class="fa fa-times-circle"></i></a>
+																</li>
+																<li>
+																	<label>2/12</label>
+																	<input type="text" class="form-control first">
+																	<input type="text" class="form-control second">
+																	<a href="#"><i class="fa fa-edit"></i></a>
+																	<a href="#" class="text-danger"><i class="fa fa-times-circle"></i></a>
+																</li>
+																<li>
+																	<label>1/12</label>
+																	<input type="text" class="form-control first">
+																	<input type="text" class="form-control second">
+																	<a href="#"><i class="fa fa-edit"></i></a>
+																	<a href="#" class="text-danger"><i class="fa fa-times-circle"></i></a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="text-center mt-16">
+													<a href="setting/notice.html" class="btn btn-outline-secondary btn-lg px-11 font-weight-bold">목록</a>
+												</div>
 											</div>
-											<!--end: Write Form-->										
 										</div>
+
                                     </div>
                                     <!--end: Card Body-->
                                 </div>
@@ -696,7 +720,7 @@
 			</span>
 		</div>
 		<!--end::Scrolltop-->
-		
+
 		<!--begin::Global Config(global config for global JS scripts)-->
 		<!--end::Global Config-->
 		<!--begin::Global Theme Bundle(used by all pages)-->

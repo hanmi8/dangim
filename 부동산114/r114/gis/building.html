@@ -30,8 +30,10 @@
 		<link href="assets/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/common.css" rel="stylesheet" type="text/css" />
 		<!--end::Layout Themes-->
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+		<script src="assets/js/pages/gis/gis_building.js"></script>
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -136,7 +138,7 @@
 													<span class="menu-text">임대료변동율</span>
 												</a>
 											</li>
-											
+
 											<li class="menu-item" aria-haspopup="true">
 												<a href="dashboard/industryInfo.html" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
@@ -212,13 +214,13 @@
 													<span class="menu-text">비밀번호수정</span>
 												</a>
 											</li>
-											
+
 											<li class="menu-item" aria-haspopup="true">
 												<a href="setting/saveInfo.html" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
 													</i>
-													<span class="menu-text">저장한정보</span>
+													<span class="menu-text">북마크</span>
 												</a>
 											</li>
 											<li class="menu-item" aria-haspopup="true">
@@ -339,22 +341,23 @@
 								<!--begin::Info popup-->
 								<div class="position-absolute border px-1 py-1 map-info-popup bg-white cursor-pointer mapInfo1" >
 									<div class="d-flex pb-1">
-										<span class="label label-lg label-success rounded-0 flex-fill"  >분양</span>
-										<span class="label label-lg label-warning rounded-0 flex-fill" >임대료</span>
-										<span class="label label-lg label-primary rounded-0 flex-fill" >실거래</span>
+										<span class="label label-lg label-success rounded-0 flex-fill" data-target="#pop_sale">분양</span>
+										<span class="label label-lg label-warning rounded-0 flex-fill" data-target="#pop_rent">임대료</span>
+										<span class="label label-lg label-primary rounded-0 flex-fill" data-target="#pop_actual">실거래</span>
 									</div>
 									<div class="text-center">논현동 261번지 </div>
 									<!-- 201223수정  -->
 									<!-- S: leaflet-popup -->
-									<div class="leaflet-popup">
+									<div class="leaflet-popup" id="pop_sale">
 										<div class="leaflet-popup-content">
 											<div class="leaflet-content-box">
 												<div class="leaflet-header">
 													<h3>분양</h3>
+													<strong>분양일 : <span>2019.12.21</span></strong>
 												</div>
 
 												<div class="leaflet-body scroll" data-scroll="true" data-height="155" data-mobile-height="155" style="height:155px">
-													<table class="table table-bordered m-0">
+													<table class="table table-bordered table-td-right m-0">
 														<colgroup>
 															<col style="width:120px">
 															<col style="width:auto">
@@ -384,7 +387,7 @@
 																<td class="bg-light-secondary py-2">상가연면적</td>
 																<td class="py-2">10,289.312(㎡)</td>
 															</tr>
-															
+
 															<tr>
 																<td class="bg-light-secondary py-2">1F전용평당가</td>
 																<td class="py-2">1,400천원</td>
@@ -405,7 +408,153 @@
 													</table>
 												</div>
 												<div class="leaflet-footer">
-													<button type="button" class="btn btn-outline-secondary btn-lg px-11 font-weight-bold" id="mapInfo1">더보기</button>
+													<button type="button" class="btn btn-outline-secondary btn-lg px-11 font-weight-bold map-pannel-open" data-target="#mapPannel1">더보기</button>
+												</div>
+											</div>
+											<div class="t_arrow"></div>
+										</div>
+										<button class="leaflet-popup-close-button"><i class="ki ki-close"></i></button>
+									</div>
+									<div class="leaflet-popup" id="pop_rent">
+										<div class="leaflet-popup-content">
+											<div class="leaflet-content-box">
+												<div class="leaflet-header">
+													<h3>임대료</h3>
+													<strong>등록일 : <span>2019.12.21</span></strong>
+												</div>
+
+												<div class="leaflet-body scroll" data-scroll="true" data-height="155" data-mobile-height="155" style="height:155px">
+													<table class="table table-bordered table-td-right m-0">
+														<colgroup>
+															<col style="width:120px">
+															<col style="width:auto">
+														</colgroup>
+														<tbody>
+														<tr>
+															<td class="bg-light-secondary py-2">위치</td>
+															<td class="py-2">논현동427번지</td>
+														</tr>
+														<tr>
+															<td class="bg-light-secondary py-2">대지면적</td>
+															<td class="py-2">10,289.312(㎡)</td>
+														</tr>
+														<tr>
+															<td class="bg-light-secondary py-2">연면적</td>
+															<td class="py-2">10,289.312(㎡)</td>
+														</tr>
+														<tr>
+															<td class="bg-light-secondary py-2">건폐율 / 용적률</td>
+															<td class="py-2">59.54 % / 812.03 %</td>
+														</tr>
+
+														<tr>
+															<td class="bg-light-secondary py-2">주용도</td>
+															<td class="py-2">제 2 종 근린 생활 시설</td>
+														</tr>
+														<tr>
+															<td class="bg-light-secondary py-2">건축 규모</td>
+															<td class="py-2">지상 3 층 / 지하 1 층</td>
+														</tr>
+														<tr>
+															<td class="bg-light-secondary py-2">주차</td>
+															<td class="py-2">총 49 대<br>(자주식 4, 기계식 45)</td>
+														</tr>
+														</tbody>
+													</table>
+													<table class="table-gray  mt-9">
+														<thead>
+														<tr>
+															<th>구분</th>
+															<th>계약일</th>
+															<th>임대면적<br>(㎡)</th>
+															<th>월세<br>(만원)</th>
+														</tr>
+														</thead>
+														<tbody>
+														<tr>
+															<td>1</td>
+															<td>2019.12.21</td>
+															<td>10,289.312</td>
+															<td>1,400</td>
+														</tr>
+														</tbody>
+													</table>
+												</div>
+												<div class="leaflet-footer">
+													<button type="button" class="btn btn-outline-secondary btn-lg px-11 font-weight-bold map-pannel-open" data-target="#mapPannel1_2">더보기</button>
+												</div>
+											</div>
+											<div class="t_arrow"></div>
+										</div>
+										<button class="leaflet-popup-close-button"><i class="ki ki-close"></i></button>
+									</div>
+									<div class="leaflet-popup" id="pop_actual">
+										<div class="leaflet-popup-content">
+											<div class="leaflet-content-box">
+												<div class="leaflet-header">
+													<h3>실거래</h3>
+													<strong>최근계약일 : <span>2019.12.21</span></strong>
+												</div>
+
+												<div class="leaflet-body scroll" data-scroll="true" data-height="155" data-mobile-height="155" style="height:155px">
+													<table class="table table-bordered table-td-right m-0">
+														<colgroup>
+															<col style="width:120px">
+															<col style="width:auto">
+														</colgroup>
+														<tbody>
+														<tr>
+															<td class="bg-light-secondary py-2">위치</td>
+															<td class="py-2">논현동427번지</td>
+														</tr>
+														<tr>
+															<td class="bg-light-secondary py-2">대지면적</td>
+															<td class="py-2">10,289.312(㎡)</td>
+														</tr>
+														<tr>
+															<td class="bg-light-secondary py-2">연면적</td>
+															<td class="py-2">10,289.312(㎡)</td>
+														</tr>
+														<tr>
+															<td class="bg-light-secondary py-2">건폐율 / 용적률</td>
+															<td class="py-2">59.54 % / 812.03 %</td>
+														</tr>
+
+														<tr>
+															<td class="bg-light-secondary py-2">주용도</td>
+															<td class="py-2">제 2 종 근린 생활 시설</td>
+														</tr>
+														<tr>
+															<td class="bg-light-secondary py-2">건축 규모</td>
+															<td class="py-2">지상 3 층 / 지하 1 층</td>
+														</tr>
+														<tr>
+															<td class="bg-light-secondary py-2">주차</td>
+															<td class="py-2">총 49 대<br>(자주식 4, 기계식 45)</td>
+														</tr>
+														</tbody>
+													</table>
+													<table class="table-gray mt-9">
+														<thead>
+														<tr>
+															<th>구분</th>
+															<th>계약일</th>
+															<th>임대면적<br>(㎡)</th>
+															<th>월세<br>(만원)</th>
+														</tr>
+														</thead>
+														<tbody>
+														<tr>
+															<td>1</td>
+															<td>2019.12.21</td>
+															<td>10,289.312</td>
+															<td>1,400</td>
+														</tr>
+														</tbody>
+													</table>
+												</div>
+												<div class="leaflet-footer">
+													<button type="button" class="btn btn-outline-secondary btn-lg px-11 font-weight-bold map-pannel-open" data-target="#mapPannel1_3">더보기</button>
 												</div>
 											</div>
 											<div class="t_arrow"></div>
@@ -414,18 +563,19 @@
 									</div>
 									<!-- E: leaflet-popup -->
 								</div>
-								<div class="position-absolute border px-1 py-1 map-info-popup bg-white cursor-pointer mapInfo2" >
+								<div class="position-absolute border px-1 py-1 map-info-popup bg-white cursor-pointer mapInfo2">
 									<div class="d-flex pb-1">
-										<span class="label label-lg label-secondary rounded-0 label-inline flex-fill" >건물</span>
+										<span class="label label-lg label-secondary rounded-0 label-inline flex-fill" data-target="#building">건물</span>
 									</div>
 									<div class="text-center">논현동 261번지 </div>
 									<!-- 201223수정  -->
 									<!-- S: leaflet-popup -->
-									<div class="leaflet-popup">
+									<div class="leaflet-popup" id="building">
 										<div class="leaflet-popup-content">
 											<div class="leaflet-content-box">
 												<div class="leaflet-header">
 													<h3>건물</h3>
+													<strong>사용승인일 : <span>2019.12.21</span></strong>
 												</div>
 												<div class="leaflet-body scroll" data-scroll="true" data-height="155" data-mobile-height="155" style="height:155px">
 													<table class="table table-bordered m-0">
@@ -454,25 +604,25 @@
 																<td class="bg-light-secondary py-2">주용도</td>
 																<td class="py-2">제2종근린생활시설</td>
 															</tr>
-															
+
 															<tr>
 																<td class="bg-light-secondary py-2">건축규모</td>
 																<td class="py-2">지상3/지하1</td>
 															</tr>
-															
+
 															<tr>
 																<td class="bg-light-secondary py-2">주차장</td>
 																<td class="py-2">49대(기계식 48대 )</td>
 															</tr>
-															<tr>
-																<td class="bg-light-secondary py-2">승강기</td>
-																<td class="py-2">2대</td>
-															</tr>
+<!--															<tr>-->
+<!--																<td class="bg-light-secondary py-2">승강기</td>-->
+<!--																<td class="py-2">2대</td>-->
+<!--															</tr>-->
 														</tbody>
 													</table>
 												</div>
 												<div class="leaflet-footer">
-													<button type="button" class="btn btn-outline-secondary btn-lg px-11 font-weight-bold" id="mapInfo2" >더보기</button>
+													<button type="button" class="btn btn-outline-secondary btn-lg px-11 font-weight-bold map-pannel-open" data-target="#mapPannel2" >더보기</button>
 												</div>
 											</div>
 											<div class="t_arrow"></div>
@@ -648,10 +798,14 @@
 											<span class="font-size-h5">등록년도</span>
 											<span class="font-size-h5">2018 ~ 2020</span>
 										</div>
-										<div class="mt-5">
-											<div class="pb-9">
-												<div id="kt_nouislider_1" class="nouislider nouislider-connect-danger"></div>
-											</div>
+										<div class="select-years">
+											<a href="#" class="left"></a>
+											<ul class="radio-years">
+												<li><span></span><strong>2018</strong></li>
+												<li><span></span><strong>2019</strong></li>
+												<li class="on"><span></span><strong>2020</strong></li>
+											</ul>
+											<a href="#" class="right"></a>
 										</div>
 									</div>
 									<div class="border border-top-0 bg-white px-6 py-6" id="filterLayer2" style="display: none;">
@@ -708,7 +862,7 @@
 															<span id="addressTotalCount" class="num">주소 ( <span>14</span> 건)</span>
 															<!-- 더보기 버튼 -->
 															<span id="address_list_more" class="more" ><a class="lan_etcList" href="#">더보기<i class="ki ki-arrow-next icon-sm"></i></a></span>
-														</h2> 
+														</h2>
 													</div>
 													<!-- //건수 -->
 													<!-- list -->
@@ -720,7 +874,7 @@
 															<dl class="one_depth_dl">
 																<dt>서울특별시 강남구</dt>
 															</dl>
-															
+
 														</div>
 														<div class="JusoResult list clear " >
 															<!-- class on : 리스트 on 상태 -->
@@ -877,7 +1031,7 @@
 																</div>
 															</div>
 															<!-- E: 2뎁스 주소 -->
-															
+
 														</div>
 													</div>
 													<!-- //list -->
@@ -886,13 +1040,13 @@
 												<!-- S: 장소검색결과 -->
 												<div id="poiSearchForm" class="map_search_list" >
 													<div class="result_num clear">
-														
+
 														<h2>
 															<!-- 건수 -->
 															<span id="poiTotalCount" class="num">장소 ( <span>12,322</span> 건 )</span>
 															<!-- 더보기 버튼 -->
 															<span id="poi_list_more" class="more"  style="display: block;"><a class="lan_etcList" href="#">더보기<i class="ki ki-arrow-next icon-sm"></i></a></span>
-														</h2> 
+														</h2>
 													</div>
 													<!-- //건수 -->
 													<!-- 장소 list -->
@@ -907,7 +1061,7 @@
 																<dd class="blank"></dd>
 																<dd class="txt2">기업</dd>
 															</dl>
-															
+
 														</div>
 														<div class="PoiResult list clear">
 															<!-- class on : 리스트 on 상태 -->
@@ -919,7 +1073,7 @@
 																<dd class="blank"></dd>
 																<dd class="txt2">식품</dd>
 															</dl>
-														
+
 														</div>
 														<div class="PoiResult list clear" >
 															<!-- class on : 리스트 on 상태 -->
@@ -931,7 +1085,7 @@
 																<dd class="blank"></dd>
 																<dd class="txt2">기업</dd>
 															</dl>
-															
+
 														</div>
 														<div class="PoiResult list clear" >
 															<!-- class on : 리스트 on 상태 -->
@@ -943,7 +1097,7 @@
 																<dd class="blank"></dd>
 																<dd class="txt2">기업</dd>
 															</dl>
-															
+
 														</div>
 														<div class="PoiResult list clear">
 															<!-- class on : 리스트 on 상태 -->
@@ -955,7 +1109,7 @@
 																<dd class="blank"></dd>
 																<dd class="txt2">기업</dd>
 															</dl>
-															
+
 														</div>
 													</div>
 													<!-- //list -->
@@ -1005,16 +1159,16 @@
 										<div class="tab-pane fade scroll" id="kt_tab_pane_6" role="tabpanel" aria-labelledby="kt_tab_pane_6" data-scroll="true" data-height="500" data-mobile-height="300" style="height:500px">
 											<!-- S: 201217  재 구성  -->
 											<div class="map_search_list_wrap pa_list">
-											
+
 												<!-- S: 장소검색결과 -->
 												<div id="poiSearchForm" class="map_search_list" >
 													<div class="result_num clear">
-														
+
 														<h2>
 															<!-- 건수 -->
 															<span id="poiTotalCount" class="num">장소 ( <span>12,322</span> 건 )</span>
 
-														</h2> 
+														</h2>
 													</div>
 													<!-- //건수 -->
 													<!-- 장소 list -->
@@ -1029,7 +1183,7 @@
 																<dd class="blank"></dd>
 																<dd class="txt2">기업</dd>
 															</dl>
-															
+
 														</div>
 														<div class="PoiResult list clear">
 															<!-- class on : 리스트 on 상태 -->
@@ -1041,7 +1195,7 @@
 																<dd class="blank"></dd>
 																<dd class="txt2">식품</dd>
 															</dl>
-														
+
 														</div>
 														<div class="PoiResult list clear" >
 															<!-- class on : 리스트 on 상태 -->
@@ -1053,7 +1207,7 @@
 																<dd class="blank"></dd>
 																<dd class="txt2">기업</dd>
 															</dl>
-															
+
 														</div>
 														<div class="PoiResult list clear" >
 															<!-- class on : 리스트 on 상태 -->
@@ -1065,7 +1219,7 @@
 																<dd class="blank"></dd>
 																<dd class="txt2">기업</dd>
 															</dl>
-															
+
 														</div>
 														<div class="PoiResult list clear">
 															<!-- class on : 리스트 on 상태 -->
@@ -1077,7 +1231,7 @@
 																<dd class="blank"></dd>
 																<dd class="txt2">기업</dd>
 															</dl>
-															
+
 														</div>
 													</div>
 													<!-- //list -->
@@ -1195,7 +1349,7 @@
 															<img class="off_img" src="assets/media/map/ic-05.png">
 															<img class="on_img" src="assets/media/map/ic-05_on.png">
 															<span>마트/슈퍼</span>
-															
+
 														</a>
 													</li>
 													<li class="sub_depth_in">
@@ -1211,7 +1365,7 @@
 															<img class="off_img" src="assets/media/map/ic-07.png">
 															<img class="on_img" src="assets/media/map/ic-07_on.png">
 															<span>스포츠시설</span>
-													
+
 														</a>
 													</li>
 												</ul>
@@ -1253,7 +1407,7 @@
 															<img class="off_img" src="assets/media/map/ic-12.png">
 															<img class="on_img" src="assets/media/map/ic-12_on.png">
 															<span>편의점</span>
-														
+
 														</a>
 													</li>
 													<li>
@@ -1261,7 +1415,7 @@
 															<img class="off_img" src="assets/media/map/ic-13.png">
 															<img class="on_img" src="assets/media/map/ic-13_on.png">
 															<span>영화/공연</span>
-														
+
 														</a>
 													</li>
 													<li class="sub_depth_in">
@@ -1357,10 +1511,10 @@
 			</div>
 		</div>
 		<!--end::Favorite Panel-->
-		
+
 		<!--begin::Detail Panel-->
-		<div id="mapPannel1" class="position-fixed w-600px pb-0 d-none flex-column border map-pannel bg-white">
-			<div class="position-absolute map-pannel-close" id="mapPannel1Close">
+		<div id="mapPannel1" class="map-pannel-sale position-fixed w-600px pb-0 d-none flex-column border map-pannel bg-white">
+			<div class="position-absolute map-pannel-close">
 				<button class="btn btn-square btn-outline-secondary pl-5 pr-4 py-5 bg-white"><i class="flaticon2-cross text-dark"></i></button>
 			</div>
 			<!--begin::Content-->
@@ -1368,8 +1522,8 @@
 				<!--begin::Header-->
 				<div class="d-flex align-items-center justify-content-between bg-white pt-6 pb-4 px-6 flex-column-auto">
 					<div class="pb-3">
-						<h3 class="font-size-h3 text-dark mb-1">서울시 강남구 역삼동 735-17</h3>
-						<span class="font-size-lg">역삼푸르지오시티</span>
+						<h3 class="font-size-h3 text-dark mb-1">역삼푸르지오시티</h3>
+						<span class="font-size-lg">서울시 강남구 역삼동 735-17</span>
 					</div>
 					<div class="mt-n1">
 						<!-- 즐겨찾기 전 버튼 -->
@@ -1378,31 +1532,31 @@
 						<!-- <button class="btn btn-danger pl-2 pr-1 py-2" data-toggle="modal" data-target="#favModal"><i class="flaticon-star text-white"></i></button> -->
 					</div>
 				</div>
-				<div class="d-flex justify-content-between bg-white px-6 pb-4">
-					<div class="d-flex flex-column justify-content-between">
-						<div>
-							<div>
-								<span class="label label-lg label-success rounded-0 label-inline">분양완료</span>
-								<span class="label label-lg label-outline-secondary rounded-0 label-inline ml-1">복합상가</span>
-							</div>
-							<div class="mt-3">
-								<span class="label label-lg label-warning rounded-0 label-inline">임대료</span>
-								<span class="label label-lg label-outline-secondary rounded-0 label-inline ml-1">단지내상가</span>
-							</div>
-							<div class="mt-3">
-								<span class="label label-lg label-primary rounded-0 label-inline">실거래</span>
-								<span class="label label-lg label-outline-secondary rounded-0 label-inline ml-1">단지내상가</span>
-							</div>
-						</div>
-						<div class="text-muted mb-3">
-							등록일: 2020.10.15<br>수정일: 2020.10.15
-						</div>
+				<div class="d-flex justify-content-between bg-white">
+					<div class="basic-info">
+						<h4 class="font-size-h5 mb-4">기본정보</h4>
+						<ul class="">
+							<li>
+								<label>분양일</label>
+								<strong>2020.03.11</strong>
+							</li>
+							<li>
+								<label>입주일</label>
+								<strong>2020.03.11</strong>
+							</li>
+							<li>
+								<label>점포 수(상가)</label>
+								<strong>12 개</strong>
+							</li>
+						</ul>
 					</div>
-					<div class="px-6 bg-white mb-4">
+					<div class="blue-print">
 						<h4 class="font-size-h5 mb-4">평면도 및 조감도</h4>
 						<div class="d-flex">
-							<div class="border h-130px w-180px d-flex align-items-center justify-content-center"><img src="assets/media/sample.jpg" width="180" height="130" alt=""></div>
-							<div class="border h-130px w-180px d-flex align-items-center justify-content-center position-relative ml-1 cursor-pointer" data-toggle="modal" data-target="#exampleModal">
+							<div class="img-wrap border d-flex align-items-center justify-content-center">
+								<img src="assets/media/sample.jpg" width="180" height="130" alt="">
+							</div>
+							<div class="img-wrap border d-flex align-items-center justify-content-center position-relative ml-1 cursor-pointer" data-toggle="modal" data-target="#exampleModal">
 								<img src="assets/media/sample.jpg" width="180" height="130" alt="">
 								<div class="d-flex justify-content-center align-items-center bg-dark-o-50 position-absolute w-100 h-100">
 									<span class="text-white font-size-h1 font-weight-bold">+ 5</span>
@@ -1413,18 +1567,18 @@
 				</div>
 				<ul class="nav nav-tabs nav-tabs-line nav-justified nav-tabs-line-2x nav-tabs-line-danger border-top bg-white sticky">
 					<li class="nav-item border-right">
-						<a class="nav-link active justify-content-center m-0 font-size-h6" data-toggle="tab" href="#kt_tab_pane_1">개요</a>
+						<a class="nav-link active justify-content-center m-0 font-size-h6" data-toggle="tab" href="#kt_tab_pane_1_1_1">개요</a>
 					</li>
 					<li class="nav-item border-right">
-						<a class="nav-link justify-content-center m-0 font-size-h6" data-toggle="tab" href="#kt_tab_pane_2">분양가</a>
+						<a class="nav-link justify-content-center m-0 font-size-h6" data-toggle="tab" href="#kt_tab_pane_1_1_2">분양가</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link justify-content-center m-0 font-size-h6" data-toggle="tab" href="#kt_tab_pane_3">상권분석</a>
+						<a class="nav-link justify-content-center m-0 font-size-h6" data-toggle="tab" href="#kt_tab_pane_1_1_3">상권분석</a>
 					</li>
 				</ul>
 				<!--end::Header-->
-				<div class="tab-content" id="myTabContent">
-					<div class="tab-pane fade show active" id="kt_tab_pane_1" role="tabpanel" aria-labelledby="kt_tab_pane_1">
+				<div class="tab-content" id="myTabContent1">
+					<div class="tab-pane fade show active" id="kt_tab_pane_1_1_1" role="tabpanel" aria-labelledby="kt_tab_pane_1">
 						<div class="px-6 py-6 bg-white mb-4">
 							<h4 class="font-size-h5 mb-4">기본정보</h4>
 							<table class="table table-bordered m-0">
@@ -1434,7 +1588,7 @@
 								</colgroup>
 								<tbody>
 									<tr>
-										<td class="bg-light-secondary py-2">사업명</td>
+										<td class="bg-light-secondary py-2">상가명</td>
 										<td class="py-2">역삼푸르지오시티</td>
 									</tr>
 									<tr>
@@ -1454,7 +1608,7 @@
 										<td class="py-2">제 2종 근린생활시설</td>
 									</tr>
 									<tr>
-										<td class="bg-light-secondary py-2">규모</td>
+										<td class="bg-light-secondary py-2">건축규모</td>
 										<td class="py-2">지상 2층 / 지하 1층 </td>
 									</tr>
 									<tr>
@@ -1470,7 +1624,7 @@
 						</div>
 						<div class="px-6 py-6 bg-white mb-4">
 							<div class="d-flex justify-content-between">
-								<h4 class="font-size-h5 mb-4">상가연면적</h4>
+								<h4 class="font-size-h5 mb-4">상가면적</h4>
 								<span>단위 : 천원</span>
 							</div>
 							<table class="table table-bordered m-0">
@@ -1515,93 +1669,466 @@
 							위의 정보는 시점 기준으로 지속적으로 업데이트 하고 있으나, 변동사항 있을 수 있습니다. 공식적인 자료 등 열람하여 반드시 재확인 바랍니다.<br> MABS에서 제공된 정보를무단으로 사용 할 수 없을 알려드립니다
 						</div>
 					</div>
-					<div class="tab-pane fade" id="kt_tab_pane_2" role="tabpanel" aria-labelledby="kt_tab_pane_2">
-						<div class="px-6 py-6 bg-white mb-4">
-							<div class="d-flex justify-content-between align-items-center mb-2">
-								<!-- <h4 class="font-size-h5 m-0">통계정보(평당분양가)</h4> -->
-								<div class="w-200px">
-									<select class="form-control selectpicker">
-										<option >층을 선택하세요</option>
-										<option value="1">B1</option>
-										<option value="2">1F</option>
-										<option value="2">2F</option>
-										<option value="2">3F</option>
-									</select>
-								</div>
-								<div class="layer_number_box">
-									<span class="layer_number_current">1</span>
-									<span class="layer_number_total">/ 3</span>
-								</div>
-							</div>
-							<div class="mb-4">
-								<div class="layer_img_box"><img src="assets/media/stock-600x400/img-1.jpg"></div>
-							</div>
-
-						</div>
+					<div class="tab-pane fade" id="kt_tab_pane_1_1_2" role="tabpanel" aria-labelledby="kt_tab_pane_2">
 						<div class="px-6 py-6 bg-white mb-4">
 							<div class="d-flex justify-content-between">
-								<h4 class="font-size-h5 mb-4">상가연면적</h4>
-								<span>단위 : 천원</span>
+								<h4 class="font-size-h5 mb-4">호 · 구분 별 분양가 정보</h4>
 							</div>
 							<table class="table table-bordered m-0">
 								<colgroup>
-									<col style="width:15%">
-									<col style="width:auto">
-									<col style="width:15%">
-									<col style="width:15%">
-									<col style="width:15%">
-									<col style="width:15%">
+									<col width="8%">
+									<col width="*">
+									<col width="20%">
+									<col width="20%">
+									<col width="20%">
+									<col width="12%">
 								</colgroup>
 								<thead>
 									<tr>
 										<th class="py-2 text-center bg-light-secondary align-middle">호</th>
-										<th class="py-2 text-center bg-light-secondary align-middle">전용면적</th>
-										<th class="py-2 text-center bg-light-secondary align-middle">분양면적</th>
-										<th class="py-2 text-center bg-light-secondary align-middle">분양가</th>
-										<th class="py-2 text-center bg-light-secondary align-middle">평당</th>
-										<th class="py-2 text-center bg-light-secondary align-middle">전용율</th>
+										<th class="py-2 text-center bg-light-secondary align-middle">전용면적<span class="font-weight-normal">(㎡)</span></th>
+										<th class="py-2 text-center bg-light-secondary align-middle">분양면적<span class="font-weight-normal">(㎡)</span></th>
+										<th class="py-2 text-center bg-light-secondary align-middle">분양가<span class="font-weight-normal">(만원)</span></th>
+										<th class="py-2 text-center bg-light-secondary align-middle">평단가<span class="font-weight-normal">(만원)</span></th>
+										<th class="py-2 text-center bg-light-secondary align-middle">전용률</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td class="py-2 text-center align-middle bg-light-secondary">101</td>
-										<td class="py-2 text-center align-middle">289.312(㎡)</td>
-										<td class="py-2 text-center align-middle">289.312(㎡)</td>
-										<td class="py-2 text-center align-middle">1,456</td>
-										<td class="py-2 text-center align-middle"></td>
-										<td class="py-2 text-center align-middle"></td>
-									</tr>
-									<tr>
-										<td class="py-2 text-center align-middle bg-light-secondary">101</td>
-										<td class="py-2 text-center align-middle">289.312(㎡)</td>
-										<td class="py-2 text-center align-middle">289.312(㎡)</td>
-										<td class="py-2 text-center align-middle">1,456</td>
-										<td class="py-2 text-center align-middle"></td>
+										<td class="py-2 text-center align-middle">289.312</td>
+										<td class="py-2 text-center align-middle">289.312</td>
+										<td class="py-2 text-right align-middle">1,456</td>
+										<td class="py-2 text-right align-middle">1,450</td>
 										<td class="py-2 text-center align-middle"></td>
 									</tr>
 									<tr>
-										<td class="py-2 text-center align-middle bg-light-secondary">101</td>
-										<td class="py-2 text-center align-middle">289.312(㎡)</td>
-										<td class="py-2 text-center align-middle">289.312(㎡)</td>
-										<td class="py-2 text-center align-middle">1,456</td>
+										<td class="py-2 text-center align-middle bg-light-secondary">102</td>
+										<td class="py-2 text-center align-middle">289.312</td>
+										<td class="py-2 text-center align-middle">289.312</td>
+										<td class="py-2 text-right align-middle">1,456</td>
+										<td class="py-2 text-right align-middle">1,450</td>
 										<td class="py-2 text-center align-middle"></td>
+									</tr>
+									<tr>
+										<td class="py-2 text-center align-middle bg-light-secondary">103</td>
+										<td class="py-2 text-center align-middle">289.312</td>
+										<td class="py-2 text-center align-middle">289.312</td>
+										<td class="py-2 text-right align-middle">1,456</td>
+										<td class="py-2 text-right align-middle">1,450</td>
+										<td class="py-2 text-center align-middle"></td>
+									</tr>
+									<tr>
+										<td class="py-2 text-center align-middle bg-light-secondary">104</td>
+										<td class="py-2 text-center align-middle">289.312</td>
+										<td class="py-2 text-center align-middle">289.312</td>
+										<td class="py-2 text-right align-middle">1,456</td>
+										<td class="py-2 text-right align-middle">1,450</td>
 										<td class="py-2 text-center align-middle"></td>
 									</tr>
 								</tbody>
 							</table>
 						</div>
-				
+
 						<div class="px-6 py-6 bg-white mb-4 font-size-sm">
 							<p class="text-center">@2020 MABS</p>
 							위의 정보는 시점 기준으로 지속적으로 업데이트 하고 있으나, 변동사항 있을 수 있습니다. 공식적인 자료 등 열람하여 반드시 재확인 바랍니다.<br> MABS에서 제공된 정보를무단으로 사용 할 수 없을 알려드립니다
 						</div>
 					</div>
-					<div class="tab-pane fade" id="kt_tab_pane_3" role="tabpanel" aria-labelledby="kt_tab_pane_3">
+					<div class="tab-pane fade" id="kt_tab_pane_1_1_3" role="tabpanel" aria-labelledby="kt_tab_pane_3">
+						<div class="px-6 py-6 bg-white mb-4">
+							<div class="d-flex justify-content-between align-items-center mb-2">
+								<div class="d-flex align-items-center">
+									<h4 class="font-size-h5 mb-2">업종 현황</h4>
+								</div>
+							</div>
+							<div class="">
+								<select class="form-control w-180px selectpicker">
+									<option value="1">전체선택</option>
+								</select>
+								<div id="chart_map_sale_01"></div>
+							</div>
+						</div>
+						<div class="px-6 py-6 bg-white mb-4">
+							<div class="d-flex justify-content-between align-items-center mb-2">
+								<div class="d-flex align-items-center">
+									<h4 class="font-size-h5 mb-2">총 매출 추이</h4>
+								</div>
+							</div>
+							<div class="">
+								<select class="form-control w-180px selectpicker">
+									<option value="1">관광/여가/오락</option>
+								</select>
+								<div id="chart_map_sale_02"></div>
+							</div>
+						</div>
+						<div class="px-6 py-6 bg-white mb-4">
+							<div class="d-flex justify-content-between align-items-center mb-2">
+								<div class="d-flex align-items-center">
+									<h4 class="font-size-h5 mb-2">업종별 매출 추이</h4>
+								</div>
+							</div>
+							<div class="">
+								<select class="form-control w-180px selectpicker">
+									<option value="1">전체선택</option>
+								</select>
+								<div id="chart_map_sale_03"></div>
+							</div>
+						</div>
+						<div class="px-6 py-6 bg-white mb-4">
+							<div class="d-flex justify-content-between align-items-center mb-2">
+								<div class="d-flex align-items-center">
+									<h4 class="font-size-h5 mb-2">거주/직장인구 : 성별</h4>
+								</div>
+							</div>
+							<div class="relative">
+								<div id="chart_map_sale_04"></div>
+								<ul class="chart_y_label">
+									<li>거주인구(남)</li>
+									<li>거주인구(여)</li>
+									<li>직장인구(남)</li>
+									<li>직장인구(여)</li>
+								</ul>
+							</div>
+						</div>
+						<div class="px-6 py-6 bg-white mb-4">
+							<div class="d-flex justify-content-between align-items-center mb-2">
+								<div class="d-flex align-items-center">
+									<h4 class="font-size-h5 mb-2">거주/직장인구 : 성별 x 연령별</h4>
+								</div>
+							</div>
+							<div class="">
+								<div id="chart_map_sale_05"></div>
+							</div>
+						</div>
+						<div class="px-6 py-6 bg-white mb-4">
+							<div class="d-flex justify-content-between align-items-center mb-2">
+								<div class="d-flex align-items-center">
+									<h4 class="font-size-h5 mb-2">유동인구 : 요일 x 시간대별</h4>
+								</div>
+							</div>
+							<div class="">
+								<div id="chart_map_sale_06"></div>
+							</div>
+						</div>
+						<div class="px-6 py-6 bg-white mb-4 font-size-sm">
+							<p class="text-center">@2020 MABS</p>
+							위의 정보는 시점 기준으로 지속적으로 업데이트 하고 있으나, 변동사항 있을 수 있습니다. 공식적인 자료 등 열람하여 반드시 재확인 바랍니다.<br> MABS에서 제공된 정보를무단으로 사용 할 수 없을 알려드립니다
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!--end::Content-->
+			<!--begin::Footer-->
+			<div class="flex-column-auto">
+				<div class="d-flex">
+					<!-- 21.01.04 수정 -->
+					<!-- <button class="btn btn-danger btn-square btn-lg btn-block"><i class="flaticon2-copy"></i>복사하기</button> -->
+					<button class="btn btn-danger btn-square btn-lg btn-block mt-0"><i class="flaticon-download"></i>다운로드</button>
+				</div>
+			</div>
+			<!--end::Footer -->
+		</div>
+		<div id="mapPannel1_2" class="map-pannel-rent position-fixed w-600px pb-0 d-none flex-column border map-pannel bg-white">
+			<div class="position-absolute map-pannel-close">
+				<button class="btn btn-square btn-outline-secondary pl-5 pr-4 py-5 bg-white"><i class="flaticon2-cross text-dark"></i></button>
+			</div>
+			<!--begin::Content-->
+			<div class="flex-column-fluid scroll ps bg-light-secondary" data-scroll="true" data-height="600" style="height:600px">
+				<!--begin::Header-->
+				<div class="d-flex align-items-center justify-content-between bg-white pt-6 pb-4 px-6 flex-column-auto">
+					<div class="pb-3">
+						<h3 class="font-size-h3 text-dark mb-1">서울시 강남구 역삼동 735-17</h3>
+						<span class="font-size-lg">복합상가</span>
+					</div>
+					<div class="mt-n1">
+						<!-- 즐겨찾기 전 버튼 -->
+						<button class="btn btn-outline-secondary pl-2 pr-1 py-2" data-toggle="modal" data-target="#favModal"><i class="flaticon-star"></i></button>
+						<!-- 즐겨찾기 후 버튼 -->
+						<!-- <button class="btn btn-danger pl-2 pr-1 py-2" data-toggle="modal" data-target="#favModal"><i class="flaticon-star text-white"></i></button> -->
+					</div>
+				</div>
+				<div class="d-flex justify-content-between bg-white">
+					<div class="basic-info">
+						<h4 class="font-size-h5 mb-4">기본정보</h4>
+						<ul>
+							<li>
+								<label>사용승인일</label>
+								<strong>2020.03.11</strong>
+							</li>
+							<li>
+								<label>건축규모</label>
+								<strong>지상 3층 / 지하 1층</strong>
+							</li>
+							<li>
+								<label>주용도</label>
+								<strong>제 2종 근린 생활 시설</strong>
+							</li>
+						</ul>
+					</div>
+<!--					<div class="blue-print">-->
+<!--						<h4 class="font-size-h5 mb-4">평면도 및 조감도</h4>-->
+<!--						<div class="d-flex">-->
+<!--							<div class="img-wrap border d-flex align-items-center justify-content-center">-->
+<!--								<img src="assets/media/sample.jpg" width="180" height="130" alt="">-->
+<!--							</div>-->
+<!--							<div class="img-wrap border d-flex align-items-center justify-content-center position-relative ml-1 cursor-pointer" data-toggle="modal" data-target="#exampleModal">-->
+<!--								<img src="assets/media/sample.jpg" width="180" height="130" alt="">-->
+<!--								<div class="d-flex justify-content-center align-items-center bg-dark-o-50 position-absolute w-100 h-100">-->
+<!--									<span class="text-white font-size-h1 font-weight-bold">+ 5</span>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+				</div>
+				<ul class="nav nav-tabs nav-tabs-line nav-justified nav-tabs-line-2x nav-tabs-line-danger border-top bg-white sticky">
+					<li class="nav-item border-right">
+						<a class="nav-link active justify-content-center m-0 font-size-h6" data-toggle="tab" href="#kt_tab_pane_1_2_1">개요</a>
+					</li>
+					<li class="nav-item border-right">
+						<a class="nav-link justify-content-center m-0 font-size-h6" data-toggle="tab" href="#kt_tab_pane_1_2_2">가격</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link justify-content-center m-0 font-size-h6" data-toggle="tab" href="#kt_tab_pane_1_2_3">상권분석</a>
+					</li>
+				</ul>
+				<!--end::Header-->
+				<div class="tab-content" id="myTabContent1_2">
+					<div class="tab-pane fade show active" id="kt_tab_pane_1_2_1" role="tabpanel" aria-labelledby="kt_tab_pane_1">
+						<div class="px-6 py-6 bg-white mb-4">
+							<h4 class="font-size-h5 mb-4">기본정보</h4>
+							<table class="table table-bordered m-0">
+								<colgroup>
+									<col width="120px">
+									<col width="auto">
+								</colgroup>
+								<tbody>
+								<tr>
+									<td class="bg-light-secondary py-2">대지면적</td>
+									<td class="py-2">8,297 ㎡ (2,514 평)</td>
+								</tr>
+								<tr>
+									<td class="bg-light-secondary py-2">건축면적</td>
+									<td class="py-2">3,510 ㎡ (1,063 평)</td>
+								</tr>
+								<tr>
+									<td class="bg-light-secondary py-2">연면적</td>
+									<td class="py-2">약 59,868 ㎡ (18,141 평)</td>
+								</tr>
+								<tr>
+									<td class="bg-light-secondary py-2">건폐율</td>
+									<td class="py-2">42.32 %</td>
+								</tr>
+								<tr>
+									<td class="bg-light-secondary py-2">용적률</td>
+									<td class="py-2">59,868 %</td>
+								</tr>
+								<tr>
+									<td class="bg-light-secondary py-2">주차</td>
+									<td class="px-0 py-0">
+										<table class="table-detail">
+											<thead>
+											<tr>
+												<th>구분</th>
+												<th>옥내</th>
+												<th>옥외</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+												<th>자주식</th>
+												<td>403대</td>
+												<td>55대</td>
+											</tr>
+											<tr>
+												<th>기계식</th>
+												<td>0대</td>
+												<td>0대</td>
+											</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td class="bg-light-secondary py-2">승강기</td>
+									<td class="py-2">승용 : 6 기 / 비상용 : 2 기</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="px-6 py-6 bg-white mb-4">
+							<div class="d-flex justify-content-between">
+								<h4 class="font-size-h5 mb-4">물건현황</h4>
+							</div>
+							<table class="table table-bordered m-0">
+								<colgroup>
+									<col width="20%">
+									<col width="*">
+									<col width="30%">
+								</colgroup>
+								<thead>
+								<tr>
+									<th class="py-2 text-center bg-light-secondary align-middle">구분</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">주 용도</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">면적<span class="font-weight-normal">(㎡ / 평)</span></th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td class="py-2 text-center align-middle bg-light-secondary">B1</td>
+									<td class="py-2 text-center align-middle">일반 공장</td>
+									<td class="py-2 text-center align-middle">109/33</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle bg-light-secondary">1F</td>
+									<td class="py-2 text-center align-middle">기타 공장</td>
+									<td class="py-2 text-center align-middle">109/33</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle bg-light-secondary">2F</td>
+									<td class="py-2 text-center align-middle">제 2종 근린 생활 시설</td>
+									<td class="py-2 text-center align-middle">109/33</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="px-6 py-6 bg-white mb-4 font-size-sm">
+							<p class="text-center">@2020 MABS</p>
+							위의 정보는 시점 기준으로 지속적으로 업데이트 하고 있으나, 변동사항 있을 수 있습니다. 공식적인 자료 등 열람하여 반드시 재확인 바랍니다.<br> MABS에서 제공된 정보를무단으로 사용 할 수 없을 알려드립니다
+						</div>
+					</div>
+					<div class="tab-pane fade" id="kt_tab_pane_1_2_2" role="tabpanel" aria-labelledby="kt_tab_pane_2">
+						<div class="px-6 py-6 bg-white mb-4">
+							<div class="d-flex justify-content-between">
+								<h4 class="font-size-h5 mb-4">임대 매물 정보</h4>
+							</div>
+							<table class="table table-bordered m-0">
+								<colgroup>
+									<col width="8%">
+									<col width="8%">
+									<col width="*">
+									<col width="*">
+									<col width="18%">
+									<col width="15%">
+									<col width="15%">
+								</colgroup>
+								<thead>
+								<tr>
+									<th class="py-2 text-center bg-light-secondary align-middle">층</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">호</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">계약면적<span class="font-weight-normal">(㎡)</span></th>
+									<th class="py-2 text-center bg-light-secondary align-middle">전용면적<span class="font-weight-normal">(㎡)</span></th>
+									<th class="py-2 text-center bg-light-secondary align-middle">보증금<span class="font-weight-normal">(천원)</span></th>
+									<th class="py-2 text-center bg-light-secondary align-middle">월세<span class="font-weight-normal">(천원)</span></th>
+									<th class="py-2 text-center bg-light-secondary align-middle">등록일</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td class="py-2 text-center align-middle">1F</td>
+									<td class="py-2 text-center align-middle">101</td>
+									<td class="py-2 text-center align-middle">289.312</td>
+									<td class="py-2 text-center align-middle">289.312</td>
+									<td class="py-2 text-right align-middle">10,456</td>
+									<td class="py-2 text-right align-middle">1,450</td>
+									<td class="py-2 text-center align-middle">20.12.15</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle">1F</td>
+									<td class="py-2 text-center align-middle">102</td>
+									<td class="py-2 text-center align-middle">289.312</td>
+									<td class="py-2 text-center align-middle">289.312</td>
+									<td class="py-2 text-right align-middle">10,456</td>
+									<td class="py-2 text-right align-middle">1,450</td>
+									<td class="py-2 text-center align-middle">20.12.15</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle">1F</td>
+									<td class="py-2 text-center align-middle">103</td>
+									<td class="py-2 text-center align-middle">289.312</td>
+									<td class="py-2 text-center align-middle">289.312</td>
+									<td class="py-2 text-right align-middle">10,456</td>
+									<td class="py-2 text-right align-middle">1,450</td>
+									<td class="py-2 text-center align-middle">20.12.15</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle">2F</td>
+									<td class="py-2 text-center align-middle">205</td>
+									<td class="py-2 text-center align-middle">289.312</td>
+									<td class="py-2 text-center align-middle">289.312</td>
+									<td class="py-2 text-right align-middle">10,456</td>
+									<td class="py-2 text-right align-middle">1,450</td>
+									<td class="py-2 text-center align-middle">20.12.15</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="px-6 py-6 bg-white mb-4">
+							<div class="d-flex justify-content-between">
+								<h4 class="font-size-h5 mb-4">매매 실거래가 정보</h4>
+							</div>
+							<table class="table table-bordered m-0">
+								<colgroup>
+									<col width="15%">
+									<col width="15%">
+									<col width="20%">
+									<col width="*">
+									<col width="20%">
+								</colgroup>
+								<thead>
+								<tr>
+									<th class="py-2 text-center bg-light-secondary align-middle">계약일</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">층</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">거래금액<span class="font-weight-normal">(천원)</span></th>
+									<th class="py-2 text-center bg-light-secondary align-middle">주 용도</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">전용면적<span class="font-weight-normal">(㎡)</span></th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td class="py-2 text-center align-middle">20.12.15</td>
+									<td class="py-2 text-center align-middle">1F</td>
+									<td class="py-2 text-right align-middle">1,450</td>
+									<td class="py-2 text-center align-middle">제 2종 근린 생활 시설</td>
+									<td class="py-2 text-center align-middle">10,289.312</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle">20.12.15</td>
+									<td class="py-2 text-center align-middle">1F</td>
+									<td class="py-2 text-right align-middle">1,450</td>
+									<td class="py-2 text-center align-middle">제 2종 근린 생활 시설</td>
+									<td class="py-2 text-center align-middle">10,289.312</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle">20.12.15</td>
+									<td class="py-2 text-center align-middle">1F</td>
+									<td class="py-2 text-right align-middle">1,450</td>
+									<td class="py-2 text-center align-middle">제 2종 근린 생활 시설</td>
+									<td class="py-2 text-center align-middle">10,289.312</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle">20.12.15</td>
+									<td class="py-2 text-center align-middle">1F</td>
+									<td class="py-2 text-right align-middle">1,450</td>
+									<td class="py-2 text-center align-middle">제 2종 근린 생활 시설</td>
+									<td class="py-2 text-center align-middle">10,289.312</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="px-6 py-6 bg-white mb-4 font-size-sm">
+							<p class="text-center">@2020 MABS</p>
+							위의 정보는 시점 기준으로 지속적으로 업데이트 하고 있으나, 변동사항 있을 수 있습니다. 공식적인 자료 등 열람하여 반드시 재확인 바랍니다.<br> MABS에서 제공된 정보를무단으로 사용 할 수 없을 알려드립니다
+						</div>
+					</div>
+					<div class="tab-pane fade" id="kt_tab_pane_1_2_3" role="tabpanel" aria-labelledby="kt_tab_pane_3">
 						<div class="px-6 py-6 bg-white mb-4">
 							<div class="d-flex justify-content-between align-items-center mb-2">
 								<div class="d-flex align-items-center">
 									<h4 class="font-size-h5 m-0">주거인구 & 직장인구</h4>
-									
+
 								</div>
 								<span></span>
 							</div>
@@ -1685,8 +2212,8 @@
 							<div class="mt-4">
 								<div id="chart_1_1"></div>
 							</div>
-							
-						</div>	
+
+						</div>
 						<div class="px-6 py-6 bg-white mb-4">
 							<div class="d-flex justify-content-between align-items-center mb-2">
 								<div class="d-flex align-items-center">
@@ -1699,13 +2226,13 @@
 										</select>
 									</div>
 								</div>
-								
+
 							</div>
 							<div class="mt-4">
 								<div id="chart_5_1"></div>
 							</div>
-							
-						</div>	
+
+						</div>
 						<div class="px-6 py-6 bg-white mb-4">
 							<div class="d-flex justify-content-between align-items-center mb-2">
 								<div class="d-flex align-items-center">
@@ -1725,9 +2252,450 @@
 							</div>
 
 						</div>
-						
-						
-						
+						<div class="px-6 py-6 bg-white mb-4 font-size-sm">
+							<p class="text-center">@2020 MABS</p>
+							위의 정보는 시점 기준으로 지속적으로 업데이트 하고 있으나, 변동사항 있을 수 있습니다. 공식적인 자료 등 열람하여 반드시 재확인 바랍니다.<br> MABS에서 제공된 정보를무단으로 사용 할 수 없을 알려드립니다
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!--end::Content-->
+			<!--begin::Footer-->
+			<div class="flex-column-auto">
+				<div class="d-flex">
+					<!-- 21.01.04 수정 -->
+					<!-- <button class="btn btn-danger btn-square btn-lg btn-block"><i class="flaticon2-copy"></i>복사하기</button> -->
+					<button class="btn btn-danger btn-square btn-lg btn-block mt-0"><i class="flaticon-download"></i>다운로드</button>
+				</div>
+			</div>
+			<!--end::Footer -->
+		</div>
+		<div id="mapPannel1_3" class="map-pannel-actual position-fixed w-600px pb-0 d-none flex-column border map-pannel bg-white">
+			<div class="position-absolute map-pannel-close">
+				<button class="btn btn-square btn-outline-secondary pl-5 pr-4 py-5 bg-white"><i class="flaticon2-cross text-dark"></i></button>
+			</div>
+			<!--begin::Content-->
+			<div class="flex-column-fluid scroll ps bg-light-secondary" data-scroll="true" data-height="600" style="height:600px">
+				<!--begin::Header-->
+				<div class="d-flex align-items-center justify-content-between bg-white pt-6 pb-4 px-6 flex-column-auto">
+					<div class="pb-3">
+						<h3 class="font-size-h3 text-dark mb-1">서울시 강남구 역삼동 735-17</h3>
+						<span class="font-size-lg">복합상가</span>
+					</div>
+					<div class="mt-n1">
+						<!-- 즐겨찾기 전 버튼 -->
+						<button class="btn btn-outline-secondary pl-2 pr-1 py-2" data-toggle="modal" data-target="#favModal"><i class="flaticon-star"></i></button>
+						<!-- 즐겨찾기 후 버튼 -->
+						<!-- <button class="btn btn-danger pl-2 pr-1 py-2" data-toggle="modal" data-target="#favModal"><i class="flaticon-star text-white"></i></button> -->
+					</div>
+				</div>
+				<div class="d-flex justify-content-between bg-white">
+					<div class="basic-info">
+						<h4 class="font-size-h5 mb-4">기본정보</h4>
+						<ul>
+							<li>
+								<label>사용승인일</label>
+								<strong>2020.03.11</strong>
+							</li>
+							<li>
+								<label>건축규모</label>
+								<strong>지상 3층 / 지하 1층</strong>
+							</li>
+							<li>
+								<label>주용도</label>
+								<strong>제 2종 근린 생활 시설</strong>
+							</li>
+						</ul>
+					</div>
+<!--					<div class="blue-print">-->
+<!--						<h4 class="font-size-h5 mb-4">평면도 및 조감도</h4>-->
+<!--						<div class="d-flex">-->
+<!--							<div class="img-wrap border d-flex align-items-center justify-content-center">-->
+<!--								<img src="assets/media/sample.jpg" width="180" height="130" alt="">-->
+<!--							</div>-->
+<!--							<div class="img-wrap border d-flex align-items-center justify-content-center position-relative ml-1 cursor-pointer" data-toggle="modal" data-target="#exampleModal">-->
+<!--								<img src="assets/media/sample.jpg" width="180" height="130" alt="">-->
+<!--								<div class="d-flex justify-content-center align-items-center bg-dark-o-50 position-absolute w-100 h-100">-->
+<!--									<span class="text-white font-size-h1 font-weight-bold">+ 5</span>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+				</div>
+				<ul class="nav nav-tabs nav-tabs-line nav-justified nav-tabs-line-2x nav-tabs-line-danger border-top bg-white sticky">
+					<li class="nav-item border-right">
+						<a class="nav-link active justify-content-center m-0 font-size-h6" data-toggle="tab" href="#kt_tab_pane_1_3_1">개요</a>
+					</li>
+					<li class="nav-item border-right">
+						<a class="nav-link justify-content-center m-0 font-size-h6" data-toggle="tab" href="#kt_tab_pane_1_3_2">가격</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link justify-content-center m-0 font-size-h6" data-toggle="tab" href="#kt_tab_pane_1_3_3">상권분석</a>
+					</li>
+				</ul>
+				<!--end::Header-->
+				<div class="tab-content" id="myTabContent">
+					<div class="tab-pane fade show active" id="kt_tab_pane_1_3_1" role="tabpanel" aria-labelledby="kt_tab_pane_1">
+						<div class="px-6 py-6 bg-white mb-4">
+							<h4 class="font-size-h5 mb-4">기본정보</h4>
+							<table class="table table-bordered m-0">
+								<colgroup>
+									<col width="120px">
+									<col width="auto">
+								</colgroup>
+								<tbody>
+								<tr>
+									<td class="bg-light-secondary py-2">대지면적</td>
+									<td class="py-2">8,297 ㎡ (2,514 평)</td>
+								</tr>
+								<tr>
+									<td class="bg-light-secondary py-2">건축면적</td>
+									<td class="py-2">3,510 ㎡ (1,063 평)</td>
+								</tr>
+								<tr>
+									<td class="bg-light-secondary py-2">연면적</td>
+									<td class="py-2">약 59,868 ㎡ (18,141 평)</td>
+								</tr>
+								<tr>
+									<td class="bg-light-secondary py-2">건폐율</td>
+									<td class="py-2">42.32 %</td>
+								</tr>
+								<tr>
+									<td class="bg-light-secondary py-2">용적률</td>
+									<td class="py-2">59,868 %</td>
+								</tr>
+								<tr>
+									<td class="bg-light-secondary py-2">주차</td>
+									<td class="px-0 py-0">
+										<table class="table-detail">
+											<thead>
+											<tr>
+												<th>구분</th>
+												<th>옥내</th>
+												<th>옥외</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+												<th>자주식</th>
+												<td>403대</td>
+												<td>55대</td>
+											</tr>
+											<tr>
+												<th>기계식</th>
+												<td>0대</td>
+												<td>0대</td>
+											</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td class="bg-light-secondary py-2">승강기</td>
+									<td class="py-2">승용 : 6 기 / 비상용 : 2 기</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="px-6 py-6 bg-white mb-4">
+							<div class="d-flex justify-content-between">
+								<h4 class="font-size-h5 mb-4">건출물 현황</h4>
+							</div>
+							<table class="table table-bordered m-0">
+								<colgroup>
+									<col width="20%">
+									<col width="*">
+									<col width="30%">
+								</colgroup>
+								<thead>
+								<tr>
+									<th class="py-2 text-center bg-light-secondary align-middle">구분</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">주 용도</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">면적<span class="font-weight-normal">(㎡ / 평)</span></th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td class="py-2 text-center align-middle bg-light-secondary">B1</td>
+									<td class="py-2 text-center align-middle">일반 공장</td>
+									<td class="py-2 text-center align-middle">109/33</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle bg-light-secondary">1F</td>
+									<td class="py-2 text-center align-middle">기타 공장</td>
+									<td class="py-2 text-center align-middle">109/33</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle bg-light-secondary">2F</td>
+									<td class="py-2 text-center align-middle">제 2종 근린 생활 시설</td>
+									<td class="py-2 text-center align-middle">109/33</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="px-6 py-6 bg-white mb-4 font-size-sm">
+							<p class="text-center">@2020 MABS</p>
+							위의 정보는 시점 기준으로 지속적으로 업데이트 하고 있으나, 변동사항 있을 수 있습니다. 공식적인 자료 등 열람하여 반드시 재확인 바랍니다.<br> MABS에서 제공된 정보를무단으로 사용 할 수 없을 알려드립니다
+						</div>
+					</div>
+					<div class="tab-pane fade" id="kt_tab_pane_1_3_2" role="tabpanel" aria-labelledby="kt_tab_pane_2">
+						<div class="px-6 py-6 bg-white mb-4">
+							<div class="d-flex justify-content-between">
+								<h4 class="font-size-h5 mb-4">임대 매물 정보</h4>
+							</div>
+							<table class="table table-bordered m-0">
+								<colgroup>
+									<col width="8%">
+									<col width="8%">
+									<col width="*">
+									<col width="*">
+									<col width="18%">
+									<col width="15%">
+									<col width="15%">
+								</colgroup>
+								<thead>
+								<tr>
+									<th class="py-2 text-center bg-light-secondary align-middle">층</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">호</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">계약면적<span class="font-weight-normal">(㎡)</span></th>
+									<th class="py-2 text-center bg-light-secondary align-middle">전용면적<span class="font-weight-normal">(㎡)</span></th>
+									<th class="py-2 text-center bg-light-secondary align-middle">보증금<span class="font-weight-normal">(천원)</span></th>
+									<th class="py-2 text-center bg-light-secondary align-middle">월세<span class="font-weight-normal">(천원)</span></th>
+									<th class="py-2 text-center bg-light-secondary align-middle">등록일</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td class="py-2 text-center align-middle">1F</td>
+									<td class="py-2 text-center align-middle">101</td>
+									<td class="py-2 text-center align-middle">289.312</td>
+									<td class="py-2 text-center align-middle">289.312</td>
+									<td class="py-2 text-right align-middle">10,456</td>
+									<td class="py-2 text-right align-middle">1,450</td>
+									<td class="py-2 text-center align-middle">20.12.15</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle">1F</td>
+									<td class="py-2 text-center align-middle">102</td>
+									<td class="py-2 text-center align-middle">289.312</td>
+									<td class="py-2 text-center align-middle">289.312</td>
+									<td class="py-2 text-right align-middle">10,456</td>
+									<td class="py-2 text-right align-middle">1,450</td>
+									<td class="py-2 text-center align-middle">20.12.15</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle">1F</td>
+									<td class="py-2 text-center align-middle">103</td>
+									<td class="py-2 text-center align-middle">289.312</td>
+									<td class="py-2 text-center align-middle">289.312</td>
+									<td class="py-2 text-right align-middle">10,456</td>
+									<td class="py-2 text-right align-middle">1,450</td>
+									<td class="py-2 text-center align-middle">20.12.15</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle">2F</td>
+									<td class="py-2 text-center align-middle">205</td>
+									<td class="py-2 text-center align-middle">289.312</td>
+									<td class="py-2 text-center align-middle">289.312</td>
+									<td class="py-2 text-right align-middle">10,456</td>
+									<td class="py-2 text-right align-middle">1,450</td>
+									<td class="py-2 text-center align-middle">20.12.15</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="px-6 py-6 bg-white mb-4">
+							<div class="d-flex justify-content-between">
+								<h4 class="font-size-h5 mb-4">매매 실거래가 정보</h4>
+							</div>
+							<table class="table table-bordered m-0">
+								<colgroup>
+									<col width="15%">
+									<col width="15%">
+									<col width="20%">
+									<col width="*">
+									<col width="20%">
+								</colgroup>
+								<thead>
+								<tr>
+									<th class="py-2 text-center bg-light-secondary align-middle">계약일</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">층</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">거래금액<span class="font-weight-normal">(천원)</span></th>
+									<th class="py-2 text-center bg-light-secondary align-middle">주 용도</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">전용면적<span class="font-weight-normal">(㎡)</span></th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td class="py-2 text-center align-middle">20.12.15</td>
+									<td class="py-2 text-center align-middle">1F</td>
+									<td class="py-2 text-right align-middle">1,450</td>
+									<td class="py-2 text-center align-middle">제 2종 근린 생활 시설</td>
+									<td class="py-2 text-center align-middle">10,289.312</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle">20.12.15</td>
+									<td class="py-2 text-center align-middle">1F</td>
+									<td class="py-2 text-right align-middle">1,450</td>
+									<td class="py-2 text-center align-middle">제 2종 근린 생활 시설</td>
+									<td class="py-2 text-center align-middle">10,289.312</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle">20.12.15</td>
+									<td class="py-2 text-center align-middle">1F</td>
+									<td class="py-2 text-right align-middle">1,450</td>
+									<td class="py-2 text-center align-middle">제 2종 근린 생활 시설</td>
+									<td class="py-2 text-center align-middle">10,289.312</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle">20.12.15</td>
+									<td class="py-2 text-center align-middle">1F</td>
+									<td class="py-2 text-right align-middle">1,450</td>
+									<td class="py-2 text-center align-middle">제 2종 근린 생활 시설</td>
+									<td class="py-2 text-center align-middle">10,289.312</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="px-6 py-6 bg-white mb-4 font-size-sm">
+							<p class="text-center">@2020 MABS</p>
+							위의 정보는 시점 기준으로 지속적으로 업데이트 하고 있으나, 변동사항 있을 수 있습니다. 공식적인 자료 등 열람하여 반드시 재확인 바랍니다.<br> MABS에서 제공된 정보를무단으로 사용 할 수 없을 알려드립니다
+						</div>
+					</div>
+					<div class="tab-pane fade" id="kt_tab_pane_1_3_3" role="tabpanel" aria-labelledby="kt_tab_pane_3">
+						<div class="px-6 py-6 bg-white mb-4">
+							<div class="d-flex justify-content-between align-items-center mb-2">
+								<div class="d-flex align-items-center">
+									<h4 class="font-size-h5 m-0">주거인구 & 직장인구</h4>
+
+								</div>
+								<span></span>
+							</div>
+
+							<div class="d-flex mt-4">
+								<div class="w-50 mr-1">
+									<div class="text-center mb-2">
+										<div class="d-inline-block border rounded-xl py-2 px-4">
+											남여 주거인구
+										</div>
+									</div>
+									<div class="">
+										<div id="chart_6_1"></div>
+									</div>
+								</div>
+								<div class="w-50 ml-1">
+									<div class="text-center mb-2">
+										<div class="d-inline-block border rounded-xl py-2 px-4">
+											남여 직장인구
+										</div>
+									</div>
+									<div class="">
+										<div id="chart_6_2"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="px-6 py-6 bg-white mb-4">
+							<div class="d-flex justify-content-between align-items-center mb-2">
+								<div class="d-flex align-items-center">
+									<h4 class="font-size-h5 m-0">평균임대료</h4>
+									<div class="w-80px mx-2">
+										<select class="form-control selectpicker">
+											<option value="1">상가유형</option>
+										</select>
+									</div>
+									<div class="w-80px mx-2">
+										<select class="form-control selectpicker">
+											<option value="">㎡ </option>
+											<option value="3.3㎡ ">3.3㎡</option>
+										</select>
+									</div>
+									<div class="w-80px mx-2">
+										<select class="form-control selectpicker">
+											<option value="전용면적">전용면적</option>
+											<option value="계약면적">계약면적</option>
+										</select>
+									</div>
+								</div>
+								<span>단위 : 천원</span>
+							</div>
+							<div class="mt-4">
+								<div id="chart_3_1"></div>
+							</div>
+
+						</div>
+						<div class="px-6 py-6 bg-white mb-4">
+							<div class="d-flex justify-content-between align-items-center mb-2">
+								<div class="d-flex align-items-center">
+									<h4 class="font-size-h5 m-0">평균분양가</h4>
+									<div class="w-80px mx-2">
+										<select class="form-control selectpicker">
+											<option value="1">상가유형</option>
+										</select>
+									</div>
+									<div class="w-80px mx-2">
+										<select class="form-control selectpicker">
+											<option value="">㎡ </option>
+											<option value="3.3㎡ ">3.3㎡</option>
+										</select>
+									</div>
+									<div class="w-80px mx-2">
+										<select class="form-control selectpicker">
+											<option value="전용면적">전용면적</option>
+											<option value="계약면적">계약면적</option>
+										</select>
+									</div>
+								</div>
+								<span>단위 : 천원</span>
+							</div>
+							<div class="mt-4">
+								<div id="chart_1_1"></div>
+							</div>
+
+						</div>
+						<div class="px-6 py-6 bg-white mb-4">
+							<div class="d-flex justify-content-between align-items-center mb-2">
+								<div class="d-flex align-items-center">
+									<h4 class="font-size-h5 m-0">업종분포</h4>
+									<div class="w-80px mx-2">
+										<select class="form-control selectpicker">
+											<option value="1">시도</option>
+											<option value="2">시군구</option>
+											<option value="3">읍면동</option>
+										</select>
+									</div>
+								</div>
+
+							</div>
+							<div class="mt-4">
+								<div id="chart_5_1"></div>
+							</div>
+
+						</div>
+						<div class="px-6 py-6 bg-white mb-4">
+							<div class="d-flex justify-content-between align-items-center mb-2">
+								<div class="d-flex align-items-center">
+									<h4 class="font-size-h5 m-0">지역매출현황</h4>
+									<div class="w-80px mx-2">
+										<select class="form-control selectpicker">
+											<option value="1">시도</option>
+											<option value="2">시군구</option>
+											<option value="3">읍면동</option>
+										</select>
+									</div>
+								</div>
+								<span>단위 : 천원</span>
+							</div>
+							<div class="mt-4">
+								<div id="chart_3_2"></div>
+							</div>
+
+						</div>
+
+
+
 						<div class="px-6 py-6 bg-white mb-4 font-size-sm">
 							<p class="text-center">@2020 MABS</p>
 							위의 정보는 시점 기준으로 지속적으로 업데이트 하고 있으나, 변동사항 있을 수 있습니다. 공식적인 자료 등 열람하여 반드시 재확인 바랍니다.<br> MABS에서 제공된 정보를무단으로 사용 할 수 없을 알려드립니다
@@ -1749,35 +2717,12 @@
 		</div>
 		<!--end::Detail Panel-->
 		<!--begin::Detail Panel 2-->
-		<div id="mapPannel2" class="position-fixed w-600px pb-0 d-none flex-column border map-pannel bg-white">
+		<div id="mapPannel2" class="map-pannel-building position-fixed w-600px pb-0 d-none flex-column border map-pannel bg-white">
 			<div class="position-absolute map-pannel-close" id="mapPannel2Close">
 				<button class="btn btn-square btn-outline-secondary pl-5 pr-4 py-5 bg-white"><i class="flaticon2-cross text-dark"></i></button>
 			</div>
 			<!--begin::Content-->
 			<div class="flex-column-fluid scroll ps bg-light-secondary" data-scroll="true" data-height="600" style="height:600px">
-				<!-- 21.01.04 삭제 , 수정  -->
-				<!--begin::Header-->
-				<!-- <div class="d-flex align-items-center justify-content-between bg-white pt-6 pb-3 px-6 flex-column-auto">
-					<div class="">
-						<h3 class="font-size-h3 text-dark mb-1">서울 강남구 역삼동 831-20</h3>
-						<span class="font-size-lg">상가점포매물</span>
-					</div>
-					<div class="mt-n1">
-
-						<button class="btn btn-outline-secondary pl-2 pr-1 py-2" data-toggle="modal" data-target="#favModal"><i class="flaticon-star"></i></button>
-
-					</div>
-				</div> -->
-				<!-- <div class="d-flex justify-content-between align-items-center bg-white px-6 pb-8 border-bottom border-bottom-secondary">
-					<div class="">
-						<span class="label label-lg label-secondary rounded-0 label-inline">건물</span>
-						<span class="label label-lg label-outline-secondary rounded-0 label-inline ml-1">복합상가</span>
-					</div>
-					<div class="text-muted">
-						등록일: 2020.10.15<br>수정일: 2020.10.15
-					</div>
-				</div> -->
-				<!--end::Header-->
 				<!--begin::Header-->
 				<div class="d-flex align-items-center justify-content-between bg-white pt-6 pb-4 px-6 flex-column-auto">
 					<div class="pb-3">
@@ -1791,31 +2736,31 @@
 						<!-- <button class="btn btn-danger pl-2 pr-1 py-2" data-toggle="modal" data-target="#favModal"><i class="flaticon-star text-white"></i></button> -->
 					</div>
 				</div>
-				<div class="d-flex justify-content-between bg-white px-6 pb-4">
-					<div class="d-flex flex-column justify-content-between">
-						<div>
-							<div>
-								<span class="label label-lg label-success rounded-0 label-inline">분양완료</span>
-								<span class="label label-lg label-outline-secondary rounded-0 label-inline ml-1">복합상가</span>
-							</div>
-							<div class="mt-3">
-								<span class="label label-lg label-warning rounded-0 label-inline">임대료</span>
-								<span class="label label-lg label-outline-secondary rounded-0 label-inline ml-1">단지내상가</span>
-							</div>
-							<div class="mt-3">
-								<span class="label label-lg label-primary rounded-0 label-inline">실거래</span>
-								<span class="label label-lg label-outline-secondary rounded-0 label-inline ml-1">단지내상가</span>
-							</div>
-						</div>
-						<div class="text-muted mb-3">
-							등록일: 2020.10.15<br>수정일: 2020.10.15
-						</div>
+				<div class="d-flex justify-content-between bg-white">
+					<div class="basic-info">
+						<h4 class="font-size-h5 mb-4">기본정보</h4>
+						<ul>
+							<li>
+								<label>사용승인일</label>
+								<strong>2020.03.11</strong>
+							</li>
+							<li>
+								<label>건축규모</label>
+								<strong>지상 3층 / 지하 1층</strong>
+							</li>
+							<li>
+								<label>주용도</label>
+								<strong>제 2종 근린 생활 시설</strong>
+							</li>
+						</ul>
 					</div>
-					<div class="px-6 bg-white mb-4">
+					<div class="blue-print">
 						<h4 class="font-size-h5 mb-4">평면도 및 조감도</h4>
 						<div class="d-flex">
-							<div class="border h-130px w-180px d-flex align-items-center justify-content-center"><img src="assets/media/sample.jpg" width="180" height="130" alt=""></div>
-							<div class="border h-130px w-180px d-flex align-items-center justify-content-center position-relative ml-1 cursor-pointer" data-toggle="modal" data-target="#exampleModal">
+							<div class="img-wrap border d-flex align-items-center justify-content-center">
+								<img src="assets/media/sample.jpg" width="180" height="130" alt="">
+							</div>
+							<div class="img-wrap border d-flex align-items-center justify-content-center position-relative ml-1 cursor-pointer" data-toggle="modal" data-target="#exampleModal">
 								<img src="assets/media/sample.jpg" width="180" height="130" alt="">
 								<div class="d-flex justify-content-center align-items-center bg-dark-o-50 position-absolute w-100 h-100">
 									<span class="text-white font-size-h1 font-weight-bold">+ 5</span>
@@ -1838,15 +2783,6 @@
 				<div class="tab-content" id="myTabContent3">
 					<div class="tab-pane fade show active" id="kt2_tab_pane_1" role="tabpanel" aria-labelledby="kt2_tab_pane_1">
 						<div class="px-6 py-6 bg-white mb-4">
-							<div class="d-flex">
-								<div class="owl-carousel owl-theme">
-									<div class="item"><img src="assets/media/stock-600x400/img-1.jpg" alt=""></div>
-									<div class="item"><img src="assets/media/stock-600x400/img-2.jpg" alt=""></div>
-									<div class="item"><img src="assets/media/stock-600x400/img-3.jpg" alt=""></div>
-								</div>
-							</div>
-						</div>	
-						<div class="px-6 py-6 bg-white mb-4">
 							<h4 class="font-size-h5 mb-4">기본정보</h4>
 							<table class="table table-bordered m-0">
 								<colgroup>
@@ -1854,82 +2790,196 @@
 									<col style="width:auto">
 								</colgroup>
 								<tbody>
-									<tr>
-										<td class="bg-light-secondary py-2">사업명</td>
-										<td class="py-2">역삼푸르지오시티</td>
-									</tr>
-									<tr>
-										<td class="bg-light-secondary py-2">대지위치</td>
-										<td class="py-2">서울특별시 강남구 역삼동 735-17 1층</td>
-									</tr>
-									<tr>
-										<td class="bg-light-secondary py-2">대지면적</td>
-										<td class="py-2">약1,695.88(1028평)</td>
-									</tr>
-									<tr>
-										<td class="bg-light-secondary py-2">연면적</td>
-										<td class="py-2">약15438.09(4670평)</td>
-									</tr>
-									<tr>
-										<td class="bg-light-secondary py-2">주용도</td>
-										<td class="py-2">제 2종 근린생활시설</td>
-									</tr>
-									<tr>
-										<td class="bg-light-secondary py-2">규모</td>
-										<td class="py-2">지상 2층 / 지하 1층 </td>
-									</tr>
-									<tr>
-										<td class="bg-light-secondary py-2">건페/용적율</td>
-										<td class="py-2">38.98%/79.95%</td>
-									</tr>
-									<tr>
-										<td class="bg-light-secondary py-2">주차장/승강기</td>
-										<td class="py-2">4대/없음</td>
-									</tr>
+								<tr>
+									<td class="bg-light-secondary py-2">상가명</td>
+									<td class="py-2">역삼푸르지오시티</td>
+								</tr>
+								<tr>
+									<td class="bg-light-secondary py-2">대지위치</td>
+									<td class="py-2">서울특별시 강남구 역삼동 735-17 1층</td>
+								</tr>
+								<tr>
+									<td class="bg-light-secondary py-2">대지면적</td>
+									<td class="py-2">약1,695.88(1028평)</td>
+								</tr>
+								<tr>
+									<td class="bg-light-secondary py-2">연면적</td>
+									<td class="py-2">약15438.09(4670평)</td>
+								</tr>
+								<tr>
+									<td class="bg-light-secondary py-2">주용도</td>
+									<td class="py-2">제 2종 근린생활시설</td>
+								</tr>
+								<tr>
+									<td class="bg-light-secondary py-2">건축규모</td>
+									<td class="py-2">지상 2층 / 지하 1층 </td>
+								</tr>
+<!--								<tr>-->
+<!--									<td class="bg-light-secondary py-2">건페/용적율</td>-->
+<!--									<td class="py-2">38.98%/79.95%</td>-->
+<!--								</tr>-->
+								<tr>
+									<td class="bg-light-secondary py-2">주차장/승강기</td>
+									<td class="py-2">4대/없음</td>
+								</tr>
 								</tbody>
 							</table>
 						</div>
 						<div class="px-6 py-6 bg-white mb-4">
 							<div class="d-flex justify-content-between">
-								<h4 class="font-size-h5 mb-4">상가연면적</h4>
-								<span>단위 : 천원</span>
+								<h4 class="font-size-h5 mb-4">상가면적</h4>
 							</div>
 							<table class="table table-bordered m-0">
 								<colgroup>
-									<col style="width:20%">
-									<col style="width:auto">
-									<col style="width:20%">
-									<col style="width:20%">
+									<col width="20%">
+									<col width="*">
+									<col width="20%">
+									<col width="20%">
 								</colgroup>
 								<thead>
 									<tr>
 										<th class="py-2 text-center bg-light-secondary align-middle">구분</th>
-										<th class="py-2 text-center bg-light-secondary align-middle">전용면적</th>
-										<th class="py-2 text-center bg-light-secondary align-middle">분양면적</th>
+										<th class="py-2 text-center bg-light-secondary align-middle">전용면적<span class="font-weight-normal">(㎡)</span></th>
+										<th class="py-2 text-center bg-light-secondary align-middle">분양면적<span class="font-weight-normal">(㎡)</span></th>
 										<th class="py-2 text-center bg-light-secondary align-middle">전용율</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td class="py-2 text-center align-middle bg-light-secondary">B1</td>
-										<td class="py-2 text-center align-middle">10,289.312(㎡)</td>
-										<td class="py-2 text-center align-middle">10,289.312(㎡)</td>
+										<td class="py-2 text-center align-middle">10,289.312</td>
+										<td class="py-2 text-center align-middle">10,289.312</td>
 										<td class="py-2 text-center align-middle"></td>
 									</tr>
 									<tr>
 										<td class="py-2 text-center align-middle bg-light-secondary">1F</td>
-										<td class="py-2 text-center align-middle">10,289.312(㎡)</td>
-										<td class="py-2 text-center align-middle">10,289.312(㎡)</td>
+										<td class="py-2 text-center align-middle">10,289.312</td>
+										<td class="py-2 text-center align-middle">10,289.312</td>
 										<td class="py-2 text-center align-middle"></td>
 									</tr>
 									<tr>
 										<td class="py-2 text-center align-middle bg-light-secondary">2F</td>
-										<td class="py-2 text-center align-middle">10,289.312(㎡)</td>
-										<td class="py-2 text-center align-middle">10,289.312(㎡)</td>
+										<td class="py-2 text-center align-middle">10,289.312</td>
+										<td class="py-2 text-center align-middle">10,289.312</td>
 										<td class="py-2 text-center align-middle"></td>
 									</tr>
 								</tbody>
 							</table>
+						</div>
+						<div class="px-6 py-6 bg-white mb-4">
+							<div class="d-flex justify-content-between">
+								<h4 class="font-size-h5 mb-4">물건현황</h4>
+							</div>
+							<table class="table table-bordered m-0">
+								<colgroup>
+									<col width="20%">
+									<col width="20%">
+									<col width="*">
+									<col width="20%">
+								</colgroup>
+								<thead>
+								<tr>
+									<th class="py-2 text-center bg-light-secondary align-middle">층</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">용도</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">구조</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">면적<span class="font-weight-normal">(㎡ / 평)</span></th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td class="py-2 text-center align-middle bg-light-secondary">지상 4</td>
+									<td class="py-2 text-center align-middle">도서관</td>
+									<td class="py-2 text-center align-middle">철근 콘크리트 구조</td>
+									<td class="py-2 text-center align-middle">561 평</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle bg-light-secondary">지상 3</td>
+									<td class="py-2 text-center align-middle">도서관</td>
+									<td class="py-2 text-center align-middle">철근 콘크리트 구조</td>
+									<td class="py-2 text-center align-middle">503 평</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle bg-light-secondary">지상 2</td>
+									<td class="py-2 text-center align-middle">도서관</td>
+									<td class="py-2 text-center align-middle">철근 콘크리트 구조</td>
+									<td class="py-2 text-center align-middle">416 평</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle bg-light-secondary">지상 1</td>
+									<td class="py-2 text-center align-middle">휴게음식점</td>
+									<td class="py-2 text-center align-middle">철근 콘크리트 구조</td>
+									<td class="py-2 text-center align-middle">485 평</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle bg-light-secondary">지상 1</td>
+									<td class="py-2 text-center align-middle">도서관</td>
+									<td class="py-2 text-center align-middle">철근 콘크리트 구조</td>
+									<td class="py-2 text-center align-middle">22 평</td>
+								</tr>
+								</tbody>
+							</table>
+							<button class="btn btn-gray btn-block">더보기 9개</button>
+						</div>
+						<div class="px-6 py-6 bg-white mb-4">
+							<div class="d-flex justify-content-between">
+								<h4 class="font-size-h5 mb-4">상가 업소 정보</h4>
+							</div>
+							<table class="table table-bordered m-0">
+								<colgroup>
+									<col width="*">
+									<col width="12%">
+									<col width="20%">
+									<col width="22%">
+									<col width="25%">
+								</colgroup>
+								<thead>
+								<tr>
+									<th class="py-2 text-center bg-light-secondary align-middle">상가업소명</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">층</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">업종 대분류</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">업종 중분류</th>
+									<th class="py-2 text-center bg-light-secondary align-middle">업종 소분류</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td class="py-2 text-center align-middle">삼성전자서초사옥</td>
+									<td class="py-2 text-center align-middle">1층</td>
+									<td class="py-2 text-center align-middle">소매</td>
+									<td class="py-2 text-center align-middle">가전제품소매</td>
+									<td class="py-2 text-center align-middle">일반가전제품</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle">리빙룸</td>
+									<td class="py-2 text-center align-middle">2층</td>
+									<td class="py-2 text-center align-middle">소매</td>
+									<td class="py-2 text-center align-middle">선물/팬시/기념품</td>
+									<td class="py-2 text-center align-middle">꽃집/꽃배달</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle">다사랑약국</td>
+									<td class="py-2 text-center align-middle">1층</td>
+									<td class="py-2 text-center align-middle">의료</td>
+									<td class="py-2 text-center align-middle">약국/한약방</td>
+									<td class="py-2 text-center align-middle">약국</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle">커피빈</td>
+									<td class="py-2 text-center align-middle">1층</td>
+									<td class="py-2 text-center align-middle">음식</td>
+									<td class="py-2 text-center align-middle">커피점/카페</td>
+									<td class="py-2 text-center align-middle">커피전문점/카페/다방</td>
+								</tr>
+								<tr>
+									<td class="py-2 text-center align-middle">삼성모바일샵</td>
+									<td class="py-2 text-center align-middle">44층</td>
+									<td class="py-2 text-center align-middle">소매</td>
+									<td class="py-2 text-center align-middle">가전제품소매</td>
+									<td class="py-2 text-center align-middle">일반가전제품</td>
+								</tr>
+								</tbody>
+							</table>
+							<button class="btn btn-gray btn-block">더보기 16개</button>
 						</div>
 						<div class="px-6 py-6 bg-white mb-4 font-size-sm">
 							<p class="text-center">@2020 MABS</p>
@@ -1942,7 +2992,7 @@
 							<div class="d-flex justify-content-between align-items-center mb-2">
 								<div class="d-flex align-items-center">
 									<h4 class="font-size-h5 m-0">주거인구 & 직장인구</h4>
-									
+
 								</div>
 								<span></span>
 							</div>
@@ -2026,8 +3076,8 @@
 							<div class="mt-4">
 								<div id="chart2_1_1"></div>
 							</div>
-							
-						</div>	
+
+						</div>
 						<div class="px-6 py-6 bg-white mb-4">
 							<div class="d-flex justify-content-between align-items-center mb-2">
 								<div class="d-flex align-items-center">
@@ -2040,13 +3090,13 @@
 										</select>
 									</div>
 								</div>
-								
+
 							</div>
 							<div class="mt-4">
 								<div id="chart2_5_1"></div>
 							</div>
-							
-						</div>	
+
+						</div>
 						<div class="px-6 py-6 bg-white mb-4">
 							<div class="d-flex justify-content-between align-items-center mb-2">
 								<div class="d-flex align-items-center">
@@ -2066,9 +3116,9 @@
 							</div>
 
 						</div>
-						
-						
-						
+
+
+
 						<div class="px-6 py-6 bg-white mb-4 font-size-sm">
 							<p class="text-center">@2020 MABS</p>
 							위의 정보는 시점 기준으로 지속적으로 업데이트 하고 있으나, 변동사항 있을 수 있습니다. 공식적인 자료 등 열람하여 반드시 재확인 바랍니다.<br> MABS에서 제공된 정보를무단으로 사용 할 수 없을 알려드립니다
@@ -2076,7 +3126,7 @@
 					</div>
 				</div>
 				<!-- E: 21.01.04 tab컨텐츠 추가 -->
-				
+
 			</div>
 			<!--end::Content-->
 			<!--begin::Footer-->
@@ -2090,7 +3140,7 @@
 			<!--end::Footer -->
 		</div>
 		<!--end::Detail Panel 2-->
-  
+
 		<!-- Modal -->
 		<div class="modal fade" id="exampleModal"  data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered modal-lg">
@@ -2124,7 +3174,7 @@
 			</span>
 		</div>
 		<!--end::Scrolltop-->
-		
+
 		<!--begin::Global Config(global config for global JS scripts)-->
 		<!--end::Global Config-->
 		<!--begin::Global Theme Bundle(used by all pages)-->
@@ -2137,6 +3187,7 @@
 		<script src="assets/js/pages/gis/buildingcharts.js"></script>
 		<script src="assets/plugins/custom/owlcarousel/owl.carousel.min.js"></script>
 		<script src="assets/js/pages/my-script.js"></script>
+		<script src="assets/js/pages/gis/gis_building.js"></script>
 		<script>
 			jQuery(document).ready(function() {
 				Swal.fire({
@@ -2158,7 +3209,20 @@
 					dots: true,
 					navText : ['<i class="la la-angle-left" aria-hidden="true"></i>','<i class="la la-angle-right" aria-hidden="true"></i>']
 				});
-			});
+
+
+				chart_map_sale_01.render();
+				chart_map_sale_02.render();
+				chart_map_sale_03.render();
+				chart_map_sale_04.render();
+				chart_map_sale_05.render();
+				chart_map_sale_06.render();
+
+				$('.radio-years').find('li').click(function(){
+					$(this).siblings('li').removeClass('on')
+					$(this).addClass('on');
+				})
+			})
 		</script>
 		<!--end::Page Scripts-->
 	</body>

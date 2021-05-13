@@ -27,6 +27,7 @@
 		<link href="assets/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/common.css" rel="stylesheet" type="text/css" />
 		<!--end::Layout Themes-->
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
 	</head>
@@ -133,7 +134,7 @@
 													<span class="menu-text">임대료변동율</span>
 												</a>
 											</li>
-											
+
 											<li class="menu-item" aria-haspopup="true">
 												<a href="dashboard/industryInfo.html" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
@@ -209,13 +210,13 @@
 													<span class="menu-text">비밀번호수정</span>
 												</a>
 											</li>
-											
+
 											<li class="menu-item menu-item-active" aria-haspopup="true">
 												<a href="setting/saveInfo.html" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
 													</i>
-													<span class="menu-text">저장한정보</span>
+													<span class="menu-text">북마크</span>
 												</a>
 											</li>
 											<li class="menu-item" aria-haspopup="true">
@@ -336,72 +337,192 @@
                                     <!--begin::Header-->
                                     <div class="card-header align-items-center border-bottom">
                                         <h3 class="card-title align-items-center">
-                                            <span class="font-weight-bolder text-dark">저장한 정보</span>
+                                            <span class="font-weight-bolder text-dark">북마크</span>
                                         </h3>
-                                        <!-- 201215 추가 -->
                                         <div class="card-toolbar">
 											<div class="d-flex align-items-center">
 												<i class="flaticon-buildings text-dark mb-1"></i>
 												<i class="ki ki-arrow-next icon-sm mx-2"></i>
-												저장한 정보
+												북마크
 											</div>
                                         </div>
                                     </div>
-                                    <!--end::Header-->
-                                    <!--begin::Body-->
                                     <div class="card-body pt-9">
                                         <div class="bg-light px-6 py-6 font-size-lg line-height-xl mb-6">
-                                            - GIS에서 북마크한 정보리스트입니다.<br>
-                                            - 북마크를 클릭하면 해제 됩니다.
-                                        </div>
-                                        <!--begin: Section-->
-										<div class="mb-5">
-                                            <!--begin: Item-->
-                                            <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center bg-light rounded p-5 mb-5">
-                                                <div class="pb-2 pb-md-0">
-                                                    <span class="label label-lg label-success rounded-sm label-inline">분양완료</span>
-                                                    <span class="label label-lg label-outline-dark rounded-sm label-inline mx-md-2 text-break">복합상가</span>
-                                                </div>
-                                                <div class="d-flex flex-grow-1 ml-md-6 pb-1 pb-md-0">
-                                                    <span class="font-weight-bold text-dark-75 font-size-lg mb-1">
-                                                        역삼 푸르지오 시티
-                                                        <span class="font-weight-normal ml-md-6">서울특별시 강남구 역삼동 735-17 1층</span>
-                                                    </span>
-                                                </div>
-                                                <button class="btn btn-danger pl-2 pr-1 py-2 ml-md-3"><i class="flaticon-star text-white"></i></button>
-                                            </div>
-                                            <!--end: Item-->
-                                            <!--begin: Item-->
-                                            <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center bg-light rounded p-5 mb-5">
-                                                <div class="pb-2 pb-md-0">
-                                                    <span class="label label-lg label-success rounded-sm label-inline">분양완료</span>
-                                                    <span class="label label-lg label-outline-dark rounded-sm label-inline mx-md-2 text-break">복합상가</span>
-                                                </div>
-                                                <div class="d-flex flex-grow-1 ml-md-6 pb-1 pb-md-0">
-                                                    <span class="font-weight-bold text-dark-75 font-size-lg mb-1">
-                                                        역삼 푸르지오 시티
-                                                        <span class="font-weight-normal ml-md-6">서울특별시 강남구 역삼동 735-17 1층</span>
-                                                    </span>
-                                                </div>
-                                                <button class="btn btn-danger pl-2 pr-1 py-2 ml-md-3"><i class="flaticon-star text-white"></i></button>
-                                            </div>
-                                            <!--end: Item-->
-                                            <!--begin: Item-->
-                                            <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center bg-light rounded p-5 mb-5">
-                                                <div class="pb-2 pb-md-0">
-                                                    <span class="label label-lg label-success rounded-sm label-inline">분양완료</span>
-                                                    <span class="label label-lg label-outline-dark rounded-sm label-inline mx-md-2 text-break">복합상가</span>
-                                                </div>
-                                                <div class="d-flex flex-grow-1 ml-md-6 pb-1 pb-md-0">
-                                                    <span class="font-weight-bold text-dark-75 font-size-lg mb-1">
-                                                        역삼 푸르지오 시티
-                                                        <span class="font-weight-normal ml-md-6">서울특별시 강남구 역삼동 735-17 1층</span>
-                                                    </span>
-                                                </div>
-                                                <button class="btn btn-danger pl-2 pr-1 py-2 ml-md-3"><i class="flaticon-star text-white"></i></button>
-                                            </div>
-                                            <!--end: Item-->
-                                        </div>
+                                            - GIS 건물, GIS 블록에서 북마크한 내용들이 보여지는 공간입니다.
+										</div>
+										<ul class="bookmark">
+											<li class="count">총 <span>3</span>건</li>
+                                            <li>
+												<div class="title-wrap">
+													<div class="star">
+														<span class="text-warning"><em class="fa fa-star"></em></span>
+													</div>
+													<div class="name">
+														<span class="font-weight-bold text-dark-75 font-size-lg">역삼 푸르지오 시티</span>
+														<span class="font-weight-normal">GIS 건물</span>
+														<span class="font-weight-normal">서울특별시 강남구 역삼동 735-17 1층</span>
+													</div>
+												</div>
+												<div class="control-wrap">
+													<div class="state">
+														<span class="label label-lg label-success rounded-sm label-inline">분양완료</span>
+														<span class="label label-lg label-outline-dark rounded-sm label-inline mx-md-2 text-break">복합상가</span>
+													</div>
+													<div class="directMove">
+														<a href="#"><span class="font-weight-normal">바로가기 <i class="fas fa-external-link-square-alt"></i></span></a>
+													</div>
+												</div>
+                                            </li>
+											<li>
+												<div class="title-wrap">
+													<div class="star">
+														<span class="text-warning"><em class="fa fa-star"></em></span>
+													</div>
+													<div class="name">
+														<span class="font-weight-bold text-dark-75 font-size-lg mb-1">병점역 주변상권 테스트</span>
+														<span class="font-weight-normal">GIS 블럭</span>
+														<span class="font-weight-normal">경기도 화성시 능동 외 50건</span>
+													</div>
+												</div>
+												<div class="control-wrap">
+<!--													<div class="state">-->
+<!--														<span class="label label-lg label-success rounded-sm label-inline">분양완료</span>-->
+<!--														<span class="label label-lg label-outline-dark rounded-sm label-inline mx-md-2 text-break">복합상가</span>-->
+<!--													</div>-->
+													<div class="directMove">
+														<a href="#"><span class="font-weight-normal">바로가기 <i class="fas fa-external-link-square-alt"></i></span></a>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="title-wrap">
+													<div class="star">
+														<span class="text-warning"><em class="fa fa-star"></em></span>
+													</div>
+													<div class="name">
+														<span class="font-weight-bold text-dark-75 font-size-lg mb-1">444444</span>
+														<span class="font-weight-normal">GIS 건물</span>
+														<span class="font-weight-normal">123</span>
+													</div>
+												</div>
+												<div class="control-wrap">
+													<div class="state">
+														<span class="label label-lg label-success rounded-sm label-inline">분양완료</span>
+														<span class="label label-lg label-outline-dark rounded-sm label-inline mx-md-2 text-break">복합상가</span>
+													</div>
+													<div class="directMove">
+														<a href="#"><span class="font-weight-normal">바로가기 <i class="fas fa-external-link-square-alt"></i></span></a>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="title-wrap">
+													<div class="star">
+														<span class="text-warning"><em class="fa fa-star"></em></span>
+													</div>
+													<div class="name">
+														<span class="font-weight-bold text-dark-75 font-size-lg mb-1">즐겨찾기 테스트입니다.</span>
+														<span class="font-weight-normal">GIS 건물</span>
+														<span class="font-weight-normal">123</span>
+													</div>
+												</div>
+												<div class="control-wrap">
+													<div class="state">
+														<span class="label label-lg label-success rounded-sm label-inline">분양완료</span>
+														<span class="label label-lg label-outline-dark rounded-sm label-inline mx-md-2 text-break">복합상가</span>
+													</div>
+													<div class="directMove">
+														<a href="#"><span class="font-weight-normal">바로가기 <i class="fas fa-external-link-square-alt"></i></span></a>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="title-wrap">
+													<div class="star">
+														<span class="text-warning"><em class="fa fa-star"></em></span>
+													</div>
+													<div class="name">
+														<span class="font-weight-bold text-dark-75 font-size-lg mb-1">빌딩 구리시 교문동</span>
+														<span class="font-weight-normal">GIS 건물</span>
+														<span class="font-weight-normal">123</span>
+													</div>
+												</div>
+												<div class="control-wrap">
+													<div class="state">
+														<span class="label label-lg label-success rounded-sm label-inline">분양완료</span>
+														<span class="label label-lg label-outline-dark rounded-sm label-inline mx-md-2 text-break">복합상가</span>
+													</div>
+													<div class="directMove">
+														<a href="#"><span class="font-weight-normal">바로가기 <i class="fas fa-external-link-square-alt"></i></span></a>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="title-wrap">
+													<div class="star">
+														<span class="text-warning"><em class="fa fa-star"></em></span>
+													</div>
+													<div class="name">
+														<span class="font-weight-bold text-dark-75 font-size-lg mb-1">블록 즐겨찾기 테스트</span>
+														<span class="font-weight-normal">GIS 블럭</span>
+														<span class="font-weight-normal">경기도 화성시 능동 외 50건</span>
+													</div>
+												</div>
+												<div class="control-wrap">
+<!--													<div class="state">-->
+<!--														<span class="label label-lg label-success rounded-sm label-inline">분양완료</span>-->
+<!--														<span class="label label-lg label-outline-dark rounded-sm label-inline mx-md-2 text-break">복합상가</span>-->
+<!--													</div>-->
+													<div class="directMove">
+														<a href="#"><span class="font-weight-normal">바로가기 <i class="fas fa-external-link-square-alt"></i></span></a>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="title-wrap">
+													<div class="star">
+														<span class="text-warning"><em class="fa fa-star"></em></span>
+													</div>
+													<div class="name">
+														<span class="font-weight-bold text-dark-75 font-size-lg mb-1">22</span>
+														<span class="font-weight-normal">GIS 건물</span>
+														<span class="font-weight-normal">123</span>
+													</div>
+												</div>
+												<div class="control-wrap">
+													<div class="state">
+														<span class="label label-lg label-success rounded-sm label-inline">분양완료</span>
+														<span class="label label-lg label-outline-dark rounded-sm label-inline mx-md-2 text-break">복합상가</span>
+													</div>
+													<div class="directMove">
+														<a href="#"><span class="font-weight-normal">바로가기 <i class="fas fa-external-link-square-alt"></i></span></a>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="title-wrap">
+													<div class="star">
+														<span class="text-warning"><em class="fa fa-star"></em></span>
+													</div>
+													<div class="name">
+														<span class="font-weight-bold text-dark-75 font-size-lg mb-1">123</span>
+														<span class="font-weight-normal">GIS 블럭</span>
+														<span class="font-weight-normal">경기도 화성시 능동 외 50건</span>
+													</div>
+												</div>
+												<div class="control-wrap">
+<!--													<div class="state">-->
+<!--														<span class="label label-lg label-success rounded-sm label-inline">분양완료</span>-->
+<!--														<span class="label label-lg label-outline-dark rounded-sm label-inline mx-md-2 text-break">복합상가</span>-->
+<!--													</div>-->
+													<div class="directMove">
+														<a href="#"><span class="font-weight-normal">바로가기 <i class="fas fa-external-link-square-alt"></i></span></a>
+													</div>
+												</div>
+											</li>
+											<!--end: Item-->
+                                        </ul>
 										<!--end: Section-->
                                     </div>
                                     <!--end: Card Body-->
@@ -434,7 +555,7 @@
 			</span>
 		</div>
 		<!--end::Scrolltop-->
-		
+
 		<!--begin::Global Config(global config for global JS scripts)-->
 		<!--end::Global Config-->
 		<!--begin::Global Theme Bundle(used by all pages)-->
@@ -443,7 +564,7 @@
 		<script src="assets/js/scripts.bundle.js"></script>
 		<!--end::Global Theme Bundle-->
 		<!--begin::Page Scripts(used by this page)-->
-		
+
 		<!--end::Page Scripts-->
 	</body>
 	<!--end::Body-->

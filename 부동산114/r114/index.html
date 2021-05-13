@@ -27,8 +27,11 @@
 		<link href="assets/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/common.css" rel="stylesheet" type="text/css" />
 		<!--end::Layout Themes-->
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+		<script src="assets/js/apexcharts.js"></script>
+		<script src="assets/js/pages/dashboard/dashboardChart.js"></script>
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -133,7 +136,7 @@
 													<span class="menu-text">임대료변동율</span>
 												</a>
 											</li>
-											
+
 											<li class="menu-item" aria-haspopup="true">
 												<a href="dashboard/industryInfo.html" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
@@ -209,13 +212,13 @@
 													<span class="menu-text">비밀번호수정</span>
 												</a>
 											</li>
-											
+
 											<li class="menu-item" aria-haspopup="true">
 												<a href="setting/saveInfo.html" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
 													</i>
-													<span class="menu-text">저장한정보</span>
+													<span class="menu-text">북마크</span>
 												</a>
 											</li>
 											<li class="menu-item" aria-haspopup="true">
@@ -324,7 +327,7 @@
 				</div>
 				<!--end::Aside-->
 				<!--begin::Wrapper-->
-				<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+				<div class="d-flex flex-column flex-row-fluid wrapper index" id="kt_wrapper">
 					<!--begin::Content-->
 					<div class="content d-flex flex-column flex-column-fluid pb-5" id="kt_content">
 						<!--begin::Entry-->
@@ -334,20 +337,25 @@
 								<!--begin::Dashboard-->
 								<!--begin::Row-->
 								<div class="row h-100">
-									<div class="col-lg-3 col-xxl-3">
-										<!--begin::Card-->
-										<div class="card card-custom card-stretch card-stretch-third rounded-0 gutter-b">
-											<!--begin::Body-->
-											<div class="card-body d-flex flex-column align-items-center justify-content-center">
-												<div class="d-flex align-items-center justify-content-center mb-5">
-													<img src="assets/media/logos/logo.svg" style="height:28px" alt=""> <span class="text-dark font-size-h1 font-weight-bold ml-2">지역/상권현황</span>
-												</div>
-												<!--begin::Address search-->
-												<div class="dropdown d-inline-block">
+									<div class="col-6">
+										<div class="row">
+											<div class="col-6 dashboardTitle">
+												<h1>MABS <strong>지역현황</strong></h1>
+												<label>
+													<i class="fas fa-map-marker-alt"></i>
+												</label>
+<!--												<div class="address">-->
+<!--													<span>경기도 고양시 일산동구 역삼동-->
+<!--														<i class="fa fa-angle-down"></i>-->
+<!--													</span>-->
+<!--												</div>-->
+												<div class="dropdown">
 													<!--begin::Toggle-->
 													<div class="" data-offset="10px,0px" id="btnSearchAddr">
-														<button class="btn btn-pill border border-info btn-dropdown ps mb-4 p-0" aria-expanded="true">
-															<span class="d-inline-block bg-info font-size-lg text-white px-4 pt-2 pb-3"><i class="flaticon2-pin text-white mr-1"></i> <span>경기도</span> <span>고양시 일산동구</span> <span>역삼동</span> <i class="flaticon2-down text-white icon-sm ml-3"></i></span>
+														<button class="address" aria-expanded="true">
+															<span>경기도 고양시 일산동구 역삼동
+																<i class="fa fa-angle-down"></i>
+															</span>
 														</button>
 													</div>
 													<!--end::Toggle-->
@@ -467,214 +475,133 @@
 												</div>
 												<!--end::Address search-->
 											</div>
-											<!--end: Card Body-->
-											<!--begin: Card footer -->
-											<!-- 201223 : 버튼형식수정 -->
-											<div class="card-footer border-0 bg-gray-200 px-5 py-5 text-right dashboard_bt_box index">
-												<button class="on">㎡</button><button class="">3.3㎡</button>
-											</div>
-											<!--end: Card footer -->
-										</div>
-										<!--end: Card-->
-										<!--begin::Card-->
-										<div class="card card-custom card-stretch card-stretch-third rounded-0 gutter-b">
-											<!--begin::Header-->
-											<div class="card-header align-items-center border-bottom-0 px-5">
-												<h3 class="font-size-lg align-items-center">
-													<span class="font-weight-bolder text-dark">공급동향-점포수</span>
-													<i class="fas fa-question-circle icon-md text-muted ml-1" data-toggle="tooltip" data-placement="right" title="선택지역의 상가 유형별 공급(분양) 동향을 그래프 및 테이블 형식제공"></i>
-												</h3>
-												<div class="card-toolbar"><span class="font-size-sm">(단위 : 점포수)</span></div>
-											</div>
-											<!--end::Header-->
-											<!--begin::Body-->
-											<div class="card-body px-3 py-0 mt-n6">
-												<div id="chart_1"></div>
-											</div>
-											<!--end: Card Body-->
-										</div>
-										<!--end: Card-->
-										<!--begin::Card-->
-										<div class="card card-custom card-stretch card-stretch-third rounded-0 gutter-b">
-											<!--begin::Header-->
-											<div class="card-header align-items-center border-bottom-0 px-5">
-												<h3 class="font-size-lg align-items-center">
-													<span class="font-weight-bolder text-dark">공급동향-연면적</span>
-													<i class="fas fa-question-circle icon-md text-muted ml-1" data-toggle="tooltip" data-placement="right" title="선택지역의 상가 유형별 공급(분양) 동향을 그래프 및 테이블 형식제공"></i>
-												</h3>
-												<div class="card-toolbar"><span class="font-size-sm">(단위 : 연면적(㎡))</span></div>
-											</div>
-											<!--end::Header-->
-											<!--begin::Body-->
-											<div class="card-body px-3 py-0 mt-n6">
-												<div id="chart_7"></div>
-											</div>
-											<!--end: Card Body-->
-										</div>
-										<!--end: Card-->
-									</div>
-									<div class="col-lg-6 col-xxl-6">
-										<div class="row h-100">
-											<div class="col-lg-6 col-xxl-6">
-												<!--begin::Card-->
+											<div class="col-6">
 												<div class="card card-custom card-stretch rounded-0 gutter-b">
-													<!--begin::Header-->
-													<div class="card-header align-items-center border-bottom-0 px-5">
-														<h3 class="font-size-lg align-items-center">
-															<span class="font-weight-bolder text-dark">평균분양가-상가유형</span>
-															<i class="fas fa-question-circle icon-md text-muted ml-1" data-toggle="tooltip" data-placement="right" title="선택지역의 상가 유형별 공급(분양) 동향을 그래프 및 테이블 형식제공"></i>
-														</h3>
-														<div class="card-toolbar"><span class="font-size-sm">(단위: 상가유형, 만원)</span></div>
+													<div class="card-header">
+														<h3>임대료 변동률</h3>
+														<div class="unit">단위면적당 임대료변동율(%)</div>
 													</div>
-													<!--end::Header-->
-													<!--begin::Body-->
-													<div class="card-body px-3 py-0 mt-n6">
-														<div id="chart_2"></div>
+													<div class="card-body">
+<!--														<img src="assets/images/chart_index_01.png">-->
+														<div class="chart" id="chartRentChange"></div>
 													</div>
-													<!--end: Card Body-->
 												</div>
-												<!--end: Card-->
-											</div>
-											<div class="col-lg-6 col-xxl-6">
-												<!--begin::Card-->
-												<div class="card card-custom card-stretch rounded-0 gutter-b">
-													<!--begin::Header-->
-													<div class="card-header align-items-center border-bottom-0 px-5">
-														<h3 class="font-size-lg align-items-center">
-															<span class="font-weight-bolder text-dark">평균분양가-연면적</span>
-															<i class="fas fa-question-circle icon-md text-muted ml-1" data-toggle="tooltip" data-placement="right" title="선택지역의 상가 유형별 공급(분양) 동향을 그래프 및 테이블 형식제공"></i>
-														</h3>
-														<div class="card-toolbar"><span class="font-size-sm">(단위 : 연면적(㎡), 만원)</span></div>
-													</div>
-													<!--end::Header-->
-													<!--begin::Body-->
-													<div class="card-body px-3 py-0 mt-n6">
-														<div id="chart_3"></div>
-													</div>
-													<!--end: Card Body-->
-												</div>
-												<!--end: Card-->
-											</div>
-											<div class="col-lg-12 col-xxl-12">
-												<!-- 21.01.04 위치이동-->
-												<!--begin::Card-->
-												<div class="  card card-custom card-stretch rounded-0 gutter-b">
-													<!--begin::Header-->
-													<div class="card-header align-items-center border-bottom-0 px-5">
-														<h3 class="font-size-lg align-items-center">
-															<span class="font-weight-bolder text-dark">평균임대료 - <span class="font-size-sm">상가유형별/1층</span></span>
-															<i class="fas fa-question-circle icon-md text-muted ml-1" data-toggle="tooltip" data-placement="right" title="선택지역의 상가 유형별 공급(분양) 동향을 그래프 및 테이블 형식제공"></i>
-														</h3>
-														<div class="card-toolbar"><span class="font-size-sm">(단위 : 만원/㎡))</span></div>
-													</div>
-													<!--end::Header-->
-													<!--begin::Body-->
-													<div class="card-body px-3 py-0 mt-n6">
-														<div id="chart_9"></div>
-													</div>
-													<!--end: Card Body-->
-												</div>
-												<!--end: Card-->
-											</div>
-											<div class="col-lg-6 col-xxl-6">
-												<!--begin::Card-->
-												<div class="card card-custom card-stretch rounded-0 gutter-b">
-													<!--begin::Header-->
-													<div class="card-header align-items-center border-bottom-0 px-5">
-														<h3 class="font-size-lg align-items-center">
-															<span class="font-weight-bolder text-dark">매출정보</span>
-															<i class="fas fa-question-circle icon-md text-muted ml-1" data-toggle="tooltip" data-placement="right" title="선택지역의 상가 유형별 공급(분양) 동향을 그래프 및 테이블 형식제공"></i>
-														</h3>
-														<div class="card-toolbar"><span class="font-size-sm">(단위 : 총매출, 만원)</span></div>
-													</div>
-													<!--end::Header-->
-													<!--begin::Body-->
-													<div class="card-body px-3 py-0 mt-n6">
-														<div id="chart_4"></div>
-													</div>
-													<!--end: Card Body-->
-												</div>
-												<!--end: Card-->
-											</div>
-											<div class="col-lg-6 col-xxl-6">
-												<!--begin::Card-->
-												<div class="card card-custom card-stretch rounded-0 gutter-b">
-													<!--begin::Header-->
-													<div class="card-header align-items-center border-bottom-0 px-5">
-														<h3 class="font-size-lg align-items-center">
-															<span class="font-weight-bolder text-dark">인구정보-거주</span>
-															<i class="fas fa-question-circle icon-md text-muted ml-1" data-toggle="tooltip" data-placement="right" title="선택지역의 상가 유형별 공급(분양) 동향을 그래프 및 테이블 형식제공"></i>
-														</h3>
-														<div class="card-toolbar"><span class="font-size-sm">(단위 : 연령별, 성별, 인구수)</span></div>
-													</div>
-													<!--end::Header-->
-													<!--begin::Body-->
-													<div class="card-body px-3 py-0 mt-n6">
-														<div id="chart_6"></div>
-													</div>
-													<!--end: Card Body-->
-												</div>
-												<!--end: Card-->
 											</div>
 										</div>
 									</div>
-									<div class="col-lg-3 col-xxl-3">
-										<!--begin::Card-->
-										<div class="card card-custom card-stretch card-stretch-third rounded-0 gutter-b">
-											<!--begin::Header-->
-											<div class="card-header align-items-center border-bottom-0 px-5">
-												<h3 class="font-size-lg align-items-center">
-													<span class="font-weight-bolder text-dark">임대료변동율-<span class="font-size-sm">상가유형별/1층</span></span>
-													<i class="fas fa-question-circle icon-md text-muted ml-1" data-toggle="tooltip" data-placement="right" title="선택지역의 상가 유형별 공급(분양) 동향을 그래프 및 테이블 형식제공"></i>
-												</h3>
-												<div class="card-toolbar"><span class="font-size-sm">(단위:2017년 4분기,%)</span></div>
+									<div class="col-6">
+										<div class="card card-custom card-stretch rounded-0 gutter-b">
+											<div class="card-header">
+												<h3>공급동향</h3>
+<!--												<div class="card-toolbar"><span class="font-size-sm">(단위: 상가유형, 만원)</span></div>-->
 											</div>
-											<!--end::Header-->
-											<!--begin::Body-->
-											<div class="card-body px-3 py-0 mt-n6">
-												<div id="chart_8"></div>
-											</div>
-											<!--end: Card Body-->
-										</div>
-										<!--end: Card-->
-										<!-- 21.01.04 위치이동  -->
-										<!--begin::Card-->
-										<div class="card card-custom card-stretch card-stretch-third rounded-0 gutter-b ">
-											<!--begin::Header-->
-											<div class="card-header align-items-center border-bottom-0 px-5">
-												<h3 class="font-size-lg align-items-center">
-													<span class="font-weight-bolder text-dark">업종정보</span>
-													<i class="fas fa-question-circle icon-md text-muted ml-1" data-toggle="tooltip" data-placement="right" title="선택지역의 상가 유형별 공급(분양) 동향을 그래프 및 테이블 형식제공"></i>
-												</h3>
-												<div class="card-toolbar"><span class="font-size-sm">(단위 : 업종별, 점포수)</span></div>
-											</div>
-											<!--end::Header-->
-											<!--begin::Body-->
-											<div class="card-body px-3 py-0 mt-n6">
-												<div id="chart_5"></div>
-											</div>
-											<!--end: Card Body-->
-										</div>
-										<!--end: Card-->
+											<div class="card-body">
+<!--												<img src="assets/images/chart_index_02.png">-->
+												<div class="row w100p">
+													<div class="col-6">
+														<div class="chart right" id="chartSupply"></div>
+													</div>
+													<div class="col-6">
+														<div class="chart right" id="chartSupply2"></div>
+													</div>
+												</div>
 
-										<!--begin::Card-->
-										<div class="card card-custom card-stretch card-stretch-third rounded-0 gutter-b">
-											<!--begin::Header-->
-											<div class="card-header align-items-center border-bottom-0 px-5">
-												<h3 class="font-size-lg align-items-center">
-													<span class="font-weight-bolder text-dark">인구정보-직장</span>
-													<i class="fas fa-question-circle icon-md text-muted ml-1" data-toggle="tooltip" data-placement="right" title="선택지역의 상가 유형별 공급(분양) 동향을 그래프 및 테이블 형식제공"></i>
-												</h3>
-												<div class="card-toolbar"><span class="font-size-sm">(단위 : 연령별, 성별, 인구수)</span></div>
 											</div>
-											<!--end::Header-->
-											<!--begin::Body-->
-											<div class="card-body px-3 py-0 mt-n6">
-												<div id="chart_10"></div>
-											</div>
-											<!--end: Card Body-->
 										</div>
-										<!--end: Card-->
+									</div>
+									<div class="col-6">
+										<div class="card card-custom card-stretch rounded-0 gutter-b">
+											<div class="card-header">
+												<h3>상가유형별 평균임대료</h3>
+												<div class="unit">(단위: 만원㎡)</div>
+											</div>
+											<div class="card-body">
+												<div class="chart" id="chartAverageRent"></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-6">
+										<div class="card card-custom card-stretch rounded-0 gutter-b">
+											<div class="card-header">
+												<h3>상가유형별 평균분양가</h3>
+												<div class="unit">(단위: 만원㎡)</div>
+											</div>
+											<div class="card-body">
+												<div class="chart" id="chartAveragesale"></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-6">
+										<div class="row">
+											<div class="col-6">
+												<div class="card card-custom card-stretch rounded-0 gutter-b">
+													<div class="card-header">
+														<h3>매출정보추이</h3>
+														<div class="unit">(단위:총매출/백만원)</div>
+													</div>
+													<div class="card-body">
+<!--														<img src="assets/images/chart_index_05.png">-->
+														<div class="chart" id="chartInformationTrend"></div>
+													</div>
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="card card-custom card-stretch rounded-0 gutter-b">
+													<div class="card-header">
+														<h3>업종정보</span></h3>
+														<div class="unit">(단위:개수)</div>
+													</div>
+													<div class="card-body">
+<!--														<img src="assets/images/chart_index_06.png">-->
+														<div class="chart" id="chartIndustryInformation"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-6">
+										<div class="card card-custom card-stretch rounded-0 gutter-b">
+											<div class="card-header">
+												<h3>인구정보</h3>
+											</div>
+											<div class="card-body">
+<!--												<img src="assets/images/chart_index_07.png">-->
+												<div class="d-flex w100p">
+													<div class="people-first-chart">
+														<h4>각 특성 인구 연도별 추이</h4>
+														<div class="chart" id="chartPopulationInformationYears"></div>
+													</div>
+													<div class="people-second-chart">
+														<h4>2021년 2월 각 특성인구별 성별분포</h4>
+														<div class="row donut">
+															<div class="col-4">
+																<div class="chart" id="chartPopulationInformationFab1"></div>
+																<div class="label-lady first">
+																	<label>여자</label>
+																	<strong>54%</strong>
+																</div>
+															</div>
+															<div class="col-4">
+																<div class="chart" id="chartPopulationInformationFab2"></div>
+																<div class="label-lady second">
+																	<label>여자</label>
+																	<strong>41%</strong>
+																</div>
+															</div>
+															<div class="col-4">
+																<div class="chart" id="chartPopulationInformationFab3"></div>
+																<div class="label-lady third">
+																	<label>여자</label>
+																	<strong>58%</strong>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+
+											</div>
+										</div>
 									</div>
 								</div>
 								<!--end::Row-->
@@ -706,7 +633,7 @@
 			</span>
 		</div>
 		<!--end::Scrolltop-->
-		
+
 		<!--begin::Global Config(global config for global JS scripts)-->
 		<!--end::Global Config-->
 		<!--begin::Global Theme Bundle(used by all pages)-->
@@ -715,9 +642,25 @@
 		<script src="assets/js/scripts.bundle.js"></script>
 		<!--end::Global Theme Bundle-->
 		<!--begin::Page Scripts(used by this page)-->
-		<script src="assets/js/pages/dashboard/dashboardcharts.js"></script>
+		<script src="assets/js/pages/dashboard/dashboardcharts.old.js"></script>
 		<script src="assets/js/pages/my-script.js"></script>
+		<script src="assets/js/jquery.js"></script>
 		<!--end::Page Scripts-->
+		<script>
+			$(function() {
+				chartRentChange.render();
+				chartSupply.render();
+				chartSupply2.render();
+				chartAverageRent.render();
+				chartAveragesale.render();
+				chartInformationTrend.render();
+				chartIndustryInformation.render();
+				chartPopulationInformationYears.render();
+				chartPopulationInformationFab1.render();
+				chartPopulationInformationFab2.render();
+				chartPopulationInformationFab3.render();
+			})
+		</script>
 	</body>
 	<!--end::Body-->
 </html>
